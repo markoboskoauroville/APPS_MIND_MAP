@@ -40,8 +40,15 @@ and Drive, text answers) applies here too.
 ## 3. Open and sign in (FIRST RUN)
 
 1. Linux Chrome on this VM, the profile Marko names (default: the one that makes the Gemini pictures).
-2. Open the launch post `https://microsoft.ai/news/introducing-mai-image-2-7/` and follow its MAI Labs link.
-   Write the real MAI Labs address here after the first visit: `MAI Labs URL: ______`, `Canvas URL: ______`.
+2. Open MAI Labs. Seen by the VM session vm1 on 21.11.2026 (read-only visit, not signed in):
+   - MAI Labs: `https://labs.microsoft.ai/?model=mai-image-2-7-flash` (the `model` value picks the model).
+     Canvas: `https://labs.microsoft.ai/?model=canvas`. Page title "MAI Labs | Microsoft AI".
+   - The page: a cookie banner (Accept, Reject, Manage), "Sign in" at the top right, a prompt box "What do
+     you want to create?" with a + button, a model picker (default MAI-Image-2.7-Flash) and Send; a bottom
+     bar with MAI-Image-2.7, voice and chat. Footer: "MAI Labs is a limited preview of new and experimental
+     AI models."
+   - The VM's Chrome was not signed in to Microsoft. The cookie banner is Marko's choice too: ask him.
+   - The launch post says nothing about regions, age, free limits or business use.
 3. If a Microsoft sign-in page appears, **stop and ask Marko in the chat to sign in himself** in the VM viewer.
    Never type a password, never create an account, never accept terms for him. After he signs in, read the
    account name shown in the page and tell him which account is in use.

@@ -214,11 +214,17 @@ SONY ALPHA 7 V  (ILCE-7M5, USB id 054c:0f56)
   colours, low-pass them hard (time constants of several seconds, Marko: "everything going very
   slowly"), map to the lights, pass through the limiter of 5.6.
 - Upgrade asked for Meditation Room itself (a second work item, in MANTRA_ROOM): a microphone input,
-  and a MilkDrop-style visualization that reacts to the room's sound (a gong, a bowl). Use Butterchurn
-  (MIT, WebGL2, runs in a WKWebView) unless a worker shows projectM (LGPL-2.1, OpenGL) fits better on
-  Apple Silicon; check the licence of every preset shipped. The visualization publishes its dominant
-  colours on Meditation Room's API (/api/state and the stream), and Light Control subscribes.
-  Microphone permission handled the manifest way (amber PERMISSIONS while missing).
+  so the visualization reacts to the room's sound (a gong, a bowl) and not only to the track it plays.
+  Meditation Room ALREADY has the MilkDrop visualization: butterchurn (MIT) with 100 presets, vendored
+  at android/app/src/main/assets/web/vendor/butterchurn.min.js, and on the Mac mac/app/Lights.swift
+  already turns the picture into colours for the G815 keyboard. Do not add a second visualizer: feed
+  the existing one from the microphone (a source switch: track | microphone | both), and reuse the
+  Lights.swift sampling for the colours. The visualization publishes its dominant colours on
+  Meditation Room's API (/api/state and a stream), and Light Control subscribes.
+  Microphone permission handled the manifest way (amber PERMISSIONS while missing). The Android app
+  has no INTERNET permission today; keep that, the microphone needs none.
+- Only one painter drives the G815 at a time; Light Control never writes to the keyboard itself, it
+  goes through G815 Lights' own API if the keyboard should follow the same scene.
 - Chain to prove at the end: gong struck in the room -> microphone -> visualization moves ->
   colours published -> light breathes in those colours, slowly, with no flash.
 

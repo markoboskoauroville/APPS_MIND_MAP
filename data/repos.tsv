@@ -1,9 +1,6 @@
 mantra-ndi-screen-share-android	false	false	main	Kotlin	2026-11-09T09:09:43Z	123	
 mantra-manual-camera	false	false	main	Kotlin	2026-11-16T08:44:06Z	35240	Mantra NDI - Android NDI camera. Hardware H.264/H.265 to NDI over Wi-Fi, manual sensor controls and capture profiles.
-autohotkey	true	false	main	Python	2026-05-19T13:25:52Z	6	
 auroville-florisboard-theme	false	false	main		2026-09-18T14:44:18Z	14	Auroville keyboard themes for FlorisBoard and Mantra Voice Type
-MIDI_TO_KEYSTROKE	true	false	main	Lua	2026-10-02T01:06:25Z	176	
-YSHAI_PERCUSSION_SCHOOL	true	false	main	Swift	2026-11-04T04:48:19Z	743	
 STREAM_DECK_REMOTE	false	false	main	Swift	2026-11-09T09:09:36Z	640	
 SECOND_TAKE_REMOTE	false	false	main	Kotlin	2026-11-13T21:43:40Z	89	
 groq-auto-update	false	false	main	Python	2026-11-19T14:59:55Z	6769	Groq AI Studio — CI-gated auto-update pipeline. Updates land here first, pass validation, then deploy to local.
@@ -11,133 +8,66 @@ MANTRA_FILMMAKING	false	false	main	HTML	2026-11-21T08:31:40Z	14457	The Playable 
 tidal_dl	false	false	main	Shell	2026-11-21T15:48:26Z	73	
 maha-transcriber-reader	false	false	main	HTML	2026-08-06T03:16:19Z	34	Maha Transcriber and Reader - speech to text and text to speech in one page. Keys stay on your device.
 MAHA_TRANSCRIBE_TERMUX	false	false	main	Shell	2026-08-09T14:34:10Z	85	MahaTranscribe Termux v1 — a store-first voice transcription app for Android/Termux. Flask + Waitress + SQLite, one-file installer.
-MA_READER_SPEECHIFY	true	false	main	Shell	2026-08-10T07:10:10Z	919	MA Reader Web v27: Speechify voice engine, multi-key ring and key parser. Reusable across apps.
-SOUND_DESIGN	true	false	main	Python	2026-08-19T06:09:21Z	96	Sound design for THE BRAIN BRAKE, and the craft behind it. Private.
-android-lab	true	false	main	Shell	2026-09-21T20:12:04Z	26	The local Android bench: a Pixel 7 emulated on the MacBook, one command to build, test, install and screenshot any Android project here.
 111-transcribe	false	false	main	Python	2026-11-09T09:09:16Z	200	
 marko-photoshop	false	false	main	Python	2026-05-30T15:56:55Z	3	
-MANTRA_VOICE_SWITCH	true	false	main	TypeScript	2026-11-06T02:38:59Z	16	
-NOVA_TV_777	true	false	main	JavaScript	2026-10-04T15:46:33Z	43249	Nova TV 777 — organisation hub and public page for the 27th birthday party, 28.5.2027
-spotlight	true	false	master	Python	2026-11-01T12:07:27Z	187	
-IMPORT_BUTTON	true	false	main	Swift	2026-11-04T04:46:38Z	544	Mouse thumb button in DaVinci Resolve = Import Media (Swift, Mantra)
-cq_mixpad_tutorial	true	false	main	Swift	2026-11-04T04:46:06Z	120377	
 COST_AGENT	false	false	main	Python	2026-11-14T11:39:51Z	197	
 router-mode	false	false	main	Swift	2026-11-16T13:49:55Z	22	
 SIX_LEVELS_OF_CLAUDE	false	false	main	HTML	2026-11-21T08:32:00Z	3355	An illustrated field book about working with Claude Code — six levels, from prompting to autonomy.
-marko-fooocus	true	false	main	Python	2026-05-15T15:53:15Z	21	
-lakshmi	true	false	main		2026-09-13T08:34:21Z	10911	
 MAHA_TRANSCRIBE_ANDROID	false	false	main	HTML	2026-09-18T14:46:55Z	84	Maha Transcribe v3, as a native Android app. Shares the Talk to Type provider core as a submodule.
-AVID_ASSISTANT	true	false	main	AutoHotkey	2026-09-03T11:46:04Z	414	Nova TV Avid Assistant, AutoHotkey v2 suite for the edit suite
-mani_communication	true	false	main	HTML	2026-10-29T06:20:37Z	30314	
 SOUND_LINK	false	false	main	Swift	2026-11-15T13:32:25Z	432	
-GERMAN_TO_ENGLISH	true	false	main	JavaScript	2026-11-06T09:33:07Z	10	
-CLAUDE_CODE_MONITOR	true	true	main	Swift	2026-11-07T05:04:44Z	16	
-MANTRA_ROUTER	true	false	main	TypeScript	2026-11-17T03:45:36Z	230	Gatekeeper model router for Claude Code: Haiku suggests Haiku/Sonnet/Opus, you confirm, it learns
-MANTRA_VOICE	true	false	main	Python	2026-11-21T06:25:12Z	16378	
 web-cam-viewer	false	false	main	Swift	2026-11-21T13:52:29Z	3014	
 FKeys	false	false	main	Swift	2026-09-18T14:44:29Z	80	FKeys - one click function key mode switching from the macOS menu bar.
 LENOVO_HUNTER	false	false	main	JavaScript	2026-09-18T14:57:21Z	299	Lenovo Hunter — real-time stock and price hunter for the Legion Tab Y700 Gen 3 across fourteen shops in Croatia, Germany and the EU. Expo/React Native.
-SANTOSHI_CONCERT_MIX	true	false	main	HTML	2026-10-31T09:01:37Z	29364	Santoshi Concert Mix: the 17.10.2026 Santoshi concert multitrack in Live, played into the CQ-12T for a virtual soundcheck and an SD mix
-djmantra-test-songs	true	false	main		2026-10-13T21:03:17Z	1241705	DJ Mantra test songs (Marko's music, private): section detection test set
-CHROME_SUNO_CONTROLLER	true	false	main	JavaScript	2026-11-10T13:28:25Z	118	
-payment_gateway	true	false	main	HTML	2026-11-21T15:30:00Z	372	
 CLAUDE_CONTROL	false	false	main	Swift	2026-11-16T14:19:15Z	430	
 claude-code-session-names	false	false	main	Python	2026-11-14T19:34:50Z	7	
 Startup-Mantra	false	false	main	Swift	2026-11-19T03:44:05Z	7	
-ElevateMedia	true	false	main	Python	2026-11-21T06:49:51Z	1124993	
 MARCO_MACRO_RECORDER	false	false	main	AutoHotkey	2026-08-08T14:24:55Z	51	A keyboard and mouse macro recorder for Windows. Everything records itself, with undo, redo, and a teaching line that shows you the AutoHotkey it wrote.
 GOOGLE_TTS_STT	false	false	main	Shell	2026-09-19T06:54:01Z	21665	One roof over Gemini text-to-speech and speech-to-text. One key ring, one ledger, one fallback.
-VOICE_ENGINES	true	false	master	Python	2026-10-31T15:20:16Z	10	
-FREE_MAC	true	false	master	Shell	2026-11-04T04:46:29Z	1165	
-LIAM_OTTLEY_KNOWLEDGE	true	false	main		2026-11-10T00:17:59Z	2161	
 ttt-layouts	false	false	main		2026-11-09T09:09:49Z	2	
 MANTRA_TEACHERS	false	false	main	Swift	2026-11-13T21:43:56Z	27	
-GROQ_AI_STUDIO_MAC	true	false	main	Swift	2026-11-14T11:49:14Z	19	
-claude-code	true	false	main	Python	2026-11-21T15:51:49Z	5786	Everything built with Claude Code on Marko's Mac: the journal, the index, every program as a submodule
-MANTRA_CORRECTIONS	true	false	main		2026-11-21T16:37:04Z	7	
-marinko_communication	true	false	claude/kind-hamilton-xh46u7	HTML	2026-10-26T08:13:57Z	14038	
-markoboskopossesions	true	false	main	JavaScript	2026-10-29T06:20:33Z	1291	The Boško family's parcels in Kukljica: map, owners, family tree, documents. Behind a login.
-CQ_ETHERNET_BRIDGE	true	false	main		2026-11-07T08:40:03Z	4	
 router-credits	false	false	main	Kotlin	2026-11-09T09:09:45Z	27	
-groq_ai_studio_data	true	false	main	Shell	2026-11-21T13:27:42Z	1218	
 Song_simple_mixer	false	false	main	Kotlin	2026-11-21T15:39:24Z	81	
 zet_strike	false	false	main	Python	2026-11-21T15:43:41Z	271	
-surgeon	true	false	main	Python	2026-09-16T05:04:35Z	8	Edit single files of a GitHub repo without cloning it
 MINIMALIST_STOPWATCH	false	false	main	Kotlin	2026-10-04T15:46:32Z	495	A stopwatch. Black screen, white digits, three transport buttons, nothing else. Mantra Productions.
 obs2vmix	false	false	master	C	2026-09-18T14:44:21Z	83451	OBS Studio - Free and open source software for live streaming and screen recording
 cq_mixpad_protocol	false	false	main	Python	2026-11-08T22:21:40Z	39	Database of codes for Allen & Heath CQ mixers: the private protocol decoded from CQ MixPad (protocol.json, PROTOCOL.md, sniffer tools)
 CCMC	false	false	main	Python	2026-11-13T22:19:10Z	589	
 CLOUD_MIXER	false	false	main	Python	2026-11-17T00:45:33Z	142	
 MEDITERRANEAN_PERCUSSION	false	false	main	HTML	2026-11-21T08:31:47Z	15337	The Oldest Drum — a Mantra field book on Mediterranean frame drumming. Velez, Redmond, Fresco, Afterman; the instruments, the rhythm cycles, and how to begin.
-MANTRA_PORTS	true	false	master	Python	2026-10-27T11:04:51Z	33	
 VOICE_ENGINE_UNIVERSAL	false	false	main	Kotlin	2026-11-09T09:09:40Z	7	
 MANTRA_SANDBOX	false	false	main	Shell	2026-11-09T09:09:33Z	13	
-karin-avi-training	true	false	main	Kotlin	2026-11-07T07:21:15Z	54	Karin AVI Training — Android player for training videos with progress & resume
-charts	true	false	master	Python	2026-10-14T13:47:22Z	18	BeatStats.com chart PDF -> Spotify playlist (Gemini OCR + Spotify search)
 MAHA_TRANSCRIBE_STREAMLIT	false	false	main	Python	2026-11-21T15:29:18Z	3271	Maha Transcribe ported to Streamlit — browser recording, ffmpeg downsample, Whisper on Groq only (EN/HR).
 DictateKeyboard	false	false	main	Kotlin	2026-09-18T14:52:02Z	48523	A powerful Whisper AI keyboard for reliable speech transcription
 DRIVE_DOWNLOADER	false	false	main	Python	2026-10-04T15:45:57Z	36	Flask web app that downloads a whole Google Drive folder with byte-level resume, so a dropped connection costs seconds and not gigabytes. v1
-messaging	true	false	main		2026-10-05T03:11:24Z	10	
 CLAUDE_CODE_TERMUX	false	false	main	Shell	2026-11-21T15:31:43Z	252	One-command installer for Claude Code on Android via Termux (patched native binary or proot-Ubuntu).
 santoshi_band_site	false	false	main	HTML	2026-11-17T00:44:41Z	166273	Published files of the Santoshi Kirtan Band websites (deployed to Cloudflare Pages by Actions)
 AGENT_MANAGER	false	false	main	Swift	2026-11-17T21:05:01Z	730	
 GCLOUD_CHAT_TERMUX	false	false	main		2026-11-18T15:16:50Z	4	
-NOVA_TV_SCHEDULE	true	false	main	AutoHotkey	2026-08-27T10:37:47Z	86	Baba Nova TV schedule vault: takeover, rules, monthly XLS, macros. Private.
-mantra_virtual_cam	true	false	main	Swift	2026-11-04T04:47:12Z	759	
-SISTER_APP	true	false	main	Swift	2026-11-04T04:47:38Z	508	Sister App (Mantra): MANTRA CHAT's server on and off, and its page. The star's Sister row in Swift.
 SWIFT_MATRIX	false	false	main	Swift	2026-11-09T09:09:38Z	823	
-djay-playlists	true	false	main	Python	2026-10-14T15:39:52Z	97	
-mantra-mackie-control-translator	true	false	main	Lua	2026-10-02T01:06:27Z	299	Translates the OXI E16 MIDI CC and notes into Mackie Control for Ableton Live. Hammerspoon hub, star menu app.
-mantra_pages	true	false	main	Python	2026-10-24T05:16:35Z	4	
 KUKLJICA_ECOOASIS	false	false	main	HTML	2026-11-21T15:29:07Z	13398	Kukljica EcoOasis, ecosystem restoration on the island of Ugljan
 MPA_ACADEMY_ANDROID	false	false	main	Kotlin	2026-11-21T15:29:37Z	931	
-damjan_communication	true	false	main		2026-11-16T11:11:08Z	4	
-MACRO_SKILLS	true	false	main	Python	2026-11-21T10:35:44Z	375	
-MANTRA_SONGS	true	false	main		2026-08-21T18:45:59Z	18039	Private archive: one folder per song. Source audio, prompts, art, and what was measured.
-MANTRA_PRODUCTION_PORTALS	true	false	main		2026-10-04T15:46:20Z	8	Mantra Productions — portals for the people who make the films
-RESOLVE_GRADING_TUTORIAL	true	false	main	Swift	2026-11-04T04:47:30Z	15848	
 MANTRA_TRAIL	false	false	main	Java	2026-11-21T15:39:54Z	1091	
-markoboskocv	true	false	main	HTML	2026-11-21T08:37:04Z	42617	Bilingual (HR/EN) CV for Marko Boško. Single static HTML file, no framework, no build step.
 MANTRA_VOICE_TO_TEXT	false	false	main	Swift	2026-11-21T13:54:24Z	7027	
 homebrew-pasty	false	false	main	Ruby	2026-08-11T05:00:10Z	6	Homebrew tap for Pasty, a macOS clipboard manager.
-GROQ_EXPLORER	true	false	main	Kotlin	2026-09-18T14:43:58Z	214	A Stream Deck playground for every Groq model, with the working shown. Sister app to TTT mini.
-studio-setup-mantra	true	false	main	HTML	2026-11-01T13:05:01Z	1402	
 BRAIN_BRAKE_KEYBOARD	false	true	master	Lua	2026-09-06T12:12:39Z	335	Marko's Hammerspoon keyboard: the buckets, the F keys, the extended hand and the deck for imgtoimg.ai
-keyboard-monitor	true	false	main	Swift	2026-11-04T04:46:43Z	561	
 Pasty	false	false	main	Swift	2026-11-09T09:09:35Z	810	
 PLUGIN_ASSISTANT	false	false	main	Swift	2026-11-13T09:17:09Z	166	
-COMM_NATASHA	true	false	main		2026-11-16T11:11:04Z	4	
 SKELETON	false	false	main	Swift	2026-11-16T11:33:07Z	2403	
 DJ_Mantra	false	false	main	HTML	2026-11-21T08:31:23Z	9	
-SUNO_SONGS	true	false	main	Python	2026-11-21T15:39:17Z	192719	Private database of Suno style and lyrics prompts, tagged and reusable
-LAKSHMI_COMMUNICATION	true	false	main		2026-08-24T10:18:23Z	15262	Private. Correspondence with Lakshmi: verified facts, tone rules, what has been sent.
-CLAUDE_REMOTE	true	false	main	TypeScript	2026-11-14T11:46:06Z	35	
 SONY_REMOTE_MAC	false	false	main	Swift	2026-11-15T11:03:59Z	32	
-mpa-academy	true	false	main	JavaScript	2026-11-21T15:29:35Z	439037	Mantreshwar Percussions Academy, https://mpa-academy.pages.dev
 Cascade	false	false	main	Swift	2026-09-18T14:44:19Z	56	Cascade - one click window cascading per display, built to pair with AutoRaise.
-222-transcribe	true	false	main	Python	2026-10-04T15:45:33Z	190	222 TRANSCRIBE — a copy of 111 TRANSCRIBE for a second user: upload or record audio or video, get a transcript with speakers, timecodes, subtitles and translation. AssemblyAI, Streamlit. Mantra Productions.
-cq_vesa_adapter	true	false	main	Python	2026-10-24T07:07:54Z	23	
-stream-deck-control	true	true	main	Swift	2026-11-06T19:30:25Z	503	
 oxi-controller	false	false	main	Swift	2026-11-09T09:09:45Z	2608	
 MANTRA_MAP_SERVER	false	false	main	Kotlin	2026-11-09T09:09:31Z	96	
-marko-phone-settings	true	false	main	Python	2026-11-14T08:09:13Z	14	How Marko's phones look and work: TTT profile, Termux keys, Claude Code status line. No keys.
 DAVINCI_RESOLVE_ACTIONS	false	false	main	Lua	2026-11-16T13:50:03Z	1031	
 ABLETON_LIVE_ACTIONS	false	false	main	Swift	2026-11-16T13:50:05Z	1092	
 VOICE_ENGINE_ANDROID	false	false	main	Kotlin	2026-11-21T06:24:32Z	222	
 HOW_I_MADE_TTT	false	false	main	HTML	2026-11-21T08:31:34Z	9253	An illustrated field book: how the TTT dictation keyboard got built, one broken build at a time.
-MANTRA_MANIFEST	true	false	main	Python	2026-11-21T16:07:05Z	10950	The Mantra Manifest — principles, shared modules and working rules for every app in this account. Lego blocks, written down once.
-song-analasys	true	false	main		2026-05-25T14:32:21Z	0	
-TTT_PORTAL	true	false	main	Python	2026-10-29T06:20:35Z	366	
 TOML	false	false	main	Python	2026-10-04T15:46:45Z	94	TOML - merge an exported key file into a secrets file, on your own phone. Termux + Flask, loopback only.
-MANTRA_REMOTE	true	false	main		2026-11-06T02:37:55Z	0	
 SPEECHIFY_KEYS	false	false	main	HTML	2026-10-29T04:53:40Z	11	
-STAR_LAUNCHER	true	false	main	Swift	2026-11-05T14:34:21Z	1368	
-TIMER_STOPWATCH_CLOCK	true	false	main	Swift	2026-11-10T05:29:52Z	1230	Timer Stopwatch Clock (Mantra): the Mac Swift version of Minimalist Stopwatch. S stopwatch, T timer, R clock.
 connection-keeper	false	false	main	Swift	2026-11-16T14:02:50Z	2992	
 TERMUX_VOICE	false	false	main	Python	2026-11-15T04:54:36Z	68	
 MANTRA_VPN	false	false	main	Swift	2026-11-15T09:19:25Z	80	
 ETHNO-HRVATSKA	false	false	main	Swift	2026-11-21T06:53:21Z	4205	
-CINEVIEW_VIEWER	true	false	main	Swift	2026-11-01T05:27:49Z	24	A Swift viewer for the Accsoon CineView Nano over its own Wi-Fi: the picture, nothing else. Written on the phone; compiled on the Mac.
 djmantra_app	false	false	main	C++	2026-11-21T15:29:53Z	292652	
 COCKPIT_ANDROID	false	false	main	Kotlin	2026-11-09T09:09:23Z	117	
 claude-code-mantra-os	false	false	main		2026-11-09T07:30:53Z	10	Claude Code Mantra Operating System: a master session, fresh child agents, a model router, skills instead of repeating
@@ -147,66 +77,40 @@ TTT	false	false	main	Kotlin	2026-11-21T16:31:37Z	59941	TTT, Talk to Type Advance
 MANTRA_MACRO	false	false	main	Swift	2026-11-19T14:59:52Z	2527	
 MAHA_COMMUTE	false	false	main	Shell	2026-11-21T15:40:04Z	32890	The umbrella over the Zagreb transit family: day.commute, night.commute, all.commute. One file installs, one word opens.
 MANTRA_SCREEN_COPY	false	false	main	Swift	2026-11-21T10:40:27Z	1049	
-marko-stream	true	false	main	Python	2026-06-11T20:57:25Z	137	
 MANTRA_ROUTE	false	false	main	Kotlin	2026-09-18T14:44:04Z	267	Every audio output as a row in one notification. Nothing Phone (2a), Shizuku.
-router-sms	true	false	main	Python	2026-11-04T04:47:35Z	60	
-MKV_CONVERTER	true	false	main	Swift	2026-11-04T04:47:21Z	467	
 ANDROIDVU	false	false	main	Kotlin	2026-11-09T09:09:16Z	33	
 MARKOBOSKO_THERAPIES	false	false	main	Python	2026-11-21T12:27:21Z	41442	
-RE_MAGIC_DATABASE	true	false	main		2026-11-21T16:41:31Z	111	
 termux-tools	false	false	main	Python	2026-11-21T15:44:39Z	296	
 magic-coin	false	false	main	Swift	2026-09-18T14:44:19Z	18	Magic Coin - a floating ring for macOS. MA transcribes, BA reads what is under it.
 MA_READER_ENGINE	false	false	main	Kotlin	2026-08-09T04:40:46Z	386	Shared reader engine: Edge speech client and word timing alignment. Consumed by Talk to Type (LLL) and MA Reader Android.
-MAHA_TRANSCRIBE_FLASK	true	false	master	Python	2026-10-04T15:46:10Z	143	Maha Transcribe as a Flask app in the Avid look: record, transcribe, read with the word lit, notes, quotas; one login for all the apps on the machine
-AD_TASKS	true	false	main		2026-10-08T02:26:04Z	33	AI video ads for Nikola Dziknic's agency: research, trial task, prompts and the automation for three clients
 MacBook_Pro_as_external_display	false	false	main	HTML	2026-10-29T04:53:37Z	1562	MacBook Pro 14 as the second screen of a MacBook Pro 16: USB-C dummy plug + Thunderbolt 4 cable + Swift. Page and shopping list: https://marko-macbook-pro-as-external-display.pages.dev/#shop | Dummy plug: https://www.amazon.de/dp/B0FCDJG6SW | TB4 cable: https://www.amazon.de/dp/B08KSM2FWR
 blender-control	false	false	main	Python	2026-11-11T21:02:28Z	10375	Live GUI & headless Blender 5.2 control skill, TCP JSON-RPC bridge, CLI tools, and procedural 3D test projects
-COMM_EMINA_KURTAGIC	true	false	main		2026-11-21T07:00:51Z	8	
-mpa-academy-data	true	false	main		2026-11-20T05:53:12Z	109	MPA Academy database mirror: students, lessons, Exercise Lab (written by the mpa-hub Worker)
-GITHUB_REPO	true	false	main	Kotlin	2026-09-18T14:43:56Z	107	Android app: type a GitHub username, browse their public repositories, open releases and download the files.
-MANTRA_DOWNLOAD_COUNTER	true	false	master	JavaScript	2026-11-10T03:04:25Z	12	
 MARKO_APPS	false	false	main	HTML	2026-11-09T09:16:58Z	179	markoapps.pages.dev: every public app of Mantra Productions, one page each, what it does, the technology, how to install; deployed to Cloudflare Pages by GitHub Actions
 oxi_e16_cq-12t	false	false	main	Python	2026-11-21T15:31:34Z	51	
 BRAIN_BRAKE_BOOK	false	false	main	Python	2026-09-04T04:58:43Z	50009	
 MANTRA_DRIVE_PATH	false	false	main	HTML	2026-11-13T22:19:13Z	720	
 MANTRA_REMOTE_VIEWING	false	false	main	Kotlin	2026-11-21T15:29:27Z	2287	
 vm-chromium	false	false	main	Python	2026-11-19T06:31:58Z	1845	
-kognius_app	true	false	ccr-63ab3055-9ncm8i	JavaScript	2026-11-21T06:51:21Z	84870	
 YOGA_SUTRAS	false	false	main	HTML	2026-11-21T08:32:13Z	12450	The Yoga Sutras of Patanjali — an illustrated field book. All four padas, the Samkhya underneath them, and where the translators diverge.
 mantra_workinprogress	false	false	main	HTML	2026-11-21T08:31:45Z	78077	Marko's temporary page: work in progress to listen to from the phone
 HEMISYNC_RECORDING_MONITOR	false	false	main	Swift	2026-11-21T07:30:55Z	12	
 CLEAN_START	false	false	main	Swift	2026-11-21T13:53:01Z	236	
 STAR_SWIFT	false	false	main	Swift	2026-11-21T13:27:32Z	1924	
-astro_dos	true	false	main	Kotlin	2026-11-21T15:38:26Z	94116	
-Marko-analiza	true	false	main	Python	2026-05-25T14:56:17Z	6	
-CLAUDE_CODE_LOCAL	true	false	main		2026-08-28T08:19:41Z	0	Claude Code's external memory for the Mac. Markdown only. What was built, how to restore it, and what was learned.
 SHOP_FINDER	false	false	main	Python	2026-10-20T15:10:53Z	155	The Store & Pool Finder: Spar, dm, bio&bio, Mlinar, malls and the Zagreb city pools with today's hours; shopfinder.pages.dev + the Oracle machine
-WATCH_FOLDER_DAEMON	true	false	main	Python	2026-10-04T15:46:48Z	93	A folder that pushes what you drop in it. macOS launchd daemon, menu bar eye, and a global watch command.
 KEYRING_TERMUX	false	false	main	Python	2026-10-04T15:46:05Z	83	Keyring: the key repository on the phone. Every API key in one vault, found by shape in your notes, tested for real (valid AND has credit), exported in one format, read by every app and by Claude Code with 'keyring get <provider>'. Termux + Flask, 127.0.0.1 only.
-GDRIVE_DOWNLOADER_FLASK_MACOS	true	false	main	Python	2026-10-04T15:46:01Z	481	Flask web app for macOS that scans a Google Drive folder, reports how many files and how many GB, then clones the whole tree locally with byte-level resume
-STEM_SEPARATION	true	false	main	Swift	2026-11-04T04:47:53Z	444	
 marko-transcribe	false	false	main	Python	2026-09-17T19:11:48Z	593	
-MANTRA_SOUND_RECORDER	true	false	main	Swift	2026-11-10T11:58:08Z	1431	
 MANTRA_KEYBOARD_MOUSE_ROUTER	false	false	main	Swift	2026-11-16T13:49:58Z	174	
 MANTRA_MIDI_TOOLS	false	false	main	Swift	2026-11-16T13:50:00Z	1400	
-COMM_DARKO_DUDA	true	false	main		2026-11-15T05:51:15Z	10	
 HIFI_AND_ACOUSTICS	false	false	main	HTML	2026-11-21T08:31:31Z	15267	Moving Air — a Mantra field book on sound, rooms, listening and mixing. The physics, the room, the ear, and which hi-fi claims survive a blind test.
 THERAPEUTIC_STORIES	false	false	main		2026-08-09T05:24:08Z	25	Story Medicine - Android app turning a voice note or pasted text into a therapeutic story for a child, read aloud with Edge neural voices
-INSTALLATION_LOGGER	true	false	main	Swift	2026-11-04T04:48:25Z	506	What an installer writes on this Mac, and the way out again: a local page that records an installation and uninstalls it
-INDIAN_MANTRAS	true	false	main	Swift	2026-11-04T05:53:43Z	21427	
-firefox-control	true	false	main	Python	2026-11-14T09:32:17Z	33	
 AI_FOR_BEGINNERS	false	false	main	HTML	2026-11-13T08:48:23Z	4516	How a machine learns from its teacher: the true story of Queen
 donnie-horoscope-releases	false	false	main	JavaScript	2026-11-21T08:31:26Z	9530	
 ANIMATOR_COLLABORATION	false	false	main	HTML	2026-11-21T08:31:12Z	959765	Brain Brake animation collaboration with Kristijan. Storage and handover, scene by scene.
 AVID_BACKGROUND	false	false	main	HTML	2026-11-21T08:31:15Z	189	How to stop the background AI transcription, indexing and render services in Avid Media Composer
 WIN_OPTIMIZER_GUIDE	false	false	main	HTML	2026-11-21T08:32:09Z	6	Public guide: clean, repair, and speed up Windows with BleachBit, WinUtil, and Optimizer. Retro terminal edition.
-four-powers	true	false	main	HTML	2026-07-19T16:58:32Z	418	The four Powers of the Mother from Sri Aurobindo's 1928 chapter, with the shadow each one casts and the practices that meet it. English, German, Croatian.
-TATA_Talk	true	false	main	Kotlin	2026-09-18T14:44:13Z	55	TA-TA Talk
-markoboskopec	true	false	main	HTML	2026-10-29T04:53:43Z	12	
 aooserver-arm64	false	false	main		2026-11-12T12:16:21Z	1	
 spar_locator	false	false	main	Kotlin	2026-11-09T09:09:46Z	7614	
 BRAINBREAK_AUDIO	false	false	main		2026-11-09T09:09:18Z	252521	
-ABLETON_TEACHER	true	false	main	Python	2026-11-13T18:19:54Z	5047	
 TALK_MODE	false	false	main	Swift	2026-11-16T13:49:39Z	451	
 VOICE_ENGINE	false	false	main	Swift	2026-11-21T06:25:46Z	2640	
 sony_remote_controller	false	false	main	Kotlin	2026-11-21T15:30:14Z	2020	
@@ -214,70 +118,34 @@ MAHA_TRANSCRIBE_TERMUX_TERMINAL	false	false	main	HTML	2026-10-05T03:24:42Z	136	M
 DARKEN_THE_SCREENS	false	false	main	Swift	2026-11-09T12:13:11Z	562	
 MA_READER_TERMUX_MACOS	false	false	main	Shell	2026-11-13T07:28:47Z	4699	MA Reader Termux (Edge / Speechify) - single-file .sh installer for the browser reader with two TTS engines, word + sentence pause, and Speechify key ring.
 G815_LIGHTS	false	false	main	Swift	2026-11-21T15:29:04Z	1608	
-COMM_SANTOSHI	true	false	main		2026-11-16T13:49:42Z	19	
 PERMACULTURE_FIELD_BOOK	false	false	main	HTML	2026-11-21T08:31:52Z	15358	The Patient Ground — a Mantra field book on permaculture. The ancestors, the principles, the actual yield evidence, and designing for Mediterranean karst.
-UHD_HD_DISPLAY	true	false	main	Swift	2026-11-21T15:30:16Z	571	Resolve's HD/UHD as a menu-bar word, click to switch (Swift, Mantra)
-password-keyring	true	false	main	Kotlin	2026-08-31T20:48:38Z	120	Notes, encrypted, on the phone only. No network permission at all.
-HOST_EDITOR_TERMINAL_MACOS	true	false	main	Python	2026-08-22T05:24:39Z	26	Curses TUI for /etc/hosts on macOS - blocked/allowed tabs, live search, atomic writes
 MANIFEST_INTRO	false	false	main		2026-08-22T12:27:27Z	5	The front door. Keys, and where to go once you have them.
-claude-persist	true	false	main	Python	2026-10-08T15:08:03Z	5	
-SPEED_TEST	true	false	main	Python	2026-10-19T05:54:33Z	493	Mantra Speed Test: the real speed of a drive (past its cache), its health and maker, against the popular SSDs. Flask on the Mac, one word: speedtest.
-SPECTRAL_ANALYZER	true	false	master	Swift	2026-11-04T04:47:41Z	12273	
 DOWNLOAD_MONITOR	false	false	main	Swift	2026-11-17T07:58:15Z	797	
 SESSION_HUB	false	false	main	Swift	2026-11-13T12:44:30Z	22	
 CAUSE_AND_SYMPTOM	false	false	main	HTML	2026-11-21T08:31:21Z	635	Cause and Symptom - one pattern in the body, the field, the river, the border and war. Bilingual HR/EN.
 HAMMERSPOON_LUA_RECORDER	false	false	main	Lua	2026-08-08T05:46:42Z	17	The macOS port. Same recorder, same workflow, written in Lua for Hammerspoon. Everything records itself, with undo, redo, and a teaching line that shows you the Lua it wrote.
 BRAIN_BRAKE	false	false	main	Python	2026-11-21T15:31:45Z	1900218	
-DJ_TRANSFER_MONITOR	true	false	main	Swift	2026-11-04T04:46:18Z	672	
-IDO_PORTAL_KNOWLEDGE	true	false	main		2026-11-10T02:28:38Z	102	
 AGENT_MANAGER_ANDROID	false	false	main	Kotlin	2026-11-10T04:16:19Z	96	
 STAR_MONITOR	false	false	main	Swift	2026-11-13T21:44:02Z	558	
 MACOS_TASK_SWITCHER	false	false	main	Swift	2026-11-13T21:44:07Z	986	
 MANTRA_ROOM	false	false	main	Python	2026-11-15T15:35:32Z	45551	
 BRAIN_BRAKE_3D	false	false	main	Python	2026-11-09T09:09:20Z	286	
-santoshi_band	true	false	main	HTML	2026-11-16T14:06:34Z	462993	
 OGLEDALO_I_PROZOR	false	false	main	HTML	2026-11-21T08:31:50Z	4553	Ogledalo i prozor. Ilustrirana knjiga o narcisoidnosti, harmoniji i staklu izmedju nas.
 MANTRA_SOFTWARE	false	false	main	HTML	2026-11-21T08:31:43Z	15163	The Chat That Forgets — how one person built sixty-five repositories by talking to an AI. The human-readable face of the Mantra Manifest.
 BRAIN_BRAKE_FRAMES	false	false	main	HTML	2026-08-06T13:00:32Z	4124	The Brain Brake, contact sheet of every frame and reference sheet.
 BRAINBREAK_BUS	false	false	main	Python	2026-11-09T09:09:20Z	13	
-ELEVATE_MEDIA_MONITOR	true	false	main	Swift	2026-11-10T12:26:47Z	33174	
 mantra_arkod	false	false	main	Kotlin	2026-11-21T15:29:57Z	16622	Mantra ARKOD: katastarske čestice Hrvatske, posjedovni i vlasnički list
-ARKOD_cache	true	false	main	Python	2026-10-04T15:45:38Z	61790	ARKOD remote cache: the state's WMS, WFS, cadastre (KAT) and land registry (ZK) answers, kept for when the state is offline
-Claude_Toki	true	false	master	Python	2026-10-04T15:45:51Z	130	Claude Talkie: a skin over Claude in the Avid look; talk to it with the microphone, every answer read aloud with the word lit; one login for all the apps on the machine
-PASSWORD_KEYRING	true	false	main	Kotlin	2026-10-04T15:49:59Z	460	Password Keyring - offline encrypted password manager for Android
-ABLETON_COMMAND_GUIDE	true	false	main	Python	2026-11-13T18:04:04Z	79	Ask Ableton Live by voice and tell it what to do: the guide's page in the sister's shape, actions in Live over AbletonOSC, local voice only, Gemini's free keys in a ring with Haiku behind
-brigita.vilc_communication	true	false	main		2026-11-21T05:11:31Z	0	
 SOUND_DESIGN_GUIDE	false	false	main	HTML	2026-11-21T08:32:05Z	13	How to read a frame and hear what belongs in it. A three-level guide to AI-assisted sound design, from the making of THE BRAIN BRAKE.
-COMM_DIDI_ANANDA_ARPANA	true	false	main		2026-11-21T07:38:16Z	4	
 groq_ai_studio	false	false	main	Python	2026-11-21T13:49:37Z	7060	
 MA_READER_ANDROID	false	false	main	HTML	2026-09-18T14:46:45Z	339	MA Reader v26, ported to a standalone Android app. The macOS front end unchanged, served by a local server, with the engine as a submodule.
 SAMPLE_PLAYER	false	false	main	Kotlin	2026-09-18T14:44:12Z	483	Android sample player: 30 recorded phrases per project, transcribed and re-voiced, recorded from anywhere with an overlay triangle. Mantra Productions.
-calendar_events	true	false	ccr-ed8ac7c0-qehb42	Python	2026-11-02T14:24:03Z	15	
 OGLEDALO_REF	false	false	main		2026-11-09T09:09:36Z	56904	
 mantra-voice-to-text-downloads	false	false	main		2026-11-01T12:19:07Z	0	Mantra Voice to Text: free dictation for Mac and Windows, Whisper on your own computer. Downloads only; website mantravoicetotext.pages.dev
 MANTRA_CONTROLS	false	false	main	Swift	2026-11-13T21:44:05Z	26	
-MAC_TRANSCRIBER	true	false	main	Python	2026-11-14T10:00:19Z	23	
-ndi-mantra-monitor	true	false	main	Swift	2026-11-04T04:47:06Z	761	An NDI receiver for the Mac. One window, one picture, right-click to choose a source.
-MANTRA_MOUSE	true	false	main	Swift	2026-11-04T04:47:03Z	757	Automated Mouse Actions: move the pointer to a pop-up's default button, and more mouse helpers to come
-APP_STORE	true	false	master	Swift	2026-11-04T04:46:00Z	610	
 SHAMANIC_PATHS	false	false	main	HTML	2026-11-21T08:31:58Z	14908	The Long Night — a Mantra field book on shamanic practice, ayahuasca and the West. History and anthropology, not a how-to.
-VOICE_OF_CLAUDE	true	false	main	Swift	2026-11-01T12:06:00Z	312	
-ftp-server-termux-and-terminal	true	false	main	Shell	2026-10-08T00:58:46Z	57	
-FIND_FILE	true	false	master	Swift	2026-11-04T04:46:26Z	731	Find a file: the terminal's find as a small page, a star app for the Mac
-MANTRA_STAR	true	false	master	Lua	2026-11-13T21:43:47Z	543	The one menu: a David-star menu-bar icon that runs every Mac app as an opt-in toggle. Nothing automatic.
 MAI_WORKER	false	false	main	Python	2026-11-21T05:08:51Z	7	
-TERMINAL_SHORTCUT_MACOS	true	false	main	Python	2026-08-24T15:05:37Z	66	TP - Terminal Properties. Type c, get clear. A Flask editor for shell shortcuts on macOS, with a real PATH scan and a refusal to shadow a real command.
-mantra-ndi-sdk	true	false	main	C	2026-09-18T07:52:22Z	2197	Private. NDI Advanced SDK for Android, consumed by the mantra-ndi build. Not for redistribution.
-Key_Tester	true	false	main	Kotlin	2026-10-31T12:41:22Z	150	Key Tester
-SCREENSHOT_TO_TIDAL	true	false	main	Swift	2026-11-04T04:47:35Z	610	
 arkod_web	false	false	main	JavaScript	2026-10-04T15:45:39Z	18128	ARKOD Layer as a web app (PWA): the Croatian cadastre on a map, for the iPhone and any browser. In step with the Android app mantra_arkod.
-STAR_API	true	false	main	Python	2026-11-13T07:03:21Z	539	
-svemir_communication	true	false	main		2026-11-21T15:30:04Z	3263	
-MANTRA_CODE_FILLER	true	false	master	Swift	2026-11-16T13:40:20Z	384	
 form	false	false	main	HTML	2026-07-13T08:15:44Z	47471	
-MANTRA_BRIDGE	true	false	main	Python	2026-08-29T09:27:07Z	44	A Claude-chat front end on the phone, driving Claude Code on the Mac at home.
-audio-prefer	true	false	main	Swift	2026-10-26T06:37:10Z	4	The Mac's audio output follows the CQ12T: when it is connected it is the output; else the ADAM, else the speakers
-PIANOVERSE_DEMO_SONGS	true	false	main	Python	2026-10-22T10:23:44Z	22	
 GoogleVoices	false	false	main	Python	2026-11-09T09:09:29Z	201	
 termux-emulator-image	false	false	main		2026-11-09T09:14:26Z	5162580	
 SESSION_ACK	false	false	main	Python	2026-11-15T03:46:03Z	34	
@@ -286,59 +154,23 @@ LAN_SCANNER	false	false	main	Swift	2026-11-21T13:54:17Z	302
 vm-android	false	false	main	C++	2026-11-21T15:37:29Z	83	
 APPS_MIND_MAP	false	false	main		2026-11-21T16:40:32Z	0	
 pesty-fork-archive	false	false	main		2026-07-06T05:31:14Z	755	ARCHIVE: original public fork of momenbasel/pesty. Superseded by the private Pasty repo. Safe to delete.
-MAHA_TRANSCRIBE_VM	true	false	main	Python	2026-09-03T05:23:02Z	2134	TTT-LLL migration off Streamlit Cloud to an always-free ARM VM. Hard fork of MAHA_TRANSCRIBE_STREAMLIT at 1ebd632.
-MANTRA_REMOTE_CLIENT	true	false	main		2026-08-13T09:57:36Z	0	Private mirror of rustdesk/rustdesk for building the custom Mantra Remote APK.
-CINEMATOGRAPHER_UPLOAD_PORTAL	true	false	main		2026-08-20T10:30:31Z	7	Mantra Productions — upload portal for cinematographers
-colab-video-upscaler	true	false	master	Python	2026-10-04T15:45:53Z	24	Free Topaz stand-in: DaVinci Resolve clips restored with CodeFormer and Real-ESRGAN on Colab's free GPU, in chunks through Google Drive
-CLAUDE_ENTER	true	false	main	Swift	2026-11-04T04:46:02Z	659	In a claude.ai tab, Return sends and Shift+Return makes a new line (Swift, Mantra)
-DJING_SYNC	true	false	main	Swift	2026-11-04T04:46:15Z	592	
 MANTRA_MAPS	false	false	main		2026-11-09T09:09:29Z	2	
-wa-audio-hal	true	true	main	C	2026-11-14T06:54:18Z	12	
 SOAK_YOUR_NUTS	false	false	main	HTML	2026-11-21T08:32:02Z	12382	Soak Your Nuts — activating, drying and eating nuts the slow way. The practice nut by nut, the food safety, and the butter.
-mani-umaiyan	true	false	main	HTML	2026-11-21T15:37:36Z	2599	
-oracle_machine	true	false	main		2026-11-02T07:48:48Z	11	
 TataTalk	false	false	master	Kotlin	2026-09-18T14:44:16Z	13984	Take beautiful markdown notes and stay organized with task lists.
-mix-ultra-mapper	true	false	main	Swift	2026-11-04T04:47:19Z	929	
-YT_TRANSCRIBER	true	false	main	Python	2026-11-09T16:13:41Z	69	
 SHRUTI_BOX_AND_VOICE_TRAINER	false	false	main	Kotlin	2026-11-21T15:29:44Z	10665	Mantra Shruti Box: a shruti box emulator for Android, drawn in vectors; tap a valve, its reed sounds
-SHAZAM_LOCAL	true	false	main	Python	2026-11-08T05:53:08Z	21	
 CQ_MIXPAD_MANTRA	false	false	main	Kotlin	2026-11-09T12:55:09Z	15086	
-vm-android-jobs	true	false	main		2026-11-14T22:14:59Z	14819	Mailbox of the Oracle Pixel 7: push jobs/<id>/job.json, read results/<id>/
 MPA_LESSONS_ANALYZER	false	false	main	Swift	2026-11-15T18:21:26Z	488	
 USB_TETHERING	false	false	main	Kotlin	2026-11-16T11:05:10Z	74	
-COMM_RAJKO	true	false	main		2026-11-16T12:08:25Z	3	
-COMM_SVEMIR_VRANKO	true	false	main		2026-11-17T06:14:47Z	31	
-COMM_VASYL	true	false	main		2026-11-18T09:00:44Z	3	
 SRI_AUROBINDO_AND_MOTHER	false	false	main	HTML	2026-11-21T08:32:07Z	17589	The Descent — a Mantra field book on Sri Aurobindo, the Mother, and the city they left behind. Fourteen chapters, fifteen watercolour plates, one page.
-KEYRING_OLD_SYNCED	true	true	main	Kotlin	2026-08-19T06:24:10Z	4956	Superseded by Passwords Keyring. Safe to delete.
 mareader	false	false	main	Python	2026-10-04T15:46:25Z	313	mareader
-gi	true	false	main	Python	2026-10-14T12:13:15Z	11	gi: Instagram downloader for Termux; fetches its own cookie from Firefox; gi-update
-ethno_orchestar	true	false	ccr-bc07604d-d2lwu7		2026-10-27T10:25:50Z	1	
 SAMPLE_PLAYER_MACOS	false	false	main	Python	2026-11-21T15:29:40Z	908	Sample Player for macOS: a local Flask server and web interface, run from the terminal. The same set of recorded cells, transcription and voice replacement as the Android app. Mantra Productions.
 DAVINCI_RESOLVE_ASSISTANT	false	false	master	Lua	2026-11-04T06:33:59Z	48	DaVinci Resolve Assistant: Create Timeline from the selected clips, Toggle HD UHD, Previous Page, and the star menu's UHD/HD switcher and page turner
 BRAIN_BRAKE_ORIGINALS	false	false	main	Python	2026-09-10T17:19:45Z	2841392	
-ASANA_GUIDE	true	false	main	Python	2026-11-15T15:32:09Z	63	
-CONNECTION_CONTROLLER_DASHBOARD_VIEWER	true	false	main	Swift	2026-11-20T10:00:56Z	10	
 green-and-go-croatian-islands	false	false	main		2026-11-21T08:31:28Z	2038	Green and Go Croatian Islands. Pitch for GreenerGo: e-scooter rental from renovated containers on Croatian islands.
-RESOLVE_PAGES	true	false	main	Swift	2026-11-21T15:30:12Z	563	Command-Tab for DaVinci Resolve's pages (Swift, Mantra)
-marko_communication	true	false	main	HTML	2026-11-21T15:43:25Z	1037	
 generated_playlists	false	false	main	Python	2026-11-21T15:43:22Z	3899	
-music	true	false	main	HTML	2026-06-01T15:22:04Z	38	
-MARKO_TRANSCRIBE	true	false	main	Swift	2026-11-01T10:58:45Z	920	
-SYNCING_ELEVATE_MEDIA_MESSAGES	true	false	main	JavaScript	2026-11-02T10:56:52Z	18	
-ma-player	true	false	main	Python	2026-10-04T15:46:08Z	82	
-TALK_WITH_CLAUDE	true	false	master	Python	2026-10-04T15:46:42Z	33	
-MAKING_OF_SHOWREELS	true	false	main	Python	2026-11-07T21:48:51Z	409	How Marko Bosko's showreels are made: the showreel skill, manifest, lessons, takeover and tools. Mantra Productions.
 BRAIN_BRAKE_REVIEW	false	false	main	Python	2026-11-21T15:31:41Z	12	
 COCKPIT_TERMUX	false	false	main	Python	2026-11-09T09:09:23Z	77	
 MAHA_TRANSCRIBE_ANDROID_2	false	false	main	Kotlin	2026-11-09T09:09:31Z	121	
-VOICE_CLONING	true	false	main	Swift	2026-11-04T04:48:09Z	536	Clone a voice, choose which one talks, test every voice (Swift, Mantra; over MANTRA_VOICE)
-OPENING_AND_CLOSING	true	false	main	Swift	2026-11-04T04:47:24Z	929	Closes the Home window Speechify opens at every launch (Swift, Mantra)
-KEY_RING_TESTER	true	false	master	Swift	2026-11-04T04:46:46Z	738	
-MOVEMENT_WITH_MARIO	true	false	main	HTML	2026-11-10T05:43:06Z	1850	
-WINNING_FILM	true	false	main	HTML	2026-11-13T08:38:16Z	3762	How to Create a Winning Film, a working book on craft, science and attention. Mantra Productions.
 MANTRA_CHROME_EXTENSIONS	false	false	main	Python	2026-11-12T08:26:00Z	60	
 STREAMING_DASHBOARD	false	false	main	Swift	2026-11-15T08:24:03Z	83	
-COMM_MARINKO_BOSKO	true	false	main		2026-11-16T11:11:39Z	15	
 BRAIN_FREEDOM	false	false	main	Shell	2026-11-21T08:31:18Z	193	Brain Freedom, a split screen studio for making a film. Left brain speaks, right brain works.
-marinko_documents	true	false	main		2026-11-21T15:37:44Z	229	Documents Marinko Boško uploads for the family's heritage, and the family tree.

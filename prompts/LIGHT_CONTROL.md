@@ -107,18 +107,32 @@ SONY ALPHA 7 V  (ILCE-7M5, USB id 054c:0f56)
 - One program owns the USB interface at a time. Sony Imaging Edge Remote must be closed first.
   While the camera is in USB Streaming (UVC) it gives a picture but no PTP control at all, and Wi-Fi and
   Bluetooth remote are off. A phone connected to the camera blocks control from a computer.
-- Marko's existing code already talks to this camera: WEB_CAM_VIEWER ("Webcam Recorder (Mantra)", Mac,
-  ImageCaptureCore over USB, a five-stage Sony connection check, status at 127.0.0.1:8867
-  /sony/status?check=1), sony_remote_controller (Android, PTP handshake and vendor properties for time
-  code: 0xD0D3, 0xD0D6, 0xD0D7), MACRO_SKILLS tools/sonycam (drives Imaging Edge Remote by
-  Accessibility). None of them reads or sets exposure, ISO or white balance yet: that is new work here.
-- Two routes to exposure and white balance, to be decided by a spike (5.4):
-  (a) Sony Camera Remote SDK: lists ILCE-7M5 from version 2.01.00; reads and sets shutter, aperture,
-      ISO, exposure compensation, white-balance mode, colour temperature in Kelvin, tint, and gives
-      live-view frames. Not yet verified: an Apple Silicon build, the redistribution terms (it may not
-      be allowed in a public repository), the exact A7 V property list.
-  (b) Sony vendor PTP properties through ImageCaptureCore, extending the handshake Marko already has.
-  Choose (b) if the properties are reachable, because the code and its licence are already his.
+- Marko's existing apps already talk to this camera (cards in APPS_MIND_MAP/apps/):
+  * web-cam-viewer = "Webcam Recorder (Mantra)", Mac, HTTP on 127.0.0.1:8867. It already has the Sony
+    road: GET /sony/status?check=1 (five-stage connection check), POST /sony/connect,
+    /sony/takecontrol, /sony/disconnect, /sony/rec, GET /sony/prop?code=, and
+    POST /sony/set {code|name, value|label} (ISO and shutter over USB PTP), plus GET /status, /cameras,
+    POST /snap and recording. Its own notes say the Sony USB road was not yet verified against the
+    body at v27 (21.11.2026).
+  * SONY_REMOTE_MAC = "Sony Remote", Mac, HTTP on 8881: /connect, /start, /stop, /status and
+    /frame.jpg (a live-view frame) over Wi-Fi PTP-IP.
+  * sony_remote_controller = "Mantra Sony Remote", Android: PTP handshake and vendor properties
+    (time code 0xD0D3, 0xD0D6, 0xD0D7), Bluetooth REC.
+  * MACRO_SKILLS tools/sonycam: drives Imaging Edge Remote by Accessibility.
+- THE RULE FOR THIS APP: Light Control does not open the camera itself. One program owns the USB
+  interface, and that program is Webcam Recorder. Light Control asks Webcam Recorder through its API
+  (this is the ecosystem working as designed). What Webcam Recorder lacks is added THERE, in
+  web-cam-viewer, by a worker in that repository, and Light Control calls it:
+  white-balance mode, colour temperature in Kelvin, tint (AB/GM), exposure compensation, aperture,
+  the exposure/metering indicator, and a measurement route (mean luminance and chromaticity of a
+  marked region of the live picture, so no picture has to leave the app).
+- How the missing properties are reached, to be decided by a spike on the real body (5.4):
+  (a) Sony vendor PTP properties through the PTP road Webcam Recorder already has. Preferred: the code
+      and its licence are already Marko's.
+  (b) Sony Camera Remote SDK: lists ILCE-7M5 from version 2.01.00 and covers all of the above plus
+      live view. Not yet verified: an Apple Silicon build, the redistribution terms (it may not be
+      allowed in a public repository), the exact A7 V property list. Only if (a) cannot reach a
+      property.
 
 =====================================================================
 5. WHAT TO BUILD
@@ -148,8 +162,9 @@ SONY ALPHA 7 V  (ILCE-7M5, USB id 054c:0f56)
   never flashes.
 - Scenes are timelines of keyframes (colour, time, easing), loopable, saved as JSON, shareable.
 
-5.4 CAMERA LINK  (module CameraKit)
-- Connection assistant, the same pattern as Webcam Recorder's Sony check: stages shown one by one, and
+5.4 CAMERA LINK  (module CameraKit: a client of Webcam Recorder's API on 8867, not a PTP stack)
+- If Webcam Recorder is not running, start it through Mantra Door and wait for its /status.
+- Connection assistant driven by Webcam Recorder's /sony/status?check=1: stages shown one by one, and
   when Marko's hand is needed the app says it in a sentence and waits, for example
   "Connect the Sony to the Mac with USB (upper port) and set USB Cnct Mode to Remote Shoot/Trn."
   The message disappears by itself when the camera answers. If Webcam Recorder (Mantra) or Imaging Edge
@@ -247,7 +262,8 @@ SONY ALPHA 7 V  (ILCE-7M5, USB id 054c:0f56)
 4. API + lightctl.py + MANTRA_PORTS + Mantra Door registration. From here every later test drives
    the app through the API, not through the mouse.                                        (Sonnet)
 5. Window and menu bar item.                                                              (Sonnet)
-6. Camera spike on the real A7 V, then CameraKit.                                         (Opus)
+6. Camera spike on the real A7 V; the missing Sony properties and the measurement route added
+   to web-cam-viewer (its repository, main, its tests); then CameraKit as the client.     (Opus)
 7. Calibration and the two-way match.                                                     (Opus)
 8. Brainwave presets and scenes.                                                          (Sonnet)
 9. MANTRA_ROOM changes: light target, microphone, visualization, colour publishing.       (Opus)

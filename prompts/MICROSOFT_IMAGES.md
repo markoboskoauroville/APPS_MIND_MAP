@@ -1,5 +1,8 @@
 # First-run prompt: Microsoft images on the VM (MAI Image 2.7)
 
+**CLOSED 21.11.2026: do not run.** Tested once on the VM; Marko judged the pictures worse than Google's and asked
+to stop spending credits. Kept only as a record.
+
 Paste the whole box below as the first message of a Claude Code session **running on chromium-vm**. Written
 21.11.2026 in a cloud session that could not reach the VM, the private manifest or microsoft.ai, so the skill
 and the manifest module it points to are drafts: this run is what tests them.

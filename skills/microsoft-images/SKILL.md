@@ -5,6 +5,11 @@ description: How a Claude session on the Linux VM chromium-vm makes pictures wit
 
 # Microsoft images on chromium-vm (MAI Image 2.7 in MAI Labs)
 
+**CLOSED 21.11.2026.** Marko, after the first pictures: *"Images are not as good as Google. Please don't spend my
+credits anymore. Stop all tasks and close the project."* Gemini (Nano Banana) stays the only image maker. Do not
+use MAI Labs or any paid Microsoft image road unless Marko asks for it again in his own words. The notes below are
+kept for that case.
+
 Status 21.11.2026: **written in a cloud session that could not reach the VM or microsoft.ai.** Sections marked
 CHECKED are confirmed; sections marked FIRST RUN are the plan and must be corrected by the first session that
 runs them on the VM. Read skill `this-machine` first: every rule there (this VM only, the Linux Chrome, files

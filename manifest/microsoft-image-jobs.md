@@ -1,5 +1,8 @@
 # Microsoft image jobs (MAI Image 2.7 in MAI Labs)
 
+**CLOSED 21.11.2026.** Marko: *"Images are not as good as Google. Please don't spend my credits anymore. Stop all
+tasks and close the project."* Gemini stays the only image maker; Microsoft only if Marko asks again in his own words.
+
 Draft module for `markoboskoauroville/MANTRA_MANIFEST`, file `modules/microsoft-image-jobs.md`, the twin of
 `modules/gemini-image-jobs.md`. Written 21.11.2026 in a cloud session that could not open the private manifest,
 so the layout follows the public documents of the account, not the manifest's own modules: fit the headings to

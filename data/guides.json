@@ -1,0 +1,813 @@
+{
+ "guides": [
+  {
+   "id": "sony-cameras",
+   "title": "Sony cameras: record, REC, settings, time code, live view, phone remote",
+   "applies_to": [
+    "sony",
+    "alpha",
+    "a7",
+    "a7 v",
+    "ilce",
+    "a6600",
+    "camera",
+    "record",
+    "rec",
+    "iso",
+    "shutter",
+    "time code",
+    "timecode",
+    "tc jam",
+    "live view",
+    "imaging edge"
+   ],
+   "text": "Four different things are called 'record the Sony', and each has its own app. Recording the picture to the Mac disk is Webcam Recorder (web-cam-viewer, port 8867); starting REC on the camera's own card is Sony Remote (SONY_REMOTE_MAC, port 8881) or, through Imaging Edge Remote and Accessibility, `sonycam` in MACRO_SKILLS. Only one program can hold the camera's USB at a time (Imaging Edge Remote locks it, so Webcam Recorder asks for TAKE CONTROL), and a camera streaming over USB (UVC) cannot also be controlled over that cable. ISO and shutter through Webcam Recorder (`/sony/set`) are written in the code but were not verified against a real body at v27. Time code jam and Bluetooth REC for several Sonys are the Android app, not the Mac apps.",
+   "picks": [
+    {
+     "for": "record the Sony picture to a file on the Mac disk (H.265 .mov with time code)",
+     "use": "web-cam-viewer",
+     "how": "curl -s -XPOST 127.0.0.1:8867/record/start -H 'Content-Type: application/json' -d '{\"name\":\"interview\"}'"
+    },
+    {
+     "for": "stop that recording and get the file path",
+     "use": "web-cam-viewer",
+     "how": "curl -s -XPOST 127.0.0.1:8867/record/stop"
+    },
+    {
+     "for": "start REC on the camera's own card from the Mac",
+     "use": "SONY_REMOTE_MAC",
+     "how": "curl -s -XPOST 127.0.0.1:8881/connect ; curl -s 127.0.0.1:8881/start"
+    },
+    {
+     "for": "start REC on the card through Imaging Edge Remote (Accessibility), also used by the Second Take guide",
+     "use": "MACRO_SKILLS",
+     "how": "tools/sonycam start"
+    },
+    {
+     "for": "set ISO or shutter on a connected Sony (needs /sony/connect and /sony/takecontrol first; not verified against the body)",
+     "use": "web-cam-viewer",
+     "how": "curl -s -XPOST 127.0.0.1:8867/sony/set -H 'Content-Type: application/json' -d '{\"name\":\"ISO\",\"label\":\"ISO 800\"}'"
+    },
+    {
+     "for": "jam time code into a Sony body over USB, or REC on several Sonys over Bluetooth (Android)",
+     "use": "sony_remote_controller",
+     "how": "adb shell am start -n com.mantraproductions.sonyremote/.TcJamActivity --es tc 12:00:00:00"
+    },
+    {
+     "for": "see a live-view frame of the Sony as a picture",
+     "use": "SONY_REMOTE_MAC",
+     "how": "curl -s 127.0.0.1:8881/frame.jpg -o live.jpg"
+    },
+    {
+     "for": "use the phone as a remote for the Mac shooting guide (watch, record, stop, next take)",
+     "use": "SECOND_TAKE_REMOTE",
+     "how": null
+    },
+    {
+     "for": "use a Pixel phone as a manual camera with exposure, white balance and NDI (this is the phone's own camera, not a Sony)",
+     "use": "mantra-manual-camera",
+     "how": "scripts/mcam iso 400"
+    }
+   ]
+  },
+  {
+   "id": "cq-mixer",
+   "title": "Allen & Heath CQ-12T mixer (nine apps)",
+   "applies_to": [
+    "cq",
+    "cq-12t",
+    "cq12t",
+    "allen",
+    "heath",
+    "mixer",
+    "mixpad",
+    "faders",
+    "desk"
+   ],
+   "text": "CQ MixPad (Mantra) is the Android remote built on the desk's decoded private protocol (TCP 51326); the protocol facts are in the public cq_mixpad_protocol, which also has the sniffer and injector. The desk allows one client at a time. To use it from a phone over a USB-LAN cable see CQ_ETHERNET_BRIDGE (a recipe, no code). From a knob controller use the OXI-CQ Bridge (oxi_e16_cq-12t, HTTP on 8753, MIDI NRPN, not the private protocol). The rest are a tutorial, a mount adapter, the Mac audio-output preference and the Ableton channel macros.",
+   "picks": [
+    {
+     "for": "control the CQ-12T from a phone (faders, PEQ, compressor, RTA, record)",
+     "use": "CQ_MIXPAD_MANTRA",
+     "how": null
+    },
+    {
+     "for": "move a CQ fader or button from the OXI E16 or from a script",
+     "use": "oxi_e16_cq-12t",
+     "how": "curl -s -XPOST 127.0.0.1:8753/api/inject -H 'Content-Type: application/json' -d '{\"page\":0,\"slot\":0,\"role\":\"turn\",\"value\":64}'"
+    },
+    {
+     "for": "look up or send raw CQ protocol messages",
+     "use": "cq_mixpad_protocol",
+     "how": "tools/cq_inject.sh \"f7 0c 0c 0d 00 00 56 5e\""
+    },
+    {
+     "for": "connect the desk to a Pixel over a USB-LAN cable",
+     "use": "CQ_ETHERNET_BRIDGE",
+     "how": "adb shell am start -a android.settings.TETHER_SETTINGS"
+    },
+    {
+     "for": "learn the CQ-12T with a spoken tutorial",
+     "use": "cq_mixpad_tutorial",
+     "how": "build/start 6.2"
+    },
+    {
+     "for": "mount the CQ-12T on a VESA arm or tripod",
+     "use": "cq_vesa_adapter",
+     "how": "python3 drawings/make_drawings.py --measured"
+    },
+    {
+     "for": "make the Mac's audio output prefer the CQ12T",
+     "use": "audio-prefer",
+     "how": "audio-prefer --once"
+    },
+    {
+     "for": "map Ableton tracks to the CQ-12T channels",
+     "use": "ABLETON_LIVE_ACTIONS",
+     "how": null
+    },
+    {
+     "for": "run an Android app such as CQ MixPad in a headless emulator without touching the phone",
+     "use": "MANTRA_SANDBOX",
+     "how": "sandbox run macros/cqmixpad/tab_fader.macro"
+    }
+   ]
+  },
+  {
+   "id": "transcription",
+   "title": "Transcription (speech to text): Mac, Android, Termux, web, Croatian",
+   "applies_to": [
+    "transcribe",
+    "transcription",
+    "speech to text",
+    "stt",
+    "dictate",
+    "croatian",
+    "hrvatski",
+    "whisper",
+    "assemblyai",
+    "groq",
+    "subtitles"
+   ],
+   "text": "Mac: dictation is Vox to Txt (MANTRA_VOICE_TO_TEXT, F1 hotkey, language en, hr or auto, port 8865 for files); a YouTube link or file goes through `scribe` (MAC_TRANSCRIBER). Android: TTT is the voice keyboard (English and Croatian engines); MAHA_TRANSCRIBE_ANDROID_2 is the native app, version 1 only the Talk to Type screen; TATA_Talk is a simple Croatian-only app in a private repo. Termux: `transcribe` (MAHA_TRANSCRIBE_TERMUX_TERMINAL) serves the page. Web and servers: the Streamlit and Flask Maha Transcribe pages (Whisper on Groq, language hint hr), 111/222 Transcribe (AssemblyAI with speakers and subtitles) and the hosted TTT Portal API. MARKO_TRANSCRIBE, MAHA_TRANSCRIBE_TERMUX and the web-view MAHA_TRANSCRIBE_ANDROID are superseded.",
+   "picks": [
+    {
+     "for": "dictate into any Mac app with a hotkey, Croatian or English",
+     "use": "MANTRA_VOICE_TO_TEXT",
+     "how": null
+    },
+    {
+     "for": "transcribe a WAV on the Mac through a local call",
+     "use": "MANTRA_VOICE_TO_TEXT",
+     "how": "curl -s -XPOST '127.0.0.1:8865/hear?lang=hr' --data-binary @take.wav"
+    },
+    {
+     "for": "transcribe a YouTube video or audio file with Groq, AssemblyAI or Deepgram",
+     "use": "MAC_TRANSCRIBER",
+     "how": "scribe https://www.youtube.com/watch?v=<id> --engine groq --out ~/transcripts"
+    },
+    {
+     "for": "dictate Croatian on an Android phone (keyboard)",
+     "use": "TTT",
+     "how": null
+    },
+    {
+     "for": "record and transcribe on Android in a native app (talk to type screen)",
+     "use": "MAHA_TRANSCRIBE_ANDROID_2",
+     "how": null
+    },
+    {
+     "for": "simple one-button Croatian speech to text on Android",
+     "use": "TATA_Talk",
+     "how": null
+    },
+    {
+     "for": "transcribe on the phone in Termux, or on Mac/Linux, from one command",
+     "use": "MAHA_TRANSCRIBE_TERMUX_TERMINAL",
+     "how": "transcribe 9000"
+    },
+    {
+     "for": "transcribe in the browser with Groq Whisper, English or Croatian",
+     "use": "MAHA_TRANSCRIBE_STREAMLIT",
+     "how": null
+    },
+    {
+     "for": "transcribe an interview with speakers and subtitles (upload)",
+     "use": "222-transcribe",
+     "how": null
+    },
+    {
+     "for": "transcribe through a hosted HTTP API",
+     "use": "TTT_PORTAL",
+     "how": "curl -s -H \"Authorization: Bearer <api-key>\" -F file=@clip.wav -F language=hr <portal-url>/api/v1/transcribe"
+    },
+    {
+     "for": "download the audio of a whole YouTube channel for transcription (Groq Whisper, optional summary)",
+     "use": "YT_TRANSCRIBER",
+     "how": "./download_channel.sh https://www.youtube.com/@channel mychannel --limit 20"
+    }
+   ]
+  },
+  {
+   "id": "read-aloud",
+   "title": "Read aloud / text to speech: Mac, Android, Termux, engines",
+   "applies_to": [
+    "read aloud",
+    "text to speech",
+    "tts",
+    "speak",
+    "highlight",
+    "word highlighting",
+    "voice",
+    "speechify",
+    "edge",
+    "beatrice"
+   ],
+   "text": "On the Mac, speaking and reading are one server: Mantra Voice (MANTRA_VOICE, port 8837) with `/speak` for a spoken line and `/say` for mp3 plus word timings; VOICE_ENGINE is only the subtitle band and the global on/off switch. On the phone, `phonesay` and TERMUX_VOICE (port 8840) speak a line; the browser reader with the word lit is MA_READER_TERMUX_MACOS (Termux or Mac, Edge and Speechify voices, port 8081). The native Android app MA Reader (MA_READER_ANDROID) does not speak yet; its engine is the Kotlin library MA_READER_ENGINE (Edge speech with word timing) that TTT's LLL reader also uses. Google voices are GOOGLE_TTS_STT (gtt, 7311) and GoogleVoices (gvoice, 8300).",
+   "picks": [
+    {
+     "for": "make the Mac speak a sentence",
+     "use": "MANTRA_VOICE",
+     "how": "curl -s -XPOST 127.0.0.1:8837/speak -H 'Content-Type: application/json' -d '{\"text\":\"The render is done.\",\"wait\":true}'"
+    },
+    {
+     "for": "get mp3 plus word timings for a highlighted reader page",
+     "use": "MANTRA_VOICE",
+     "how": "curl -s -XPOST 127.0.0.1:8837/say -H 'Content-Type: application/json' -d '{\"text\":\"Hello\"}'"
+    },
+    {
+     "for": "mute or switch all Claude voices, subtitle band, replay",
+     "use": "VOICE_ENGINE",
+     "how": "voiceengine off (writes ~/.mantra/voice_engine_state and stops the current reading)"
+    },
+    {
+     "for": "make the phone speak a sentence",
+     "use": "TERMUX_VOICE",
+     "how": "phonesay pixel \"The render is done.\""
+    },
+    {
+     "for": "read pasted text aloud with the word lit, on the phone (Termux) or the Mac",
+     "use": "MA_READER_TERMUX_MACOS",
+     "how": "curl -s -X POST http://127.0.0.1:8081/api/say -H 'Content-Type: application/json' -d '{\"text\":\"hello\",\"lang\":\"en\"}' -o out.mp3"
+    },
+    {
+     "for": "read aloud with the word lit on Android: use the Termux reader; the native app is not speaking yet",
+     "use": "MA_READER_ANDROID",
+     "how": null
+    },
+    {
+     "for": "reuse the Edge speech client with word timing in Kotlin",
+     "use": "MA_READER_ENGINE",
+     "how": null
+    },
+    {
+     "for": "Speechify key ring and Speechify voices on the phone",
+     "use": "MA_READER_SPEECHIFY",
+     "how": null
+    },
+    {
+     "for": "Google or Gemini voice for a sentence",
+     "use": "GOOGLE_TTS_STT",
+     "how": "curl -s -XPOST 127.0.0.1:7311/api/speak -H 'Content-Type: application/json' -d '{\"text\":\"Dobar dan\"}'"
+    },
+    {
+     "for": "read text aloud in a web page with word highlighting (Streamlit)",
+     "use": "mareader",
+     "how": null
+    }
+   ]
+  },
+  {
+   "id": "dictation-keyboard",
+   "title": "Voice dictation keyboard",
+   "applies_to": [
+    "keyboard",
+    "voice keyboard",
+    "dictation",
+    "ttt",
+    "talk to type",
+    "type by voice",
+    "dictate"
+   ],
+   "text": "On Android the voice keyboard is TTT (Talk to Type, repo TTT; package seen as tttlight): dictate into any text field with cloud or offline engines, with an RE reply assistant and an adb remote API. DictateKeyboard (TTT&LLL) is the older fork with the AI reader (LLL) and is dormant; ttt-layouts restores the owner's key layout. On the Mac and Windows the equivalent is Vox to Txt (MANTRA_VOICE_TO_TEXT): press F1, talk, press F1, the words are typed at the cursor.",
+   "picks": [
+    {
+     "for": "dictate on an Android phone into any app",
+     "use": "TTT",
+     "how": null
+    },
+    {
+     "for": "type text into the focused field of the phone from a script",
+     "use": "TTT",
+     "how": "python3 tools/ttt_remote.py say \"The render is done\""
+    },
+    {
+     "for": "restore my TTT keyboard layout on a new phone",
+     "use": "ttt-layouts",
+     "how": null
+    },
+    {
+     "for": "dictate on the Mac or Windows with F1",
+     "use": "MANTRA_VOICE_TO_TEXT",
+     "how": null
+    },
+    {
+     "for": "older keyboard with the reader (LLL)",
+     "use": "DictateKeyboard",
+     "how": null
+    }
+   ]
+  },
+  {
+   "id": "lights-visuals",
+   "title": "Keyboard lights and visuals",
+   "applies_to": [
+    "lights",
+    "keyboard lights",
+    "g815",
+    "led",
+    "logitech",
+    "visuals",
+    "milkdrop",
+    "light show",
+    "display"
+   ],
+   "text": "The only light hardware with an API today is the Logitech G815 keyboard, run by G815 Lights (G815_LIGHTS, HTTP 8877, stream 8878): it is a 115-key low-resolution LED display for any app's pictures or shows. Mantra Room (MANTRA_ROOM) drives it with `lights: true` in `play-loop` and has the MilkDrop visuals. There is no app for Bluetooth LED lights (Neewer) yet; Light Control is planned (see gaps).",
+   "picks": [
+    {
+     "for": "show a colour or picture on the keyboard",
+     "use": "G815_LIGHTS",
+     "how": "curl -s -XPOST 127.0.0.1:8877/frame -H 'Content-Type: application/json' -d '{\"color\":\"ff0000\"}'"
+    },
+    {
+     "for": "play a light show on the keyboard",
+     "use": "G815_LIGHTS",
+     "how": "curl -s -XPOST 127.0.0.1:8877/show -H 'Content-Type: application/json' -d '{\"name\":\"rainbow\",\"seconds\":20}'"
+    },
+    {
+     "for": "play a relaxation loop with keyboard lights and MilkDrop visuals until a time",
+     "use": "MANTRA_ROOM",
+     "how": "curl -s -XPOST localhost:8965/api/play-loop -d '{\"output\":\"BlackHole 2ch\",\"lights\":true,\"until\":\"11:55\",\"gain_db\":-5}'"
+    },
+    {
+     "for": "see which key I pressed as a big glyph",
+     "use": "keyboard-monitor",
+     "how": "KeyboardMonitor --shot /tmp/k.png"
+    }
+   ]
+  },
+  {
+   "id": "mac-app-no-api",
+   "title": "Controlling a Mac app that has no API (Accessibility, macros, Star API)",
+   "applies_to": [
+    "accessibility",
+    "press button",
+    "click",
+    "macro",
+    "no api",
+    "ax",
+    "automation",
+    "star api",
+    "hammerspoon",
+    "ocr"
+   ],
+   "text": "Macro Recorder (MANTRA_MACRO) holds the Accessibility and screen permissions for all other apps. `macro ax-read \"<app>\"` lists a running app's buttons and `macro ax-press \"<app>\" \"<label>\"` presses one by its title (exact, then prefix, then part), in any running app. Ask MACRO_SKILLS first whether a macro already exists (`macroskill has`), play stored ones with `macro run \"<name>\"`, and fall back to OCR or picture search (`macro click-text`) when the tree has nothing. Star API (STAR_API, 8863) does the same for the Mantra star apps over HTTP (`star press \"timer\" \"stopwatch\"`), and apps may also register real functions with `star fn`. Never use synthetic key presses where the tree works.",
+   "picks": [
+    {
+     "for": "press a button in any Mac app by its label",
+     "use": "MANTRA_MACRO",
+     "how": "macro ax-press \"Safari\" \"Reload\""
+    },
+    {
+     "for": "see if a macro for this already exists",
+     "use": "MACRO_SKILLS",
+     "how": "macroskill has --json \"snap a window left\""
+    },
+    {
+     "for": "play a recorded macro by name",
+     "use": "MANTRA_MACRO",
+     "how": "macro run \"Resolve - Voice Convert Render\""
+    },
+    {
+     "for": "press a control of a Mantra star app, locally or over HTTP",
+     "use": "STAR_API",
+     "how": "curl -s -XPOST 127.0.0.1:8863/apps/timer/press -H \"Content-Type: application/json\" -d '{\"label\":\"stopwatch\"}'"
+    },
+    {
+     "for": "run a small script of clicks and keys in one request",
+     "use": "MANTRA_MACRO",
+     "how": "macro do 'WinActivate \"DaVinci Resolve\"\nSend \"{Space}\"'"
+    },
+    {
+     "for": "read another app's window as text through Queen",
+     "use": "GROQ_AI_STUDIO_MAC",
+     "how": null
+    },
+    {
+     "for": "drive the owner's Firefox by text",
+     "use": "firefox-control",
+     "how": "firefoxctl -t yshai links pdf"
+    }
+   ]
+  },
+  {
+   "id": "claude-sessions",
+   "title": "Controlling Claude Code sessions: phone, Mac, cloud",
+   "applies_to": [
+    "claude code",
+    "session",
+    "agent",
+    "phone",
+    "cloud",
+    "monitor",
+    "pause",
+    "message",
+    "sister",
+    "talk",
+    "claude"
+   ],
+   "text": "Phone: AGENT_MANAGER_ANDROID is the client of the Mac's AGENT_MANAGER phone door (8847, bearer token over Tailscale), where blockers are answered and tasks paused; CLAUDE_CODE_TERMUX installs Claude Code on the phone itself. Mac: SESSION_HUB (8890) and SESSION_ACK (8899) pass messages between sessions, CCMC (MANTRA CHAT, 8825) mirrors a session as a chat page, TALK_MODE talks to sessions by voice, CLAUDE_CONTROL (`claudectl pause`) stops everything Claude runs, COST_AGENT asks before paid calls. Cloud: vm-chromium drives claude.ai in a VM browser (`cvm ask`). CLAUDE_CODE_MONITOR is archived.",
+   "picks": [
+    {
+     "for": "see and steer my Claude agents from the phone",
+     "use": "AGENT_MANAGER_ANDROID",
+     "how": null
+    },
+    {
+     "for": "read the overview of all sessions and workers on the Mac side",
+     "use": "AGENT_MANAGER",
+     "how": "curl -s -H 'Authorization: Bearer $(cat ~/Downloads/API/agent-manager-token.txt)' http://<mac-tailscale-address>:8847/overview"
+    },
+    {
+     "for": "send a message from one Claude session to another",
+     "use": "SESSION_HUB",
+     "how": "hub send other-session \"Please review the diff\""
+    },
+    {
+     "for": "send with delivery receipt",
+     "use": "SESSION_ACK",
+     "how": "ccmsg send <to> \"text\" then ccmsg wait <id>"
+    },
+    {
+     "for": "answer a session from a chat page, read answers aloud",
+     "use": "CCMC",
+     "how": "curl -s -XPOST 127.0.0.1:8825/api/send -H 'Content-Type: application/json' -d '{\"text\":\"Yes, go ahead\"}'"
+    },
+    {
+     "for": "pause everything Claude is running",
+     "use": "CLAUDE_CONTROL",
+     "how": "claudectl pause"
+    },
+    {
+     "for": "ask before any paid API call",
+     "use": "COST_AGENT",
+     "how": "curl -s -XPOST 127.0.0.1:9047/ask -H 'Content-Type: application/json' -d '{\"who\":\"queen\",\"what\":\"describe 20 images\",\"provider\":\"groq\",\"estimate_usd\":0.40,\"items\":20,\"job\":\"img-batch-1\"}'"
+    },
+    {
+     "for": "ask Claude in the cloud browser VM",
+     "use": "vm-chromium",
+     "how": "cvm ask \"Summarise the open tab in one sentence\""
+    },
+    {
+     "for": "install Claude Code on an Android phone",
+     "use": "CLAUDE_CODE_TERMUX",
+     "how": "curl -fsSL https://raw.githubusercontent.com/markoboskoauroville/CLAUDE_CODE_TERMUX/main/install.sh -o cct.sh && bash cct.sh --proot"
+    }
+   ]
+  },
+  {
+   "id": "cloud-vms",
+   "title": "Cloud VMs: Android emulator and Chromium",
+   "applies_to": [
+    "vm",
+    "cloud",
+    "oracle",
+    "emulator",
+    "android emulator",
+    "pixel 7",
+    "chromium",
+    "apk",
+    "job",
+    "redroid"
+   ],
+   "text": "Two Oracle Cloud machines are reached over Tailscale. vm-android is a redroid Pixel 7 with the Mac command `pixel7` and the door pixel7d on 8897; vm-android-jobs is the git mailbox for the same phone: push `jobs/<id>/job.json` and an APK, pull `results/<id>/result.json`. vm-chromium is the Chromium VM with the vm-agent on 8890 and the Mac command `cvm`. Local, not cloud: MANTRA_SANDBOX runs a headless emulator on the Mac. Related VM services: CLOUD_MIXER and STREAMING_DASHBOARD.",
+   "picks": [
+    {
+     "for": "install and test an APK on the cloud Pixel 7",
+     "use": "vm-android",
+     "how": "pixel7 test app.apk"
+    },
+    {
+     "for": "test an APK without Tailscale or a terminal: git mailbox",
+     "use": "vm-android-jobs",
+     "how": "ID=20261104-remote-v22; mkdir -p jobs/$ID && cp app.apk jobs/$ID/app.apk && cp job.json jobs/$ID/job.json && git add jobs/$ID && git commit -m \"job $ID\" && git push"
+    },
+    {
+     "for": "use a Chromium browser in the cloud",
+     "use": "vm-chromium",
+     "how": "cvm ask \"Summarise the open tab in one sentence\""
+    },
+    {
+     "for": "mix files and live URLs into one picture on the VM",
+     "use": "CLOUD_MIXER",
+     "how": "curl -s 127.0.0.1:8841/load -d '{\"src\":\"/srv/cloud-mixer/media/x.mp4\",\"id\":\"cam1\",\"start\":300}'"
+    },
+    {
+     "for": "start or stop the live stream chain",
+     "use": "STREAMING_DASHBOARD",
+     "how": "curl -s -XPOST http://127.0.0.1:8996/api/action -H 'Content-Type: application/json' -H 'x-dash-token: <token>' -d '{\"action\":\"go-live\",\"minutes\":15}'"
+    }
+   ]
+  },
+  {
+   "id": "davinci-resolve",
+   "title": "DaVinci Resolve",
+   "applies_to": [
+    "resolve",
+    "davinci",
+    "marker",
+    "timeline",
+    "grading",
+    "render",
+    "edit",
+    "page"
+   ],
+   "text": "Anything that must run Resolve's scripting API goes through the router in DaVinci Resolve Actions (DAVINCI_RESOLVE_ACTIONS, port 8940, `POST /run`): never open a second connection. The command-line `resolve.py` in ABLETON_TEACHER (`python3 resolve.py marker 250 Red \"look here\"`) is a second route for markers, timelines and render. RESOLVE_PAGES, UHD_HD_DISPLAY and IMPORT_BUTTON are small Mac helpers; DaVinci Teacher (MANTRA_TEACHERS, 8971) teaches Resolve step by step. DAVINCI_RESOLVE_ASSISTANT is superseded by DAVINCI_RESOLVE_ACTIONS.",
+   "picks": [
+    {
+     "for": "run Python in Resolve safely",
+     "use": "DAVINCI_RESOLVE_ACTIONS",
+     "how": "curl -s -X POST 'http://127.0.0.1:8940/run' -H 'Content-Type: application/json' -d '{\"who\":\"me\",\"code\":\"result = project.GetName()\",\"timeout\":30}'"
+    },
+    {
+     "for": "switch Resolve to a page",
+     "use": "DAVINCI_RESOLVE_ACTIONS",
+     "how": "curl -s -XPOST '127.0.0.1:8940/open?page=edit'"
+    },
+    {
+     "for": "add a timeline marker",
+     "use": "ABLETON_TEACHER",
+     "how": "python3 resolve.py marker 250 Red \"look here\""
+    },
+    {
+     "for": "learn Resolve with a spoken step-by-step teacher",
+     "use": "MANTRA_TEACHERS",
+     "how": null
+    },
+    {
+     "for": "cycle the Resolve pages with a hotkey",
+     "use": "RESOLVE_PAGES",
+     "how": null
+    },
+    {
+     "for": "restore clips with a free GPU upscaler",
+     "use": "colab-video-upscaler",
+     "how": "python3 colab_restore.py status"
+    },
+    {
+     "for": "repack browser-recorded lessons into Resolve-ready MOV",
+     "use": "MKV_CONVERTER",
+     "how": null
+    }
+   ]
+  },
+  {
+   "id": "ableton",
+   "title": "Ableton Live",
+   "applies_to": [
+    "ableton",
+    "live",
+    "abletonosc",
+    "osc",
+    "tempo",
+    "track",
+    "mackie"
+   ],
+   "text": "Ableton is driven by AbletonOSC (UDP 11000 in, 11001 answers; 11001 has one owner and others send to the router on 11002). ABLETON_LIVE_ACTIONS is the Mac app with the A1 assistant, MIDI to Mackie and CQ channel macros; `python3 live.py set /live/song/set/tempo 96` in ABLETON_TEACHER is the quickest scripted call; Queen exposes `POST /api/ableton/action` and mantra_pages `POST /api/live`. ABLETON_COMMAND_GUIDE answers shortcut questions by voice; the Teacher apps (MANTRA_TEACHERS, 8970) teach step by step.",
+   "picks": [
+    {
+     "for": "set tempo or read the song from a script",
+     "use": "ABLETON_TEACHER",
+     "how": "python3 live.py set /live/song/set/tempo 96"
+    },
+    {
+     "for": "tell Queen to control Ableton",
+     "use": "groq_ai_studio",
+     "how": "curl -s -XPOST 127.0.0.1:8765/api/ableton/action -H 'Content-Type: application/json' -d '{\"action\":\"set_tempo\",\"arguments\":{\"bpm\":120}}'"
+    },
+    {
+     "for": "ask a shortcut question, or give a spoken order",
+     "use": "ABLETON_COMMAND_GUIDE",
+     "how": "python3 guide.py ask \"how do I split a clip\""
+    },
+    {
+     "for": "use a MIDI knob as a Mackie control in Live",
+     "use": "MANTRA_MIDI_TOOLS",
+     "how": null
+    },
+    {
+     "for": "learn Ableton with a spoken teacher",
+     "use": "MANTRA_TEACHERS",
+     "how": "curl -s 127.0.0.1:8970/state"
+    },
+    {
+     "for": "split a song into stems with Live",
+     "use": "STEM_SEPARATION",
+     "how": null
+    }
+   ]
+  },
+  {
+   "id": "ports-door",
+   "title": "Ports and the door protocol: how any app is called",
+   "applies_to": [
+    "port",
+    "ports",
+    "door",
+    "remote door",
+    "mantra door",
+    "mantra_remote",
+    "api",
+    "health",
+    "claim",
+    "register",
+    "token",
+    "tailscale"
+   ],
+   "text": "A Mantra Mac app listens on 127.0.0.1 only, on a port it claims by name in MANTRA_PORTS (registry file ~/.config/mantra-ports.json), and answers `GET /health`, `GET /api` (the declared actions) and `POST /api/<action>` with a JSON body; the reply is `{ok, result}` or `{ok:false, error}`. Mantra Door is the token-guarded gateway for the phone (header X-Mantra-Token, token in ~/.config/mantra-door.token, Tailscale address only): `GET /apps`, `POST /apps/<id>/launch`, and any `/apps/<id>/api/...` is passed on to the app, starting it if needed. Python code uses `mantra_remote.py` (`remote.call(\"dock-switcher\", \"show\")`). To give a NEW app a port run `mantra-ports next`, claim it at start with `ports.claim(\"my-app\", N)` (Swift `Ports.claim`, Lua `ports.lua`) and ask by name everywhere else. Several numbers are claimed twice, notably 8965 (MANTRA_ROOM, MPA_LESSONS_ANALYZER, SECOND_TAKE_REMOTE), 8837 (MANTRA_VOICE, VOICE_ENGINE) and 8847 (AGENT_MANAGER, retired spotlight): check which app answers `GET /health`.",
+   "picks": [
+    {
+     "for": "get a free port for a new app and register it",
+     "use": "MANTRA_PORTS",
+     "how": "mantra-ports next"
+    },
+    {
+     "for": "claim the port in a Python server",
+     "use": "MANTRA_PORTS",
+     "how": "import sys, os; sys.path.insert(0, os.path.expanduser('~/.local/lib/mantra')); import ports; PORT = ports.claim('my-app', 8962)"
+    },
+    {
+     "for": "find where a service runs",
+     "use": "MANTRA_PORTS",
+     "how": "mantra-ports find voice"
+    },
+    {
+     "for": "press, open or quit a star app from the phone or an HTTP client",
+     "use": "STAR_API",
+     "how": "curl -s -XPOST 127.0.0.1:8863/apps/timer/press -H \"Content-Type: application/json\" -d '{\"label\":\"stopwatch\"}'"
+    },
+    {
+     "for": "drive an app that serves its own door, e.g. Meditation Room",
+     "use": "MANTRA_ROOM",
+     "how": "curl -s -XPOST localhost:8965/api/play-loop -d '{\"output\":\"BlackHole 2ch\",\"lights\":true,\"until\":\"11:55\",\"gain_db\":-5}'"
+    },
+    {
+     "for": "control the Android phone through its Claude Control door and the macro door",
+     "use": "MANTRA_REMOTE_VIEWING",
+     "how": "rvctl pixel tap 540 1200 --label \"NDI\" --watched --expect com.mantraproductions.manualcamera"
+    }
+   ]
+  },
+  {
+   "id": "oxi-midi",
+   "title": "OXI E16 and MIDI controllers",
+   "applies_to": [
+    "oxi",
+    "e16",
+    "midi",
+    "knob",
+    "controller",
+    "nrpn",
+    "mackie",
+    "cc"
+   ],
+   "text": "The OXI E16 is used three ways: as a remote for Ableton Live or DaVinci Resolve audio (oxi-controller, UDP test door on 11010), as a controller of the CQ-12T mixer (oxi_e16_cq-12t, HTTP 8753, MIDI NRPN), and as Mackie Control under Ableton's timeline (mantra-mackie-control-translator, Hammerspoon). Generic MIDI helpers: MIDI Tools (MANTRA_MIDI_TOOLS), Controller Mapper for any USB controller (mix-ultra-mapper) and the dormant MIDI to Key Stroke (MIDI_TO_KEYSTROKE) and Mantra Controls.",
+   "picks": [
+    {
+     "for": "turn a virtual knob of the OXI E16 on the Mac remote",
+     "use": "oxi-controller",
+     "how": "echo 'turn 1 5' | nc -u -w1 127.0.0.1 11010"
+    },
+    {
+     "for": "move a CQ-12T control from the E16 or a script",
+     "use": "oxi_e16_cq-12t",
+     "how": "curl -s -XPOST 127.0.0.1:8753/api/inject -H 'Content-Type: application/json' -d '{\"page\":0,\"slot\":0,\"role\":\"turn\",\"value\":64}'"
+    },
+    {
+     "for": "make a knob scroll Ableton's arrangement",
+     "use": "mantra-mackie-control-translator",
+     "how": null
+    },
+    {
+     "for": "map MIDI to keystrokes or Mackie commands",
+     "use": "MANTRA_MIDI_TOOLS",
+     "how": null
+    },
+    {
+     "for": "map any USB MIDI controller by guided learning",
+     "use": "mix-ultra-mapper",
+     "how": "open -a \"Controller Mapper (Mantra)\" --args /path/layout.json"
+    }
+   ]
+  },
+  {
+   "id": "maps",
+   "title": "Maps, location, transit",
+   "applies_to": [
+    "map",
+    "maps",
+    "tiles",
+    "offline",
+    "parcel",
+    "cadastre",
+    "arkod",
+    "transit",
+    "zagreb",
+    "tram",
+    "trail",
+    "hiking",
+    "shop"
+   ],
+   "text": "Offline maps: Mantra Map Server (MANTRA_MAP_SERVER, 8088) serves mapsforge maps as z/x/y PNG tiles from a phone; MANTRA_MAPS holds the map files; Mantra Trail (MANTRA_TRAIL) is the Android outdoor map for Croatian mountains. Croatian cadastral parcels: ARKOD (mantra_arkod Android, arkod_web PWA). Everyday finders: SHOP_FINDER (shops and pools), spar_locator, Maha Commute (MAHA_COMMUTE, Zagreb and Rijeka transit) and ZET Strike (zet_strike, 8100).",
+   "picks": [
+    {
+     "for": "get an offline map tile",
+     "use": "MANTRA_MAP_SERVER",
+     "how": "curl -s http://127.0.0.1:8088/tiles/croatia/10/553/366.png -o tile.png"
+    },
+    {
+     "for": "hike with offline maps and routing",
+     "use": "MANTRA_TRAIL",
+     "how": null
+    },
+    {
+     "for": "see Croatian cadastral parcels on a map",
+     "use": "arkod_web",
+     "how": null
+    },
+    {
+     "for": "find the nearest shop or pool",
+     "use": "SHOP_FINDER",
+     "how": "curl -s http://127.0.0.1:8900/shopfinder/health"
+    },
+    {
+     "for": "next tram or bus in Zagreb or Rijeka",
+     "use": "MAHA_COMMUTE",
+     "how": "curl 'http://127.0.0.1:8084/board?city=rijeka&stop=1734&mins=90'"
+    },
+    {
+     "for": "next ZET tram during the strike",
+     "use": "zet_strike",
+     "how": "zet near"
+    }
+   ]
+  }
+ ],
+ "gaps": [
+  {
+   "need": "Gong or singing-bowl sound source",
+   "status": "not built",
+   "note": "No app generates or plays a gong or bowl. Closest: MANTRA_ROOM plays any track in a loop and has a soft bell for its session timer; SHRUTI_BOX_AND_VOICE_TRAINER is a drone and raga box, not a gong."
+  },
+  {
+   "need": "Neewer / Bluetooth LED light control",
+   "status": "planned",
+   "note": "Light Control (Mantra), also called Mantra Neewer, is planned: a Mac app for the Neewer light over Bluetooth LE with a local HTTP API (kickoff prompt prompts/LIGHT_CONTROL.md). Nothing in the map controls Bluetooth LED lights; the only light API is the G815 keyboard."
+  },
+  {
+   "need": "Microphone-reactive visualization in Meditation Room",
+   "status": "planned",
+   "note": "Planned in the same prompt: Mantra Room listens to the room microphone so MilkDrop follows an ambient sound such as a gong, and the colours drive the lights slowly. MANTRA_ROOM has MilkDrop visuals but no microphone input today."
+  },
+  {
+   "need": "Sony white balance, Kelvin and exposure-compensation control from a script",
+   "status": "planned",
+   "note": "Planned as an addition to Webcam Recorder (web-cam-viewer) for the Alpha 7 V over USB. The overlay already lists white balance, Kelvin and EV as settings reachable through /sony/set, but the Sony USB road is not verified against a body (v27) and the manifest documents no PTP codes for them."
+  },
+  {
+   "need": "Reading aloud with word highlighting in a native Android app",
+   "status": "not built",
+   "note": "MA Reader for Android (MA_READER_ANDROID) does not speak yet; use the Termux reader MA_READER_TERMUX_MACOS."
+  },
+  {
+   "need": "Story Medicine (therapeutic stories from a parent's voice note)",
+   "status": "planned",
+   "note": "THERAPEUTIC_STORIES is a planned Android app; nothing runs yet."
+  },
+  {
+   "need": "Gemini chat on the phone in Termux",
+   "status": "planned",
+   "note": "GCLOUD_CHAT_TERMUX is a plan; only the brief exists."
+  },
+  {
+   "need": "Standard /health + /api door on Android apps",
+   "status": "not built",
+   "note": "No Android app serves the standard door; phones are reached through the Claude Control door (8790), the macro door (8841), TERMUX_VOICE (8840) or adb broadcasts."
+  },
+  {
+   "need": "Mantra Door as a repository",
+   "status": "not built",
+   "note": "The token-guarded gateway to all Mac apps and the Python client mantra_remote.py are described in the manifest module remote-door.md; no repo of them is in this map."
+  }
+ ]
+}

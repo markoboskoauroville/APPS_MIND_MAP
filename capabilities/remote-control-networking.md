@@ -1,0 +1,70 @@
+[Back to the index](../CAPABILITIES.md)
+
+# Remote control and networking
+
+- SonoBus server on the cloud machine -> [aooserver-arm64](../apps/aooserver-arm64.md) (Linux/Cloud; API: cli) - call: `aooserver -p 10998`
+- audio link between the VM and my Mac with SonoBus -> [aooserver-arm64](../apps/aooserver-arm64.md) (Linux/Cloud; API: cli)
+- arm64 aooserver binary -> [aooserver-arm64](../apps/aooserver-arm64.md) (Linux/Cloud; API: cli)
+- use Chrome in the cloud from my Mac -> [Chromium Virtual Machine (Mantra)](../apps/vm-chromium.md) (macOS/Linux/Cloud; API: door 8890) - call: `cvm ask "Summarise the open tab in one sentence" # Mac command: asks claude.ai in the VM browser, answers as text in about 7 s`
+- ask Claude or Gemini in a browser tab from a script -> [Chromium Virtual Machine (Mantra)](../apps/vm-chromium.md) (macOS/Linux/Cloud; API: door 8890)
+- clipboard between Mac and the VM -> [Chromium Virtual Machine (Mantra)](../apps/vm-chromium.md) (macOS/Linux/Cloud; API: door 8890)
+- generate images in Gemini in batch -> [Chromium Virtual Machine (Mantra)](../apps/vm-chromium.md) (macOS/Linux/Cloud; API: door 8890)
+- view and control another Mac or phone by VNC -> [Chromium Virtual Machine (Mantra)](../apps/vm-chromium.md) (macOS/Linux/Cloud; API: door 8890)
+- check which network connection has internet -> [Connection Controller Dashboard Viewer (Mantra)](../apps/CONNECTION_CONTROLLER_DASHBOARD_VIEWER.md) (macOS; API: cli) - call: `"/Applications/Connection Controller Dashboard Viewer (Mantra).app/Contents/MacOS/ConnectionController" --probe-json`
+- turn off a network interface I do not want -> [Connection Controller Dashboard Viewer (Mantra)](../apps/CONNECTION_CONTROLLER_DASHBOARD_VIEWER.md) (macOS; API: cli)
+- see all Mac network interfaces -> [Connection Controller Dashboard Viewer (Mantra)](../apps/CONNECTION_CONTROLLER_DASHBOARD_VIEWER.md) (macOS; API: cli)
+- my internet keeps dropping, keep the connection alive -> [Connection Keeper](../apps/connection-keeper.md) (macOS/Cloud; API: http 8857) - call: `ck-bondcheck --json # health of the bonded connection; the aggregate server on 127.0.0.1:8857 answers GET /status`
+- combine phone hotspot and cable for more speed -> [Connection Keeper](../apps/connection-keeper.md) (macOS/Cloud; API: http 8857)
+- switch the Mac to the phone's connection -> [Connection Keeper](../apps/connection-keeper.md) (macOS/Cloud; API: http 8857)
+- test my internet speed on each line -> [Connection Keeper](../apps/connection-keeper.md) (macOS/Cloud; API: http 8857)
+- check that bonding works -> [Connection Keeper](../apps/connection-keeper.md) (macOS/Cloud; API: http 8857)
+- which devices are on my network -> [LAN Scanner (Mantra)](../apps/LAN_SCANNER.md) (macOS; API: cli) - call: `lanscan --json # every device on the LAN as JSON`
+- scan the LAN -> [LAN Scanner (Mantra)](../apps/LAN_SCANNER.md) (macOS; API: cli)
+- find the IP of a device on the Wi-Fi -> [LAN Scanner (Mantra)](../apps/LAN_SCANNER.md) (macOS; API: cli)
+- list network devices with maker names -> [LAN Scanner (Mantra)](../apps/LAN_SCANNER.md) (macOS; API: cli)
+- which port is this app on -> [Mantra Ports](../apps/MANTRA_PORTS.md) (macOS; API: cli) - call: `mantra-ports next`
+- avoid two apps using the same port -> [Mantra Ports](../apps/MANTRA_PORTS.md) (macOS; API: cli)
+- give a new local server a free port -> [Mantra Ports](../apps/MANTRA_PORTS.md) (macOS; API: cli)
+- find the URL of the voice server -> [Mantra Ports](../apps/MANTRA_PORTS.md) (macOS; API: cli)
+- check for port clashes on the Mac -> [Mantra Ports](../apps/MANTRA_PORTS.md) (macOS; API: cli)
+- control my phone from Claude -> [Mantra Remote Viewing (Mantra Remote)](../apps/MANTRA_REMOTE_VIEWING.md) (Android/Cloud; API: door 8841) - call: `rvctl pixel tap 540 1200 --label "NDI" --watched --expect com.mantraproductions.manualcamera`
+- see the Mac screen on the phone -> [Mantra Remote Viewing (Mantra Remote)](../apps/MANTRA_REMOTE_VIEWING.md) (Android/Cloud; API: door 8841)
+- tap or swipe on the Android phone remotely -> [Mantra Remote Viewing (Mantra Remote)](../apps/MANTRA_REMOTE_VIEWING.md) (Android/Cloud; API: door 8841)
+- share the phone screen to a laptop -> [Mantra Remote Viewing (Mantra Remote)](../apps/MANTRA_REMOTE_VIEWING.md) (Android/Cloud; API: door 8841)
+- run a macro on the phone -> [Mantra Remote Viewing (Mantra Remote)](../apps/MANTRA_REMOTE_VIEWING.md) (Android/Cloud; API: door 8841)
+- how much data is left on the router SIM -> [Router Credits (Android)](../apps/router-credits.md) (Android; API: none)
+- check mobile data balance from the phone -> [Router Credits (Android)](../apps/router-credits.md) (Android; API: none)
+- read the router's SMS inbox -> [Router Credits (Android)](../apps/router-credits.md) (Android; API: none)
+- is my internet coming from the phone or the SIM -> [Router Mode (Mantra)](../apps/router-mode.md) (macOS/Cloud; API: cli) - call: `routermode status`
+- switch the router to SIM only -> [Router Mode (Mantra)](../apps/router-mode.md) (macOS/Cloud; API: cli)
+- warn me when the router fell back to the SIM -> [Router Mode (Mantra)](../apps/router-mode.md) (macOS/Cloud; API: cli)
+- how much mobile data is left on the router SIM -> [Router SMS](../apps/router-sms.md) (macOS; API: http 8880) - call: `router-sms send <number> "text" # sends an SMS through the router SIM`
+- send an SMS through the router -> [Router SMS](../apps/router-sms.md) (macOS; API: http 8880)
+- read SMS received by the router -> [Router SMS](../apps/router-sms.md) (macOS; API: http 8880)
+- switch the router Wi-Fi off -> [Router SMS](../apps/router-sms.md) (macOS; API: http 8880)
+- see my Android phone on the Mac -> [Screen Copy (Mantra)](../apps/MANTRA_SCREEN_COPY.md) (macOS/Android; API: http 8883) - call: `curl -s -XPOST 127.0.0.1:8883/record/start # records the selected phone tab; CLI: screencopy record start --serial emulator-5556 --name "01 Title"`
+- record the phone screen to a file -> [Screen Copy (Mantra)](../apps/MANTRA_SCREEN_COPY.md) (macOS/Android; API: http 8883)
+- tap or type on the phone from the Mac by script -> [Screen Copy (Mantra)](../apps/MANTRA_SCREEN_COPY.md) (macOS/Android; API: http 8883)
+- mirror several phones at once -> [Screen Copy (Mantra)](../apps/MANTRA_SCREEN_COPY.md) (macOS/Android; API: http 8883)
+- phone remote for filming lessons -> [Second Take Remote](../apps/SECOND_TAKE_REMOTE.md) (Android; API: http 8965) - call: `curl -s -XPOST http://<guide-address>:8966/record -H 'X-Remote-Id: phone1' # the phone starts a take on the Mac guide`
+- control the recording from my phone -> [Second Take Remote](../apps/SECOND_TAKE_REMOTE.md) (Android; API: http 8965)
+- shot list remote for the Mac guide -> [Second Take Remote](../apps/SECOND_TAKE_REMOTE.md) (Android; API: http 8965)
+- press a button in one of my Mac apps remotely -> [Star API (Mantra)](../apps/STAR_API.md) (macOS; API: http 8863) - call: `curl -s -XPOST 127.0.0.1:8863/apps/timer/press -H "Content-Type: application/json" -d '{"label":"stopwatch"}' # same as: star press "timer" "stopwatch"`
+- start an app from my phone -> [Star API (Mantra)](../apps/STAR_API.md) (macOS; API: http 8863)
+- call a function of an app by name -> [Star API (Mantra)](../apps/STAR_API.md) (macOS; API: http 8863)
+- list all my apps -> [Star API (Mantra)](../apps/STAR_API.md) (macOS; API: http 8863)
+- use my phone as a Stream Deck -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963) - call: `curl 'http://127.0.0.1:8963/press?profile=obs&key=0'`
+- switch OBS scenes from the phone -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963)
+- remote for the MPA classroom -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963)
+- press deck keys from Android -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963)
+- use a Stream Deck as an application switcher -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963)
+- drive a Stream Deck without the Elgato app -> [Stream Deck Remote](../apps/STREAM_DECK_REMOTE.md) (macOS/Android; API: http 8963)
+- test an Android APK in the cloud -> [vm-android (Pixel 7 in Oracle Cloud)](../apps/vm-android.md) (macOS/Linux/Cloud; API: http 8897) - call: `pixel7 test app.apk # Mac command: installs, launches, screenshots the APK on the cloud Pixel 7`
+- take a screenshot of the Android VM -> [vm-android (Pixel 7 in Oracle Cloud)](../apps/vm-android.md) (macOS/Linux/Cloud; API: http 8897)
+- tap and type on the cloud Pixel 7 -> [vm-android (Pixel 7 in Oracle Cloud)](../apps/vm-android.md) (macOS/Linux/Cloud; API: http 8897)
+- run an Android test without a phone -> [vm-android (Pixel 7 in Oracle Cloud)](../apps/vm-android.md) (macOS/Linux/Cloud; API: http 8897)
+- send multichannel audio between machines -> [vm-android (Pixel 7 in Oracle Cloud)](../apps/vm-android.md) (macOS/Linux/Cloud; API: http 8897)
+- route my traffic through Frankfurt -> [VPN (Mantra)](../apps/MANTRA_VPN.md) (macOS/Android; API: none)
+- turn VPN on or off -> [VPN (Mantra)](../apps/MANTRA_VPN.md) (macOS/Android; API: none)
+- change my public IP to Germany -> [VPN (Mantra)](../apps/MANTRA_VPN.md) (macOS/Android; API: none)
+- simple Tailscale exit-node switch -> [VPN (Mantra)](../apps/MANTRA_VPN.md) (macOS/Android; API: none)

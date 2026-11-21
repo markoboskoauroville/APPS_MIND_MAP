@@ -1,0 +1,37 @@
+[
+ {
+  "id": "light-control",
+  "repo": "LIGHT_CONTROL",
+  "name": "Light Control (Mantra)",
+  "aliases": ["Mantra Neewer", "Light Control (Mantra)", "Neewer light control"],
+  "category": "lights-keyboard-visuals",
+  "status": "planned",
+  "platforms": ["macOS"],
+  "one_line": "Planned Mac app that drives a Neewer Bluetooth LED light with smooth colour transitions and a local API, linked to Meditation Room and, through Webcam Recorder, to a Sony camera.",
+  "prompt": "prompts/LIGHT_CONTROL.md",
+  "does": [
+    "Find the light over Bluetooth LE and expose every function it has",
+    "Change colour and colour temperature with smooth transitions",
+    "Calibrate the light from the picture of a Sony Alpha 7 V, reached only through Webcam Recorder",
+    "Breathe the light slowly at brainwave pace (alpha, theta) to set a mood in the room",
+    "Follow the colours of the Meditation Room visualization, and be driven by it"
+  ],
+  "tasks": [
+    "control a Bluetooth LED light",
+    "set the room light colour or colour temperature",
+    "make the room light follow the meditation visuals",
+    "pulse the light slowly in alpha or theta rhythm"
+  ],
+  "hardware": ["Neewer Bluetooth LED light", "Sony Alpha 7 V (through Webcam Recorder)"],
+  "keywords": ["bluetooth", "ble", "led", "light", "neewer", "brainwave", "alpha", "theta"],
+  "edges": [
+   {"to": "MANTRA_ROOM", "dir": "both", "port": "door 8965", "label": "room drives the light; the light follows the visualization colours"},
+   {"to": "web-cam-viewer", "dir": "out", "port": "http 8867", "label": "the only road to the Sony camera"},
+   {"to": "MANTRA_PORTS", "dir": "out", "label": "claims the port id light-control"},
+   {"external": "Mantra Door and mantra_remote.py", "dir": "in", "label": "calls the light's actions"},
+   {"to": "groq_ai_studio", "dir": "in", "label": "Queen can drive it through the API"},
+   {"to": "MANTRA_MACRO", "dir": "in", "label": "presses its accessibility buttons"},
+   {"to": "G815_LIGHTS", "dir": "out", "port": "http 8877", "label": "optional, through the G815 Lights API only, never direct"}
+  ]
+ }
+]

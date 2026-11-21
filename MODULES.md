@@ -113,8 +113,8 @@
 | persistent Claude Code subprocess wrapper reading NDJSON events | [Mantra Bridge (MANTRA_BRIDGE)](apps/MANTRA_BRIDGE.md) (private) | `mac/bridge/session.py` |
 | prompt to model judgement | [Mantra Router (MANTRA_ROUTER)](apps/MANTRA_ROUTER.md) (private) | `mod/hooks/judge.ts` |
 | Claude Code mod registration with the band UI | [Mantra Router (MANTRA_ROUTER)](apps/MANTRA_ROUTER.md) (private) | `mod/hooks/register.tsx` |
-| engine selection with Whisper, Groq and ring of keys | [Transcribe Voice to Text RT (Mantra), retired (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (private) | `App/Sources/Engines.swift` |
-| local LLM text-style cleanup server | [Transcribe Voice to Text RT (Mantra), retired (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (private) | `server/styled.py` |
+| engine selection with Whisper, Groq and ring of keys | [Transcribe Voice to Text RT (Mantra) (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (private) | `App/Sources/Engines.swift` |
+| local LLM text-style cleanup server | [Transcribe Voice to Text RT (Mantra) (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (private) | `server/styled.py` |
 | skill describing how every academy task is done | [MPA Academy, website and hub (mpa-academy)](apps/mpa-academy.md) (private) | `.claude/skills/mpa-academy/SKILL.md` |
 | make per-sentence Speechify audio with word marks and key rotation | [DaVinci Grading Tutorial (Mantra) (RESOLVE_GRADING_TUTORIAL)](apps/RESOLVE_GRADING_TUTORIAL.md) (private) | `tools/build_audio.py` |
 | drop-in script giving Speechify keyboard control and click-to-read on any web page | [Speechify Keys (SPEECHIFY_KEYS)](apps/SPEECHIFY_KEYS.md) | `public/speechify-keys.js` |
@@ -122,7 +122,7 @@
 | Claude Code hook that sends phone notifications and lets a button push text back | [Termux Tools (termux-tools)](apps/termux-tools.md) | `notify/ccnotify.py` |
 | Claude hook speaker with word timing and subtitle feed | [Termux Tools (termux-tools)](apps/termux-tools.md) | `talker/talker.py` |
 | Skill telling sessions the VM is 'this machine' and how to work on it | [Chromium Virtual Machine (Mantra) (vm-chromium)](apps/vm-chromium.md) | `.claude/skills/this-machine/SKILL.md` |
-| encrypted key ring read from a key file with forward-only cursor | [Voice Engine Android (retired) (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) | `android/app/src/main/java/community/auroville/voiceengine/GroqKeys.kt` |
+| encrypted key ring read from a key file with forward-only cursor | [Voice Engine Android (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) | `android/app/src/main/java/community/auroville/voiceengine/GroqKeys.kt` |
 
 ## Speech, transcription and voice (43)
 
@@ -167,7 +167,7 @@
 | routes cloud dictation through a relay with AAC upload | [TTT Voice Type keyboard (TTT)](apps/TTT.md) | `engines/FrankfurtRelay.kt` |
 | resizable subtitle card that follows the spoken word | [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) | `app/Subtitle.swift` |
 | CLI for the one global voice ON/OFF state file | [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) | `tools/voiceengine` |
-| subtitle overlay drawn over other apps | [Voice Engine Android (retired) (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) | `android/app/src/main/java/community/auroville/voiceengine/Overlay.kt` |
+| subtitle overlay drawn over other apps | [Voice Engine Android (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) | `android/app/src/main/java/community/auroville/voiceengine/Overlay.kt` |
 | the call contract between voice server and subtitle | [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) | `SPEC.md` |
 | pause/continue state machine for a subtitle synced to a voice server | [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) | `swift/PauseSync.swift` |
 | one-at-a-time download, transcribe, knowledge pass with resume | [YT Transcriber (YT_TRANSCRIBER)](apps/YT_TRANSCRIBER.md) (private) | `yt_transcribe.py` |
@@ -306,7 +306,7 @@
 | PTP-IP client (init, sessions, operations) written from the protocol description | [Sony Remote (Mantra), Mac (SONY_REMOTE_MAC)](apps/SONY_REMOTE_MAC.md) | `app/PtpIp.swift` |
 | build and merge a cue sheet from frame JSON, preserving manual columns | [Sound Design (SOUND_DESIGN)](apps/SOUND_DESIGN.md) (private) | `tools/spotting.py` |
 | libndi through ctypes: find NDI sources and receive frames | [Sound Link (Mantra) (SOUND_LINK)](apps/SOUND_LINK.md) | `studio/ndi.py` |
-| IOKit HID driver for the original Stream Deck: key images, presses, brightness | [Stream Deck Control (Mantra), retired (stream-deck-control) (retired, use STREAM_DECK_REMOTE)](apps/stream-deck-control.md) (private) | `app/Deck.swift` |
+| IOKit HID driver for the original Stream Deck: key images, presses, brightness | [Stream Deck Control (Mantra) (stream-deck-control) (retired, use STREAM_DECK_REMOTE)](apps/stream-deck-control.md) (private) | `app/Deck.swift` |
 | stdlib HTTP service with history and token-guarded actions | [Streaming Dashboard (Mantra) (STREAMING_DASHBOARD)](apps/STREAMING_DASHBOARD.md) | `vm/streaming_dashboard_vm.py` |
 | reads a retail product page for title, availability, badge and main image | [Studio Setup (Mantra) (studio-setup-mantra)](apps/studio-setup-mantra.md) (private) | `tools/amazon_item.py` |
 | Crash-safe H.264/AAC MKV recording with ffmpeg packet-copy mux | [Webcam Recorder (Mantra) (web-cam-viewer)](apps/web-cam-viewer.md) | `app/Recorder.swift` |
@@ -463,7 +463,7 @@
 | stdlib Python client for the hub (works through a SOCKS5 proxy for cloud sessions) | [Session Hub (SESSION_HUB)](apps/SESSION_HUB.md) | `cli/hub` |
 | stdlib server for a static page with proxying of paid map APIs so keys stay server-side | [Store & Pool Finder (SHOP_FINDER)](apps/SHOP_FINDER.md) | `serve.py` |
 | Tile HTTP loading for the map | [Spar Locator / DM Finder (spar_locator)](apps/spar_locator.md) | `app/src/main/java/com/mantra/spar/TileHttp.kt` |
-| Flask server wrapping mdimport, mdfind and Quick Look thumbnails | [Find a File Spotlight (Mantra), retired (spotlight) (retired, use FIND_FILE)](apps/spotlight.md) (private) | `spotlightd.py` |
+| Flask server wrapping mdimport, mdfind and Quick Look thumbnails | [Find a File Spotlight (Mantra) (spotlight) (retired, use FIND_FILE)](apps/spotlight.md) (private) | `spotlightd.py` |
 | syncs learned corrections with a shared repo | [TTT Voice Type keyboard (TTT)](apps/TTT.md) | `nlp/MaCorrectionsSync.kt` |
 | export allowed browser-profile cookies to the server on a schedule | [YT Transcriber (YT_TRANSCRIBER)](apps/YT_TRANSCRIBER.md) (private) | `cookie_sync.py` |
 | Map tile proxy for OSM, Esri and Google sessions | [ZET Strike (zet_strike)](apps/zet_strike.md) | `app/tiles.py` |

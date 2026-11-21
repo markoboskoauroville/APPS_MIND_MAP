@@ -1,4 +1,4 @@
-# Keyboard and Mouse Router (Mantra), retired (retired)
+# Keyboard and Mouse Router (Mantra) (retired)
 
 [Map](../README.md) | [Capabilities](../CAPABILITIES.md) | [Control API](../CONTROL_API.md) | [Connections](../CONNECTIONS.md)
 

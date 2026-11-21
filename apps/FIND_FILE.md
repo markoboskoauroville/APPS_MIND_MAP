@@ -81,7 +81,7 @@ Outputs:
 ## Works with
 
 - Uses: [Star (Mantra), Lua (Hammerspoon, legacy)](MANTRA_STAR.md)
-- Used by or talked to by: [Find a File Spotlight (Mantra), retired (retired)](spotlight.md)
+- Used by or talked to by: [Find a File Spotlight (Mantra) (retired)](spotlight.md)
 
 ## Notes
 

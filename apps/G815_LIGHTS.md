@@ -76,7 +76,7 @@ More calls:
 - light single keys: `curl -s -XPOST 127.0.0.1:8877/frame -H 'Content-Type: application/json' -d '{"keys":{"26":"ff0000"},"keep":false}'`
 - hand the keyboard back: `curl -s -XPOST 127.0.0.1:8877/stop`
 
-Evidence: TAKEOVER.md v35 entry; app/LightShow.swift; MANTRA_MANIFEST keyboard-lights.md
+Evidence: app/LightShow.swift lines 4-16 (route list) and 252-300 (POST /frame: image body with ?fit= and ?ttl=, or JSON rgb | keys | color | path | image_base64); TAKEOVER.md v35 entry
 
 ## Inputs / Outputs
 

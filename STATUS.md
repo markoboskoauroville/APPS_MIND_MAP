@@ -22,13 +22,13 @@
 - [DaVinci Resolve Assistant (retired)](apps/DAVINCI_RESOLVE_ASSISTANT.md): replaced by [DaVinci Resolve Actions (Mantra)](apps/DAVINCI_RESOLVE_ACTIONS.md)
 - [Maha Transcribe Android v3 (web view, superseded) (retired)](apps/MAHA_TRANSCRIBE_ANDROID.md): replaced by [Maha Transcribe Android (native)](apps/MAHA_TRANSCRIBE_ANDROID_2.md)
 - [Maha Transcribe Termux v1 (superseded) (retired)](apps/MAHA_TRANSCRIBE_TERMUX.md): replaced by [Maha Transcribe (Termux/terminal)](apps/MAHA_TRANSCRIBE_TERMUX_TERMINAL.md)
-- [Keyboard and Mouse Router (Mantra), retired (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md): replaced by [Macro Recorder (Mantra)](apps/MANTRA_MACRO.md)
-- [Transcribe Voice to Text RT (Mantra), retired (retired)](apps/MARKO_TRANSCRIBE.md): replaced by [Vox to Txt (Mantra)](apps/MANTRA_VOICE_TO_TEXT.md)
+- [Keyboard and Mouse Router (Mantra) (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md): replaced by [Macro Recorder (Mantra)](apps/MANTRA_MACRO.md)
+- [Transcribe Voice to Text RT (Mantra) (retired)](apps/MARKO_TRANSCRIBE.md): replaced by [Vox to Txt (Mantra)](apps/MANTRA_VOICE_TO_TEXT.md)
 - [Pesty fork (archive) (retired)](apps/pesty-fork-archive.md): replaced by [Pasty](apps/Pasty.md)
-- [Find a File Spotlight (Mantra), retired (retired)](apps/spotlight.md): replaced by [Find a File (Mantra)](apps/FIND_FILE.md)
-- [Stream Deck Control (Mantra), retired (retired)](apps/stream-deck-control.md): replaced by [Stream Deck Remote](apps/STREAM_DECK_REMOTE.md)
-- [Voice Engine Android (retired) (retired)](apps/VOICE_ENGINE_ANDROID.md): replaced by [Termux Voice (voiced)](apps/TERMUX_VOICE.md)
-- [Voice of Claude (Mantra), retired (retired)](apps/VOICE_OF_CLAUDE.md): replaced by [Voice Engine (Mantra)](apps/VOICE_ENGINE.md)
+- [Find a File Spotlight (Mantra) (retired)](apps/spotlight.md): replaced by [Find a File (Mantra)](apps/FIND_FILE.md)
+- [Stream Deck Control (Mantra) (retired)](apps/stream-deck-control.md): replaced by [Stream Deck Remote](apps/STREAM_DECK_REMOTE.md)
+- [Voice Engine Android (retired)](apps/VOICE_ENGINE_ANDROID.md): replaced by [Termux Voice (voiced)](apps/TERMUX_VOICE.md)
+- [Voice of Claude (Mantra) (retired)](apps/VOICE_OF_CLAUDE.md): replaced by [Voice Engine (Mantra)](apps/VOICE_ENGINE.md)
 - [WhatsApp audio HAL (moved) (retired)](apps/wa-audio-hal.md): Replaced by WHATSAPP_REMOTE_VIEWER.
 
 ## Low-confidence records to re-read
@@ -53,7 +53,7 @@ Same port number written in more than one card (may be different machines; each 
 - 8810: [Maha Transcribe / TTT-LLL (Streamlit)](apps/MAHA_TRANSCRIBE_STREAMLIT.md), [Maha Transcribe VM (TTT-LLL)](apps/MAHA_TRANSCRIBE_VM.md)
 - 8837: [Mantra Voice (speech server)](apps/MANTRA_VOICE.md), [Voice Engine (Mantra)](apps/VOICE_ENGINE.md)
 - 8841: [Cloud Mixer](apps/CLOUD_MIXER.md), [Installation Logger (Mantra)](apps/INSTALLATION_LOGGER.md), [Mantra Remote Viewing (Mantra Remote)](apps/MANTRA_REMOTE_VIEWING.md)
-- 8847: [Agent Manager (CEO) (Mantra)](apps/AGENT_MANAGER.md), [Find a File Spotlight (Mantra), retired (retired)](apps/spotlight.md)
+- 8847: [Agent Manager (CEO) (Mantra)](apps/AGENT_MANAGER.md), [Find a File Spotlight (Mantra) (retired)](apps/spotlight.md)
 - 8851: [Star Monitor (Mantra)](apps/STAR_MONITOR.md), [YT Transcriber](apps/YT_TRANSCRIBER.md)
 - 8869: [Suno Controller (Mantra)](apps/CHROME_SUNO_CONTROLLER.md), [Sound Recorder (Mantra)](apps/MANTRA_SOUND_RECORDER.md)
 - 8890: [Session Hub](apps/SESSION_HUB.md), [Chromium Virtual Machine (Mantra)](apps/vm-chromium.md)
@@ -85,19 +85,19 @@ Mentioned in notes:
 - [Maha Transcribe Termux v1 (superseded) (retired)](apps/MAHA_TRANSCRIBE_TERMUX.md): superseded by MAHA_TRANSCRIBE_TERMUX_TERMINAL. RETIRED/SUPERSEDED: use MAHA_TRANSCRIBE_TERMUX_TERMINAL instead.
 - [Maha Transcribe VM (TTT-LLL)](apps/MAHA_TRANSCRIBE_VM.md): Hard fork of MAHA_TRANSCRIBE_STREAMLIT.
 - [Mantra Controls (MIDI to Key Stroke / MIDI to MK Control)](apps/MANTRA_CONTROLS.md): MIDI Tools (Mantra) replaces them (v8 starts MIDI Tools instead of Hammerspoon). Likely superseded.
-- [Keyboard and Mouse Router (Mantra), retired (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md): RETIRED/SUPERSEDED: use MANTRA_MACRO instead.
+- [Keyboard and Mouse Router (Mantra) (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md): RETIRED/SUPERSEDED: use MANTRA_MACRO instead.
 - [MIDI Tools (Mantra)](apps/MANTRA_MIDI_TOOLS.md): Replaces MANTRA_CONTROLS windows and the Lua engines.
-- [Transcribe Voice to Text RT (Mantra), retired (retired)](apps/MARKO_TRANSCRIBE.md): RETIRED/SUPERSEDED: use MANTRA_VOICE_TO_TEXT instead.
+- [Transcribe Voice to Text RT (Mantra) (retired)](apps/MARKO_TRANSCRIBE.md): RETIRED/SUPERSEDED: use MANTRA_VOICE_TO_TEXT instead.
 - [Pasty](apps/Pasty.md): Fork of momenbasel/pesty (MIT).
 - [Pesty fork (archive) (retired)](apps/pesty-fork-archive.md): Description says ARCHIVE, superseded by the private Pasty repo, safe to delete. RETIRED/SUPERSEDED: use Pasty instead.
 - [Router Credits (Android)](apps/router-credits.md): Android twin of the Mac router-sms.
 - [Sample Player, Android](apps/SAMPLE_PLAYER.md): macOS twin: SAMPLE_PLAYER_MACOS.
-- [Find a File Spotlight (Mantra), retired (retired)](apps/spotlight.md): RETIRED/SUPERSEDED: use FIND_FILE instead.
-- [Stream Deck Control (Mantra), retired (retired)](apps/stream-deck-control.md): replaced by Stream Deck Remote (Mantra). RETIRED/SUPERSEDED: use STREAM_DECK_REMOTE instead.
+- [Find a File Spotlight (Mantra) (retired)](apps/spotlight.md): RETIRED/SUPERSEDED: use FIND_FILE instead.
+- [Stream Deck Control (Mantra) (retired)](apps/stream-deck-control.md): replaced by Stream Deck Remote (Mantra). RETIRED/SUPERSEDED: use STREAM_DECK_REMOTE instead.
 - [Termux Voice (voiced)](apps/TERMUX_VOICE.md): Replaces the retired Voice Engine Android app (port 8720): TERMUX_VOICE is the only voice engine on the phones.
 - [TTT Voice Type keyboard](apps/TTT.md): Fork of Dictate (DevEmperor) on FlorisBoard, Apache 2.0.
-- [Voice Engine Android (retired) (retired)](apps/VOICE_ENGINE_ANDROID.md): RETIRED/SUPERSEDED: use TERMUX_VOICE instead.
-- [Voice of Claude (Mantra), retired (retired)](apps/VOICE_OF_CLAUDE.md): RETIRED/SUPERSEDED: use VOICE_ENGINE instead.
+- [Voice Engine Android (retired)](apps/VOICE_ENGINE_ANDROID.md): RETIRED/SUPERSEDED: use TERMUX_VOICE instead.
+- [Voice of Claude (Mantra) (retired)](apps/VOICE_OF_CLAUDE.md): RETIRED/SUPERSEDED: use VOICE_ENGINE instead.
 - [WhatsApp audio HAL (moved) (retired)](apps/wa-audio-hal.md): RETIRED/SUPERSEDED: use WHATSAPP_REMOTE_VIEWER instead.
 
 ## Catalog judgement and control level disagree

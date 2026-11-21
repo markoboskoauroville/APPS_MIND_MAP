@@ -113,6 +113,9 @@ def derive_level(c, notes=""):
     return "none"
 
 
+RETIRED_WORD = re.compile(r"\s*(?:,\s*retired|\(retired\))\s*$", re.I)
+
+
 def clean_list(v):
     out, seen = [], set()
     for x in v or []:
@@ -134,8 +137,8 @@ def normalise_record(r, log=None):
     log = [] if log is None else log
     o = {}
     o["repo"] = r["repo"].strip()
-    o["name"] = norm_text(r.get("name") or r["repo"]) or r["repo"]
-    o["aliases"] = [a for a in clean_list(r.get("aliases")) if a.lower() != o["repo"].lower()]
+    o["name"] = RETIRED_WORD.sub("", norm_text(r.get("name") or r["repo"])).strip() or r["repo"]
+    o["aliases"] = [a for a in (RETIRED_WORD.sub("", x).strip() for x in clean_list(r.get("aliases"))) if a and a.lower() != o["repo"].lower()]
     vis = str(r.get("visibility", "")).lower()
     if vis not in ("public", "private"):
         log.append("visibility defaulted to private")
@@ -709,14 +712,43 @@ def tasks_or_does(r):
     return r["tasks"] or r["does"][:3] or ([r["one_line"]] if r["one_line"] else [])
 
 
+def _stem(w):
+    return w[:-1] if len(w) > 4 and w.endswith("s") and not w.endswith("ss") else w
+
+
+def example_for_tasks(r, tasks):
+    """Map task index -> example whose 'for' clearly matches that task (shared key words)."""
+    assign = {}
+    for ex in r["control"].get("examples") or []:
+        ew = {_stem(w) for w in kw_words(ex["for"])}
+        best, bs = None, 0
+        for i, t in enumerate(tasks):
+            tw = {_stem(w) for w in kw_words(t)}
+            sc = len(ew & tw)
+            if sc >= 2 or (sc >= 1 and min(len(ew), len(tw)) <= 2):
+                if sc > bs:
+                    best, bs = i, sc
+        if best is not None and (best not in assign or bs > assign[best][1]):
+            assign[best] = (ex, bs)
+    return {i: v[0] for i, v in assign.items()}
+
+
 def cap_lines(r, prefix):
-    out = []
-    plat = "/".join(r["platforms"]) or "unknown"
-    for i, t in enumerate(tasks_or_does(r)):
-        ln = "- %s -> %s (%s; API: %s)" % (esc(t), card_link(r, prefix), plat, tag_label(r))
-        if i == 0 and r["control"]["how_to_call"]:
-            ln += " - call: " + cs(r["control"]["how_to_call"])
+    c = r["control"]
+    tasks = tasks_or_does(r)
+    info = "%s; API: %s" % ("/".join(r["platforms"]) or "unknown", tag_label(r))
+    if c["how_to_call"]:
+        info += ". Main call: " + cs(c["how_to_call"])
+    out = ["### " + card_link(r, prefix), "", info, ""]
+    if c.get("before"):
+        out += ["Before: " + esc(c["before"]), ""]
+    ex = example_for_tasks(r, tasks)
+    for i, t in enumerate(tasks):
+        ln = "- %s (%s)" % (esc(t), esc(short_name(r)))
+        if i in ex:
+            ln += " - call: " + cs(ex[i]["call"])
         out.append(ln)
+    out.append("")
     return out
 
 
@@ -741,10 +773,11 @@ def cat_section(slug, live, retired, planned, guides, by_repo, prefix, level):
     title = CAT_TITLE[slug]
     L = ["%s %s" % (level, title), ""]
     h = level + "#"
+    sub = h + "#"
     for g in guides.get(slug, []):
         L += guide_md(g, by_repo, prefix, h)
     for r in sorted([r for r in live if r["category"] == slug], key=lambda r: (r["name"].lower(), r["repo"])):
-        L += cap_lines(r, prefix)
+        L += [x.replace("### ", sub + " ", 1) if x.startswith("### ") else x for x in cap_lines(r, prefix)]
     for p in planned:
         if p["category"] == slug:
             L.append("- %s -> %s (PLANNED, not built; no API yet) - [kickoff prompt](%s%s)" % (
@@ -756,8 +789,8 @@ def cat_section(slug, live, retired, planned, guides, by_repo, prefix, level):
     return L
 
 
-CAP_INTRO = ("One line per capability: `task -> app (platforms; API: how it is driven) - call: example`. "
-             "The first line of each app carries the port and a working example. API values: `door N` (standard door on port N), `http N`, `cli`, `adb`, `accessibility`, `other`, `none`. "
+CAP_INTRO = ("One heading per app: platforms, API level and port, the main call and a `Before:` line when the call needs a step first. "
+             "Below it the app's task phrases; a `call:` appears on a task only when it is the call for that task. API values: `door N` (standard door on port N), `http N`, `cli`, `adb`, `accessibility`, `other`, `none`. "
              "Retired apps are listed per category under \"Retired - do not use\", never as live lines. "
              "Search: `grep -ri <word> CAPABILITIES.md capabilities/ KEYWORDS.md`, or open `index.html`.")
 
@@ -813,12 +846,20 @@ perhaps put quite rather said say says see seem seems several since small so soo
 thus together too toward towards try tries turn turns upon usually various way ways well went whatever whenever whole whose
 will yet yes click clicks type types thing things single simple plain full open opens close closes start starts stop stops
 called calls call able part parts item items real based plus minus per via off on in is it of to at by as be do if or an a
-mantra mantras key keys cloud live lives setting settings install installs hold holds step steps monitor monitors save aloud pause pauses stream streams folder folders window windows session sessions message messages record records recording command commands control controls
+mantra mantras active added address doing top chosen offer explain background line lines press auto answer sentence note notes action actions
+resume present provide minute front event toggle ring restore report progress print pick launch delete choose watch tap route publish
+nothing hand draw current change ask table rotate request release reference public provider path now level edit create count tab rule
+restart reading push plan order number mute manage left language input built automatically self shared result rate post inside host
+history generated generate fix fetch fallback exact continue optional online load end big describe clean apply working system split sent
+return remove recorded program point playing place newest limit latest label global field connect clock source sources track tracks
+move login log import export bar free view speed minute card report offline marko tabs spoken listen style shell row reply version
+inbox icon hear right reset saved skip swap space target value warn down everything index format fixed hook helper gate expose
+mixing stuff using called inside outside mode modes device devices service services frame frames store stores site sites learn learns task tasks wait title titles verify lock guide project projects job minutes layout layouts tile tiles scene scenes profile profiles output outputs permission permissions workflow workflows worker workers virtual edge display displays timing timings account accounts library sheet sheets chapter chapters cache upload typing highlighting heath key keys cloud live lives setting settings install installs hold holds step steps monitor monitors save aloud pause pauses stream streams folder folders window windows session sessions message messages command commands control controls
 screen switch serve server servers menu play plays microphone download downloads""".split())
 
 EXTRA_WHITELIST = set("""claude google github croatian english hindi sanskrit german whisper groq gemini tailscale cloudflare suno
 speechify resolve davinci ableton spotify firefox chrome chromium termux hammerspoon shizuku adb ndi hls midi osc usb
-bluetooth wifi ssh vnc http websocket sony camera speech transcribe light""".split())
+bluetooth wifi ssh vnc http websocket sony camera speech transcribe light record recorder""".split())
 
 
 def kw_words(s):
@@ -927,7 +968,7 @@ def gen_keywords(live, retired, planned, gaps):
             cur = head
             L += ["", "### " + head, ""]
         forms = sorted(e["forms"], key=lambda f: (len(f), f))
-        items = [card_link_plain(by[x]) for x in sorted(e["apps"], key=lambda x: (1 if by[x].get("_planned") else 0, 1 if is_retired(by[x]) else 0, by[x]["name"].lower(), x))]
+        items = [card_link_plain(by[x]) for x in sorted(e["apps"], key=lambda x: (1 if by[x].get("_planned") else 0, 1 if is_retired(by[x]) else 0, 0 if x in e["strong"] else 1, by[x]["name"].lower(), x))]
         line = "- **%s**: %s" % (", ".join(forms), ", ".join(items))
         for g in e["gaps"]:
             line += (" | " if items else "") + "NOT BUILT YET (%s): %s" % (g["status"], esc(g["need"]))
@@ -949,7 +990,8 @@ def gen_control(cards, live):
         rs = sorted([r for r in cards if r["control"]["level"] == lv], key=lambda r: (is_retired(r), r["name"].lower(), r["repo"]))
         if not rs:
             continue
-        L += ["## %s (%d)" % (LEVEL_TITLE[lv], len(rs)), "",
+        nret = sum(1 for r in rs if is_retired(r))
+        L += ["## %s (%d live%s)" % (LEVEL_TITLE[lv], len(rs) - nret, (", +%d retired" % nret) if nret else ""), "",
               "| App | Platform | Type | Port | Actions | How to call | Evidence |", "|---|---|---|---|---|---|---|"]
         for r in rs:
             c = r["control"]
@@ -1438,7 +1480,7 @@ var q=document.getElementById("q"),cat=document.getElementById("cat"),plat=docum
 function opt(sel,v,t){var o=document.createElement("option");o.value=v;o.textContent=t;sel.appendChild(o);}
 opt(cat,"","All categories");D.categories.forEach(function(c){opt(cat,c[0],c[1]);});
 opt(plat,"","All platforms");D.platforms.forEach(function(p){opt(plat,p,p);});
-opt(lvl,"","Any control level");D.levels.forEach(function(l){opt(lvl,l,l);});
+opt(lvl,"","Any control level");D.levels.forEach(function(l){var n=RECS.filter(function(r){return r.state==="live"&&r.control.level===l;}).length;opt(lvl,l,l+" ("+n+" live)");});
 function lc(a){return a.join(" ").toLowerCase();}
 RECS.forEach(function(r){
  r._n=(r.name+" "+r.repo+" "+r.aliases.join(" ")).toLowerCase();
@@ -1506,7 +1548,7 @@ function run(){
  var terms=q.value.toLowerCase().split(/\s+/).filter(Boolean);
  var out=[],pick={};
  var um0=terms.length?GUIDES.filter(function(g){return terms.every(function(t){return g._h.indexOf(t)>=0;});}):[];
- um0.forEach(function(g){g.picks.forEach(function(p){pick[p.use]=1;});});
+ um0.forEach(function(g){g.picks.forEach(function(p,i){if(pick[p.use]===undefined)pick[p.use]=i;});});
  RECS.forEach(function(r,i){
   if(cat.value&&r.category!==cat.value)return;
   if(plat.value&&r.platforms.indexOf(plat.value)<0)return;
@@ -1518,7 +1560,7 @@ function run(){
    s+=r._n.indexOf(terms[k])>=0?100:(r._t.indexOf(terms[k])>=0?40:10);
   }
   if(r.control.level!=="none")s+=5;
-  if(pick[r.repo])s+=60;
+  if(pick[r.repo]!==undefined)s+=3000-pick[r.repo]*20;
   if(r.state==="retired")s-=1000;
   out.push([s,i]);
  });
@@ -1533,7 +1575,7 @@ function run(){
   if(gm.length)note("Not built yet",gm.map(function(g){return g.need+" ("+g.status+"): "+(g.note||"");}));
   if(um.length)note("Which one to pick",um.map(function(g){return g.title+": "+g.picks.map(function(p){return p["for"]+" -> "+p.use;}).join("; ");}));
  }
- count.textContent=out.length+" of "+RECS.length+" entries";
+ count.textContent=out.length+" of "+RECS.length+" entries ("+D.counts.live+" live, "+D.counts.retired+" retired, "+D.counts.planned+" planned)";
 }
 [q,cat,plat,lvl].forEach(function(e){e.addEventListener("input",run);});
 api.addEventListener("change",run);
@@ -1551,7 +1593,7 @@ def gen_index(live, retired, planned, guides, gaps, by_repo):
         c = r["control"]
         flag, rep, sent = CTX["retired"].get(r["repo"], (False, None, None))
         o = {
-            "repo": r["repo"], "name": dname(r, False), "aliases": r["aliases"], "visibility": r["visibility"],
+            "repo": r["repo"], "name": re.sub(r" \((?:retired|planned)\)$", "", dname(r, False)), "aliases": r["aliases"], "visibility": r["visibility"],
             "category": r["category"], "category_title": CAT_TITLE[r["category"]], "platforms": r["platforms"],
             "state": "planned" if r.get("_planned") else ("retired" if flag else "live"),
             "one_line": r["one_line"], "does": r["does"], "tasks": r["tasks"], "hardware": r["hardware"],
@@ -1567,7 +1609,7 @@ def gen_index(live, retired, planned, guides, gaps, by_repo):
         if r.get("_planned"):
             o["links"] = [re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", edge_text(e, by_repo)).replace("`", "") for e in r["_edges"]]
         recs.append(o)
-    payload = {"owner": OWNER, "categories": CATS, "platforms": PLATFORMS, "levels": LEVELS, "records": recs,
+    payload = {"counts": {"live": len(live), "retired": len(retired), "planned": len(planned)}, "owner": OWNER, "categories": CATS, "platforms": PLATFORMS, "levels": LEVELS, "records": recs,
               "gaps": gaps, "guides": [{"title": g["title"], "applies_to": g.get("applies_to", []), "text": g.get("text", ""),
                                         "picks": g.get("picks", [])} for g in guides]}
     js = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
@@ -1578,6 +1620,38 @@ def gen_index(live, retired, planned, guides, gaps, by_repo):
 # ---------------------------------------------------------------------------
 # Checks
 # ---------------------------------------------------------------------------
+def assert_counts(files, live, retired, planned):
+    """One counting rule: live apps in headings and totals, retired and planned stated separately."""
+    lv = Counter(r["control"]["level"] for r in live)
+    rv = Counter(r["control"]["level"] for r in retired)
+    errs = []
+    ctl = {}
+    for m in re.finditer(r"^## (.*) \((\d+) live(?:, \+(\d+) retired)?\)$", files["CONTROL_API.md"], re.M):
+        for k, t in LEVEL_TITLE.items():
+            if t == m.group(1):
+                ctl[k] = (int(m.group(2)), int(m.group(3) or 0))
+    for k in LEVELS[:-1]:
+        if (lv[k], rv[k]) != ctl.get(k, (0, 0)):
+            errs.append("CONTROL_API %s heading %s, data %s" % (k, ctl.get(k), (lv[k], rv[k])))
+    m = re.search(r"^- By control level: (.*)\.$", files["README.md"], re.M)
+    want = ", ".join("%s %d" % (k, lv[k]) for k in LEVELS if lv[k])
+    if not m or m.group(1) != want:
+        errs.append("README levels %r vs %r" % (m and m.group(1), want))
+    m = re.search(r"^- Live cards by control level: (.*)$", files["STATUS.md"], re.M)
+    if not m or m.group(1) != want:
+        errs.append("STATUS levels %r vs %r" % (m and m.group(1), want))
+    m = re.search(r"%d live repositories have a card" % len(live), files["README.md"])
+    if not m:
+        errs.append("README live count")
+    if '"counts":{"live":%d,"retired":%d,"planned":%d}' % (len(live), len(retired), len(planned)) not in files["index.html"]:
+        errs.append("index.html counts")
+    for f, t in files.items():
+        if f.endswith(".md") and re.search(r"retired\)?[ ,]*\(retired", t, re.I):
+            errs.append("%s: retired marker twice" % f)
+    if errs:
+        sys.exit("COUNT ASSERTIONS FAILED:\n  " + "\n  ".join(errs))
+
+
 def check_text(cards):
     bad = []
     for r in cards:
@@ -1700,6 +1774,7 @@ def generate():
     files["STATUS.md"] = gen_status(recs, cards, live, retired, empties, meta, edges)
     files["index.html"] = gen_index(live, retired, planned, guides, gaps, by_repo)
     files = {k: render(k, v) for k, v in files.items()}
+    assert_counts(files, live, retired, planned)
     bad = check_links(files)
     if bad:
         sys.exit("BROKEN LINKS:\n  " + "\n  ".join(bad))

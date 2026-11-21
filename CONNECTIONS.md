@@ -82,7 +82,7 @@ graph LR
   n24["Ableton Teacher and DaVinci Teacher"]
   n25["Mantra Ports"]
   n26["Mantra Voice Switch"]
-  n27["Transcribe Voice to Text RT retired"]
+  n27["Transcribe Voice to Text RT RETIRED"]
   n28["Talk with Claude Code"]
   n29["Voice Cloning"]
   n30["Voice Engines"]
@@ -105,7 +105,7 @@ graph LR
   n47["Macro Recorder"]
   n48["Voice Engine Universal"]
   n49["Voice Engine Android RETIRED"]
-  n50["Voice of Claude retired RETIRED"]
+  n50["Voice of Claude RETIRED"]
   n51["Claude Code hub"]
   n52["CQ MixPad Tutorial"]
   n53["Termux Tools"]
@@ -574,7 +574,7 @@ graph LR
   n33["Mantra Chrome Extensions"]
   n34["Mantra Controls"]
   n35["Launcher"]
-  n36["Keyboard and Mouse Router retired"]
+  n36["Keyboard and Mouse Router RETIRED"]
   n37["Automated Mouse Actions"]
   n38["Mantra Voice"]
   n39["Star API"]
@@ -598,7 +598,7 @@ graph LR
   n57["Queen auto-update"]
   n58["Queen server and tools"]
   n59["Mantra Mackie Control Translator"]
-  n60["Find a File Spotlight retired"]
+  n60["Find a File Spotlight RETIRED"]
   n0 -->|"uses"| n1
   n2 -->|"uses"| n1
   n3 -->|"uses"| n1
@@ -757,7 +757,7 @@ graph LR
   n35["Router Credits"]
   n36["Router Mode"]
   n37["Firefox Control"]
-  n38["Stream Deck Control retired RETIRED"]
+  n38["Stream Deck Control RETIRED"]
   n39["vm-android"]
   n40["VM Android jobs mailbox"]
   n41["Session Ack"]
@@ -819,7 +819,7 @@ graph LR
   n1["G815 Lights"]
   n2["Mantra Ports"]
   n3["Mantra Room"]
-  n4["Stream Deck Control retired RETIRED"]
+  n4["Stream Deck Control RETIRED"]
   n5["Stream Deck Remote"]
   n0 -.->|"talks to"| n1
   n1 -->|"uses"| n0
@@ -928,7 +928,7 @@ graph LR
   n4["Mantra Voice"]
   n5["MPA Academy Android app"]
   n6["MPA Lessons Analyzer"]
-  n7["Transcribe Voice to Text RT retired"]
+  n7["Transcribe Voice to Text RT RETIRED"]
   n8["Second Take Remote"]
   n9["Voice Engine"]
   n10["Webcam Recorder"]
@@ -1116,7 +1116,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [Dock Switcher (Mantra) (MACOS_TASK_SWITCHER)](apps/MACOS_TASK_SWITCHER.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (t), [Mantra Remote Viewing (Mantra Remote) (MANTRA_REMOTE_VIEWING)](apps/MANTRA_REMOTE_VIEWING.md) (t), [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (u)
 - [Download, Copy and Move (Mantra) (was Download Monitor) (DOWNLOAD_MONITOR)](apps/DOWNLOAD_MONITOR.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u)
 - [Find a File (Mantra) (FIND_FILE)](apps/FIND_FILE.md) -> [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (u)
-- [Find a File Spotlight (Mantra), retired (spotlight) (retired, use FIND_FILE)](apps/spotlight.md) -> [Find a File (Mantra) (FIND_FILE)](apps/FIND_FILE.md) (u), [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (t)
+- [Find a File Spotlight (Mantra) (spotlight) (retired, use FIND_FILE)](apps/spotlight.md) -> [Find a File (Mantra) (FIND_FILE)](apps/FIND_FILE.md) (u), [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (t)
 - [Firefox Control (firefox-control)](apps/firefox-control.md) -> [Download, Copy and Move (Mantra) (was Download Monitor) (DOWNLOAD_MONITOR)](apps/DOWNLOAD_MONITOR.md) (t)
 - [Free Mac (FREE_MAC)](apps/FREE_MAC.md) -> [App Store (Mantra) (APP_STORE)](apps/APP_STORE.md) (u), [Download, Copy and Move (Mantra) (was Download Monitor) (DOWNLOAD_MONITOR)](apps/DOWNLOAD_MONITOR.md) (u), [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (u)
 - [G815 Lights (G815_LIGHTS)](apps/G815_LIGHTS.md) -> [DaVinci Resolve Actions (Mantra) (DAVINCI_RESOLVE_ACTIONS)](apps/DAVINCI_RESOLVE_ACTIONS.md) (u), [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u), [Mantra Room (Meditation Room / Chakra and Elements Toning) (MANTRA_ROOM)](apps/MANTRA_ROOM.md) (t)
@@ -1127,7 +1127,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [Indian Mantras (Mantra) (INDIAN_MANTRAS)](apps/INDIAN_MANTRAS.md) -> [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (u), [DaVinci Grading Tutorial (Mantra) (RESOLVE_GRADING_TUTORIAL)](apps/RESOLVE_GRADING_TUTORIAL.md) (u)
 - [Installation Logger (Mantra) (INSTALLATION_LOGGER)](apps/INSTALLATION_LOGGER.md) -> [Star (Mantra), Lua (Hammerspoon, legacy) (MANTRA_STAR)](apps/MANTRA_STAR.md) (u)
 - [Key Tester (Android) (Key_Tester)](apps/Key_Tester.md) -> [KeyringTester (Mantra) (KEY_RING_TESTER)](apps/KEY_RING_TESTER.md) (u)
-- [Keyboard and Mouse Router (Mantra), retired (MANTRA_KEYBOARD_MOUSE_ROUTER) (retired, use MANTRA_MACRO)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) -> [Macro Recorder (Mantra) (MANTRA_MACRO)](apps/MANTRA_MACRO.md) (t)
+- [Keyboard and Mouse Router (Mantra) (MANTRA_KEYBOARD_MOUSE_ROUTER) (retired, use MANTRA_MACRO)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) -> [Macro Recorder (Mantra) (MANTRA_MACRO)](apps/MANTRA_MACRO.md) (t)
 - [Keyring (KEYRING_TERMUX)](apps/KEYRING_TERMUX.md) -> [Maha Transcribe (Termux/terminal) (MAHA_TRANSCRIBE_TERMUX_TERMINAL)](apps/MAHA_TRANSCRIBE_TERMUX_TERMINAL.md) (u), [Store & Pool Finder (SHOP_FINDER)](apps/SHOP_FINDER.md) (t)
 - [KeyringTester (Mantra) (KEY_RING_TESTER)](apps/KEY_RING_TESTER.md) -> [Key Tester (Android) (Key_Tester)](apps/Key_Tester.md) (u)
 - [LAN Scanner (Mantra) (LAN_SCANNER)](apps/LAN_SCANNER.md) -> [Star (Mantra), Swift menu (STAR_SWIFT)](apps/STAR_SWIFT.md) (t)
@@ -1160,7 +1160,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [Mantra Sony Remote (TC Jam), Android (sony_remote_controller)](apps/sony_remote_controller.md) -> [Sony Remote (Mantra), Mac (SONY_REMOTE_MAC)](apps/SONY_REMOTE_MAC.md) (u), [Mantra Manual Camera (mantra-manual-camera)](apps/mantra-manual-camera.md) (t)
 - [Mantra Speed Test (SPEED_TEST)](apps/SPEED_TEST.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u)
 - [Mantra Trail (MANTRA_TRAIL)](apps/MANTRA_TRAIL.md) -> [Mantra Maps (MANTRA_MAPS)](apps/MANTRA_MAPS.md) (u), [Mantra Map Server (MANTRA_MAP_SERVER)](apps/MANTRA_MAP_SERVER.md) (u)
-- [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u), [Sound Recorder (Mantra) (MANTRA_SOUND_RECORDER)](apps/MANTRA_SOUND_RECORDER.md) (t), [Mantra Voice Switch (MANTRA_VOICE_SWITCH)](apps/MANTRA_VOICE_SWITCH.md) (t), [Transcribe Voice to Text RT (Mantra), retired (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (t), [Talk with Claude Code (TALK_WITH_CLAUDE)](apps/TALK_WITH_CLAUDE.md) (t), [Voice Cloning (Mantra) (VOICE_CLONING)](apps/VOICE_CLONING.md) (t), [Voice Engines (model hub) (VOICE_ENGINES)](apps/VOICE_ENGINES.md) (u)
+- [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u), [Sound Recorder (Mantra) (MANTRA_SOUND_RECORDER)](apps/MANTRA_SOUND_RECORDER.md) (t), [Mantra Voice Switch (MANTRA_VOICE_SWITCH)](apps/MANTRA_VOICE_SWITCH.md) (t), [Transcribe Voice to Text RT (Mantra) (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (t), [Talk with Claude Code (TALK_WITH_CLAUDE)](apps/TALK_WITH_CLAUDE.md) (t), [Voice Cloning (Mantra) (VOICE_CLONING)](apps/VOICE_CLONING.md) (t), [Voice Engines (model hub) (VOICE_ENGINES)](apps/VOICE_ENGINES.md) (u)
 - [Mantra Voice Switch (MANTRA_VOICE_SWITCH)](apps/MANTRA_VOICE_SWITCH.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
 - [Marco Macro Recorder (Windows) (MARCO_MACRO_RECORDER)](apps/MARCO_MACRO_RECORDER.md) -> [Hammerspoon Lua Recorder (HAMMERSPOON_LUA_RECORDER)](apps/HAMMERSPOON_LUA_RECORDER.md) (t)
 - [Marko Bosko Therapies (MARKOBOSKO_THERAPIES)](apps/MARKOBOSKO_THERAPIES.md) -> [Mantra Room (Meditation Room / Chakra and Elements Toning) (MANTRA_ROOM)](apps/MANTRA_ROOM.md) (u), [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
@@ -1168,7 +1168,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [MIDI Tools (Mantra) (MANTRA_MIDI_TOOLS)](apps/MANTRA_MIDI_TOOLS.md) -> [Ableton Live Actions (Mantra) (ABLETON_LIVE_ACTIONS)](apps/ABLETON_LIVE_ACTIONS.md) (u)
 - [Moving Air (Hi-Fi and Acoustics) (HIFI_AND_ACOUSTICS)](apps/HIFI_AND_ACOUSTICS.md) -> [How to read a frame and hear what belongs in it (SOUND_DESIGN_GUIDE)](apps/SOUND_DESIGN_GUIDE.md) (u)
 - [MPA Academy, Android app (MPA_ACADEMY_ANDROID)](apps/MPA_ACADEMY_ANDROID.md) -> [MPA Lessons Analyzer (MPA_LESSONS_ANALYZER)](apps/MPA_LESSONS_ANALYZER.md) (t)
-- [MPA Lessons Analyzer (MPA_LESSONS_ANALYZER)](apps/MPA_LESSONS_ANALYZER.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (t), [Transcribe Voice to Text RT (Mantra), retired (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (t), [Second Take Remote (SECOND_TAKE_REMOTE)](apps/SECOND_TAKE_REMOTE.md) (u), [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) (u), [Webcam Recorder (Mantra) (web-cam-viewer)](apps/web-cam-viewer.md) (t)
+- [MPA Lessons Analyzer (MPA_LESSONS_ANALYZER)](apps/MPA_LESSONS_ANALYZER.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (t), [Transcribe Voice to Text RT (Mantra) (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) (t), [Second Take Remote (SECOND_TAKE_REMOTE)](apps/SECOND_TAKE_REMOTE.md) (u), [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) (u), [Webcam Recorder (Mantra) (web-cam-viewer)](apps/web-cam-viewer.md) (t)
 - [Ogledalo i prozor (OGLEDALO_I_PROZOR)](apps/OGLEDALO_I_PROZOR.md) -> [Ogledalo i prozor references (OGLEDALO_REF)](apps/OGLEDALO_REF.md) (u)
 - [Ogledalo i prozor references (OGLEDALO_REF)](apps/OGLEDALO_REF.md) -> [Ogledalo i prozor (OGLEDALO_I_PROZOR)](apps/OGLEDALO_I_PROZOR.md) (t)
 - [Opening and Closing (Mantra) (OPENING_AND_CLOSING)](apps/OPENING_AND_CLOSING.md) -> [Mantra Ports (MANTRA_PORTS)](apps/MANTRA_PORTS.md) (u)
@@ -1203,7 +1203,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [Star Monitor (Mantra) (STAR_MONITOR)](apps/STAR_MONITOR.md) -> [Star (Mantra), Swift menu (STAR_SWIFT)](apps/STAR_SWIFT.md) (u)
 - [Startup (Mantra) (Startup-Mantra)](apps/Startup-Mantra.md) -> [Vox to Txt (Mantra) (MANTRA_VOICE_TO_TEXT)](apps/MANTRA_VOICE_TO_TEXT.md) (t), [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) (u)
 - [Stem Separation (Mantra) (STEM_SEPARATION)](apps/STEM_SEPARATION.md) -> [Ableton Live Actions (Mantra) (ABLETON_LIVE_ACTIONS)](apps/ABLETON_LIVE_ACTIONS.md) (u)
-- [Stream Deck Control (Mantra), retired (stream-deck-control) (retired, use STREAM_DECK_REMOTE)](apps/stream-deck-control.md) -> [Stream Deck Remote (STREAM_DECK_REMOTE)](apps/STREAM_DECK_REMOTE.md) (u)
+- [Stream Deck Control (Mantra) (stream-deck-control) (retired, use STREAM_DECK_REMOTE)](apps/stream-deck-control.md) -> [Stream Deck Remote (STREAM_DECK_REMOTE)](apps/STREAM_DECK_REMOTE.md) (u)
 - [Stream Deck Remote (STREAM_DECK_REMOTE)](apps/STREAM_DECK_REMOTE.md) -> [MPA Academy, website and hub (mpa-academy)](apps/mpa-academy.md) (t)
 - [Streaming Dashboard (Mantra) (STREAMING_DASHBOARD)](apps/STREAMING_DASHBOARD.md) -> [Cloud Mixer (CLOUD_MIXER)](apps/CLOUD_MIXER.md) (t), [Mantra Room (Meditation Room / Chakra and Elements Toning) (MANTRA_ROOM)](apps/MANTRA_ROOM.md) (u)
 - [Suno Controller (Mantra) (CHROME_SUNO_CONTROLLER)](apps/CHROME_SUNO_CONTROLLER.md) -> [Sound Recorder (Mantra) (MANTRA_SOUND_RECORDER)](apps/MANTRA_SOUND_RECORDER.md) (u)
@@ -1219,7 +1219,7 @@ Format: app -> what it uses (u) or talks to (t).
 - [The Chat That Forgets (Mantra Software book) (MANTRA_SOFTWARE)](apps/MANTRA_SOFTWARE.md) -> [Mantra Manifest (MANTRA_MANIFEST)](apps/MANTRA_MANIFEST.md) (u)
 - [The Playable Instruction (Mantra filmmaking) (MANTRA_FILMMAKING)](apps/MANTRA_FILMMAKING.md) -> [How to Create a Winning Film (WINNING_FILM)](apps/WINNING_FILM.md) (u)
 - [Timer Stopwatch Clock (Mantra) (TIMER_STOPWATCH_CLOCK)](apps/TIMER_STOPWATCH_CLOCK.md) -> [Minimalist Stopwatch (MINIMALIST_STOPWATCH)](apps/MINIMALIST_STOPWATCH.md) (t)
-- [Transcribe Voice to Text RT (Mantra), retired (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
+- [Transcribe Voice to Text RT (Mantra) (MARKO_TRANSCRIBE) (retired, use MANTRA_VOICE_TO_TEXT)](apps/MARKO_TRANSCRIBE.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
 - [TTT Layouts (ttt-layouts)](apps/ttt-layouts.md) -> [TTT Voice Type keyboard (TTT)](apps/TTT.md) (u)
 - [TTT Portal (TTT_PORTAL)](apps/TTT_PORTAL.md) -> [Maha Transcribe / TTT-LLL (Streamlit) (MAHA_TRANSCRIBE_STREAMLIT)](apps/MAHA_TRANSCRIBE_STREAMLIT.md) (u)
 - [TTT Voice Type keyboard (TTT)](apps/TTT.md) -> [Mantra Corrections (MANTRA_CORRECTIONS)](apps/MANTRA_CORRECTIONS.md) (u), [Screen Copy (Mantra) (MANTRA_SCREEN_COPY)](apps/MANTRA_SCREEN_COPY.md) (t), [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
@@ -1229,10 +1229,10 @@ Format: app -> what it uses (u) or talks to (t).
 - [vm-android (Pixel 7 in Oracle Cloud) (vm-android)](apps/vm-android.md) -> [Chromium Virtual Machine (Mantra) (vm-chromium)](apps/vm-chromium.md) (u)
 - [Voice Cloning (Mantra) (VOICE_CLONING)](apps/VOICE_CLONING.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
 - [Voice Engine (Mantra) (VOICE_ENGINE)](apps/VOICE_ENGINE.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u), [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) (u)
-- [Voice Engine Android (retired) (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) -> [MA Reader Termux / macOS (Edge / Speechify) (MA_READER_TERMUX_MACOS)](apps/MA_READER_TERMUX_MACOS.md) (u), [Termux Voice (voiced) (TERMUX_VOICE)](apps/TERMUX_VOICE.md) (t), [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) (u)
+- [Voice Engine Android (VOICE_ENGINE_ANDROID) (retired, use TERMUX_VOICE)](apps/VOICE_ENGINE_ANDROID.md) -> [MA Reader Termux / macOS (Edge / Speechify) (MA_READER_TERMUX_MACOS)](apps/MA_READER_TERMUX_MACOS.md) (u), [Termux Voice (voiced) (TERMUX_VOICE)](apps/TERMUX_VOICE.md) (t), [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) (u)
 - [Voice Engine Universal (Mantra) (VOICE_ENGINE_UNIVERSAL)](apps/VOICE_ENGINE_UNIVERSAL.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (t)
 - [Voice Engines (model hub) (VOICE_ENGINES)](apps/VOICE_ENGINES.md) -> [Download, Copy and Move (Mantra) (was Download Monitor) (DOWNLOAD_MONITOR)](apps/DOWNLOAD_MONITOR.md) (u), [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (t)
-- [Voice of Claude (Mantra), retired (VOICE_OF_CLAUDE) (retired, use VOICE_ENGINE)](apps/VOICE_OF_CLAUDE.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
+- [Voice of Claude (Mantra) (VOICE_OF_CLAUDE) (retired, use VOICE_ENGINE)](apps/VOICE_OF_CLAUDE.md) -> [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u)
 - [Vox to Txt (Mantra) (MANTRA_VOICE_TO_TEXT)](apps/MANTRA_VOICE_TO_TEXT.md) -> [Download, Copy and Move (Mantra) (was Download Monitor) (DOWNLOAD_MONITOR)](apps/DOWNLOAD_MONITOR.md) (t), [Mantra Voice (speech server) (MANTRA_VOICE)](apps/MANTRA_VOICE.md) (u), [Talk Mode (Mantra) (TALK_MODE)](apps/TALK_MODE.md) (t)
 - [VPN (Mantra) (MANTRA_VPN)](apps/MANTRA_VPN.md) -> [Chromium Virtual Machine (Mantra) (vm-chromium)](apps/vm-chromium.md) (u)
 - [Webcam Recorder (Mantra) (web-cam-viewer)](apps/web-cam-viewer.md) -> [MPA Lessons Analyzer (MPA_LESSONS_ANALYZER)](apps/MPA_LESSONS_ANALYZER.md) (t)

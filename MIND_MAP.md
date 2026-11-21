@@ -45,8 +45,8 @@ mindmap
       YT Transcriber
       Maha Transcribe Android v3 RETIRED
       Maha Transcribe Termux v1 RETIRED
-      Transcribe Voice to Text RT retired
-      Voice of Claude retired RETIRED
+      Transcribe Voice to Text RT RETIRED
+      Voice of Claude RETIRED
     Audio music and DJ
       Ableton Command Guide
       Teacher Lessons and Scripts
@@ -210,9 +210,9 @@ mindmap
       Timer Stopwatch Clock
       Watch Folder Daemon
       Brain Brake Keyboard RETIRED
-      Keyboard and Mouse Router retired
+      Keyboard and Mouse Router RETIRED
       Pesty fork RETIRED
-      Find a File Spotlight retired RETIRED
+      Find a File Spotlight RETIRED
     Android and Termux
       Android Lab
       Auroville FlorisBoard Theme
@@ -261,7 +261,7 @@ mindmap
       G815 Lights
       Keyboard Monitor
       Light Control PLANNED
-      Stream Deck Control retired RETIRED
+      Stream Deck Control RETIRED
     Wellbeing sound and meditation
       Asana Guide
       Hemi-Sync Recording Monitor
@@ -391,8 +391,8 @@ mindmap
 - [YT Transcriber](apps/YT_TRANSCRIBER.md) - Turns a YouTube channel, playlist or video URL into one transcript file, one video at a time via Groq Whisper, with an optional knowledge summary.
 - [Maha Transcribe Android v3 (web view, superseded) (retired)](apps/MAHA_TRANSCRIBE_ANDROID.md) (`MAHA_TRANSCRIBE_ANDROID`) - Maha Transcribe v3 for Android with the web UI in a WebView on an on-device server; superseded by the native MAHA_TRANSCRIBE_ANDROID_2.
 - [Maha Transcribe Termux v1 (superseded) (retired)](apps/MAHA_TRANSCRIBE_TERMUX.md) (`MAHA_TRANSCRIBE_TERMUX`) - One-file Termux installer for a store-first voice transcription app: Flask + Waitress + SQLite, terminal dashboard, multi-provider keys.
-- [Transcribe Voice to Text RT (Mantra), retired (retired)](apps/MARKO_TRANSCRIBE.md) (`MARKO_TRANSCRIBE`) - Floating Mac dictation stripe: press F1, speak, it transcribes (Whisper local or Groq), optionally cleans the text with an LLM, and types it at the cursor.
-- [Voice of Claude (Mantra), retired (retired)](apps/VOICE_OF_CLAUDE.md) (`VOICE_OF_CLAUDE`) - Mac window with one switch to start or stop the whole voice engine (door, ears, cloned voice) and remember the choice.
+- [Transcribe Voice to Text RT (Mantra) (retired)](apps/MARKO_TRANSCRIBE.md) (`MARKO_TRANSCRIBE`) - Floating Mac dictation stripe: press F1, speak, it transcribes (Whisper local or Groq), optionally cleans the text with an LLM, and types it at the cursor.
+- [Voice of Claude (Mantra) (retired)](apps/VOICE_OF_CLAUDE.md) (`VOICE_OF_CLAUDE`) - Mac window with one switch to start or stop the whole voice engine (door, ears, cloned voice) and remember the choice.
 
 ### Audio, music and DJ
 
@@ -547,8 +547,8 @@ mindmap
 - [TP - Terminal Properties](apps/TERMINAL_SHORTCUT_MACOS.md) (`TERMINAL_SHORTCUT_MACOS`) - Local Flask editor for shell shortcuts: search every command, give it a short name, apply; refuses to shadow a real command.
 - [Watch Folder Daemon](apps/WATCH_FOLDER_DAEMON.md) - launchd daemon plus a global watch command: anything dropped in a folder is pushed to a git repo, with progress and verification.
 - [Brain Brake Keyboard (Hammerspoon) (retired)](apps/BRAIN_BRAKE_KEYBOARD.md) (`BRAIN_BRAKE_KEYBOARD`) - Marko's Hammerspoon keyboard: clipboard buckets for imgtoimg and Suno, F-key actions, voice key, and a hand that drives imgtoimg.ai.
-- [Find a File Spotlight (Mantra), retired (retired)](apps/spotlight.md) (`spotlight`) - Retired: local page and server that index one folder with Spotlight and search it; merged into Find a File (repo FIND_FILE).
-- [Keyboard and Mouse Router (Mantra), retired (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) (`MANTRA_KEYBOARD_MOUSE_ROUTER`) - RETIRED Mac guard app: would hold Marko's keyboard/mouse while Claude drives the Mac and show a badge. Replaced by Macro Recorder's input lock.
+- [Find a File Spotlight (Mantra) (retired)](apps/spotlight.md) (`spotlight`) - Retired: local page and server that index one folder with Spotlight and search it; merged into Find a File (repo FIND_FILE).
+- [Keyboard and Mouse Router (Mantra) (retired)](apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) (`MANTRA_KEYBOARD_MOUSE_ROUTER`) - RETIRED Mac guard app: would hold Marko's keyboard/mouse while Claude drives the Mac and show a badge. Replaced by Macro Recorder's input lock.
 - [Pesty fork (archive) (retired)](apps/pesty-fork-archive.md) - Archived public fork of the open-source Pesty clipboard manager (Swift/SwiftUI); superseded by Marko's private Pasty repo. Safe to delete.
 
 ### Android and Termux
@@ -570,7 +570,7 @@ mindmap
 - [Termux Voice (voiced)](apps/TERMUX_VOICE.md) (`TERMUX_VOICE`) - Small Python daemon in Termux that makes an Android phone speak text sent from the Mac (English or Croatian), with a queue, pause/repeat and a notification.
 - [USB Tethering (Mantra)](apps/USB_TETHERING.md) (`USB_TETHERING`) - Android app with a 1x1 home widget and Quick Settings tile that switch USB tethering on and off with one tap through Shizuku.
 - [VM Android jobs mailbox](apps/vm-android-jobs.md) (`vm-android-jobs`) - Git mailbox for the cloud Pixel 7: push a job.json and an APK, a runner installs and taps it, and the result with screenshots comes back by git pull.
-- [Voice Engine Android (retired) (retired)](apps/VOICE_ENGINE_ANDROID.md) (`VOICE_ENGINE_ANDROID`) - RETIRED Android app that drew a subtitle pop-up over every app while the phone spoke, with reply recording; replaced by TERMUX_VOICE.
+- [Voice Engine Android (retired)](apps/VOICE_ENGINE_ANDROID.md) - RETIRED Android app that drew a subtitle pop-up over every app while the phone spoke, with reply recording; replaced by TERMUX_VOICE.
 - [WhatsApp audio HAL (moved) (retired)](apps/wa-audio-hal.md) (`wa-audio-hal`) - Moved: modified Android audio HAL so WhatsApp calls in a VM Android container send and receive audio from local devices.
 
 ### Remote control and networking
@@ -596,7 +596,7 @@ mindmap
 
 - [G815 Lights](apps/G815_LIGHTS.md) - Runs the Logitech G815 keyboard's 115 keys as a low-resolution LED display for any app: pictures, colours, key colours, ten light shows, idle show.
 - [Keyboard Monitor (Mantra)](apps/keyboard-monitor.md) (`keyboard-monitor`) - Mac menu-less app showing one big blob with the key just pressed, including modifiers, function and media keys.
-- [Stream Deck Control (Mantra), retired (retired)](apps/stream-deck-control.md) (`stream-deck-control`) - Obsolete Mac app that drove the original Elgato Stream Deck over USB as an app switcher and F1/F2 keys; replaced by Stream Deck Remote.
+- [Stream Deck Control (Mantra) (retired)](apps/stream-deck-control.md) (`stream-deck-control`) - Obsolete Mac app that drove the original Elgato Stream Deck over USB as an app switcher and F1/F2 keys; replaced by Stream Deck Remote.
 - [Light Control (Mantra) (planned)](apps/LIGHT_CONTROL.md) - Planned Mac app that drives a Neewer Bluetooth LED light with smooth colour transitions and a local API, linked to Meditation Room and, through Webcam Recorder, to a Sony camera. [kickoff prompt](prompts/LIGHT_CONTROL.md)
 
 ### Wellbeing, sound and meditation

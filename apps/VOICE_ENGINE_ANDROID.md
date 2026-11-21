@@ -1,4 +1,4 @@
-# Voice Engine Android (retired) (retired)
+# Voice Engine Android (retired)
 
 [Map](../README.md) | [Capabilities](../CAPABILITIES.md) | [Control API](../CONTROL_API.md) | [Connections](../CONNECTIONS.md)
 

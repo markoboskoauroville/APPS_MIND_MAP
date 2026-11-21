@@ -149,8 +149,13 @@
     "groq",
     "subtitles"
    ],
-   "text": "Mac: dictation is Vox to Txt (MANTRA_VOICE_TO_TEXT, F1 hotkey, language en, hr or auto, port 8865 for files); a YouTube link or file goes through `scribe` (MAC_TRANSCRIBER). Android: TTT is the voice keyboard (English and Croatian engines); MAHA_TRANSCRIBE_ANDROID_2 is the native app, version 1 only the Talk to Type screen; TATA_Talk is a simple Croatian-only app in a private repo. Termux: `transcribe` (MAHA_TRANSCRIBE_TERMUX_TERMINAL) serves the page. Web and servers: the Streamlit and Flask Maha Transcribe pages (Whisper on Groq, language hint hr), 111/222 Transcribe (AssemblyAI with speakers and subtitles) and the hosted TTT Portal API. MARKO_TRANSCRIBE, MAHA_TRANSCRIBE_TERMUX and the web-view MAHA_TRANSCRIBE_ANDROID are superseded.",
+   "text": "One pick for a Croatian voice recording on the phone: MAHA_TRANSCRIBE_TERMUX_TERMINAL (command `transcribe`, active, current). The Croatian language hint is documented for the Maha Transcribe pages (Whisper on Groq); the Termux README itself does not repeat it, so check the language box in the page. Mac: dictation is Vox to Txt (MANTRA_VOICE_TO_TEXT, F1 hotkey, language en, hr or auto, port 8865 for files); a YouTube link or file goes through `scribe` (MAC_TRANSCRIBER). Android: TTT is the voice keyboard (English and Croatian engines); MAHA_TRANSCRIBE_ANDROID_2 is the native app, version 1 only the Talk to Type screen; TATA_Talk is a simple Croatian-only app in a private repo. Termux: `transcribe` (MAHA_TRANSCRIBE_TERMUX_TERMINAL) serves the page. Web and servers: the Streamlit and Flask Maha Transcribe pages (Whisper on Groq, language hint hr), 111/222 Transcribe (AssemblyAI with speakers and subtitles) and the hosted TTT Portal API. MARKO_TRANSCRIBE, MAHA_TRANSCRIBE_TERMUX and the web-view MAHA_TRANSCRIBE_ANDROID are superseded.",
    "picks": [
+    {
+     "for": "transcribe a Croatian voice recording on the phone (Termux)",
+     "use": "MAHA_TRANSCRIBE_TERMUX_TERMINAL",
+     "how": "transcribe 9000   # in Termux: starts the Maha Transcribe page on port 9000 and opens it in Chrome; record or upload there, set the language to Croatian (hr) in the page, and paste your own Groq key once. No HTTP API: the page is the interface"
+    },
     {
      "for": "dictate into any Mac app with a hotkey, Croatian or English",
      "use": "MANTRA_VOICE_TO_TEXT",
@@ -180,11 +185,6 @@
      "for": "simple one-button Croatian speech to text on Android",
      "use": "TATA_Talk",
      "how": null
-    },
-    {
-     "for": "transcribe on the phone in Termux, or on Mac/Linux, from one command",
-     "use": "MAHA_TRANSCRIBE_TERMUX_TERMINAL",
-     "how": "transcribe 9000"
     },
     {
      "for": "transcribe in the browser with Groq Whisper, English or Croatian",

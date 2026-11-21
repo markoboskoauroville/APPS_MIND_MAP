@@ -137,7 +137,7 @@ The only light hardware with an API today is the Logitech G815 keyboard, run by 
 ## Elgato Stream Deck
 
 - [Stream Deck Remote](apps/STREAM_DECK_REMOTE.md) (Elgato Stream Deck 15-key)
-- [Stream Deck Control (Mantra), retired (retired)](apps/stream-deck-control.md) (Elgato Stream Deck original 15-key (0x0fd9:0x0060))
+- [Stream Deck Control (Mantra) (retired)](apps/stream-deck-control.md) (Elgato Stream Deck original 15-key (0x0fd9:0x0060))
 
 ## Capture cards, webcams and NDI gear
 
@@ -186,7 +186,7 @@ On the Mac, speaking and reading are one server: Mantra Voice (MANTRA_VOICE, por
 - [Vox to Txt (Mantra)](apps/MANTRA_VOICE_TO_TEXT.md) (microphone)
 - [Maha Transcribe Android v3 (web view, superseded) (retired)](apps/MAHA_TRANSCRIBE_ANDROID.md) (Android microphone)
 - [Maha Transcribe Termux v1 (superseded) (retired)](apps/MAHA_TRANSCRIBE_TERMUX.md) (phone microphone)
-- [Transcribe Voice to Text RT (Mantra), retired (retired)](apps/MARKO_TRANSCRIBE.md) (microphone)
+- [Transcribe Voice to Text RT (Mantra) (retired)](apps/MARKO_TRANSCRIBE.md) (microphone)
 
 ## Android phones (Pixel, Nothing) and emulators
 
@@ -247,7 +247,7 @@ Two Oracle Cloud machines are reached over Tailscale. vm-android is a redroid Pi
 - [Virtual Cam (Mantra)](apps/mantra_virtual_cam.md) (Android phone camera)
 - [VM Android jobs mailbox](apps/vm-android-jobs.md) (Android arm64 container on cloud VM)
 - [ZET Strike](apps/zet_strike.md) (Android phone GPS)
-- [Voice Engine Android (retired) (retired)](apps/VOICE_ENGINE_ANDROID.md) (Android phones (Nothing A142))
+- [Voice Engine Android (retired)](apps/VOICE_ENGINE_ANDROID.md) (Android phones (Nothing A142))
 
 ## Routers, cables and network adapters
 

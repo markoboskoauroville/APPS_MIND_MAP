@@ -106,7 +106,7 @@ Outputs:
 ## Works with
 
 - Uses: [Second Take Remote](SECOND_TAKE_REMOTE.md), [Voice Engine (Mantra)](VOICE_ENGINE.md)
-- Talks to: [Mantra Voice (speech server)](MANTRA_VOICE.md), [Transcribe Voice to Text RT (Mantra), retired (retired)](MARKO_TRANSCRIBE.md), [Webcam Recorder (Mantra)](web-cam-viewer.md)
+- Talks to: [Mantra Voice (speech server)](MANTRA_VOICE.md), [Transcribe Voice to Text RT (Mantra) (retired)](MARKO_TRANSCRIBE.md), [Webcam Recorder (Mantra)](web-cam-viewer.md)
 - Used by or talked to by: [MPA Academy, Android app](MPA_ACADEMY_ANDROID.md), [Second Take Remote](SECOND_TAKE_REMOTE.md), [Webcam Recorder (Mantra)](web-cam-viewer.md)
 
 ## Code worth reusing

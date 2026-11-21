@@ -27,121 +27,316 @@ Macro Recorder (MANTRA_MACRO) holds the Accessibility and screen permissions for
 | read another app's window as text through Queen | [Queen, Mac app (Groq AI Studio (Mantra)) (GROQ_AI_STUDIO_MAC)](../apps/GROQ_AI_STUDIO_MAC.md) |  |
 | drive the owner's Firefox by text | [Firefox Control (firefox-control)](../apps/firefox-control.md) | `firefoxctl -t yshai links pdf` |
 
-- install an app without the App Store -> [App Store (Mantra)](../apps/APP_STORE.md) (macOS/Web/Hammerspoon; API: http 8839) - call: `curl -s 127.0.0.1:8839/health # the only routes are /health and /quit; the store itself is used in its window`
-- find the dmg of an application -> [App Store (Mantra)](../apps/APP_STORE.md) (macOS/Web/Hammerspoon; API: http 8839)
-- search for a Mac or iPhone app by name -> [App Store (Mantra)](../apps/APP_STORE.md) (macOS/Web/Hammerspoon; API: http 8839)
-- put the app store to sleep -> [App Store (Mantra)](../apps/APP_STORE.md) (macOS/Web/Hammerspoon; API: http 8839)
-- move the mouse to the OK button automatically -> [Automated Mouse Actions (Mantra)](../apps/MANTRA_MOUSE.md) (macOS/Web/Hammerspoon; API: http 8831) - call: `curl -s 127.0.0.1:8831/health # the only documented route; the actions are inside the app`
-- make a mouse chord open Mission Control -> [Automated Mouse Actions (Mantra)](../apps/MANTRA_MOUSE.md) (macOS/Web/Hammerspoon; API: http 8831)
-- tidy all my windows -> [Cascade](../apps/Cascade.md) (macOS; API: none)
-- cascade windows so I can reach each with the mouse -> [Cascade](../apps/Cascade.md) (macOS; API: none)
-- restore my window layout -> [Cascade](../apps/Cascade.md) (macOS; API: none)
-- press Enter to send in Claude chat -> [Claude Enter (Mantra)](../apps/CLAUDE_ENTER.md) (macOS/Chrome; API: none)
-- change Enter behaviour in claude.ai -> [Claude Enter (Mantra)](../apps/CLAUDE_ENTER.md) (macOS/Chrome; API: none)
-- boot the Mac without any extra programs -> [Clean Start (Mantra)](../apps/CLEAN_START.md) (macOS; API: none)
-- what starts by itself on my Mac -> [Clean Start (Mantra)](../apps/CLEAN_START.md) (macOS; API: none)
-- turn off all startup items -> [Clean Start (Mantra)](../apps/CLEAN_START.md) (macOS; API: none)
-- restore my startup items -> [Clean Start (Mantra)](../apps/CLEAN_START.md) (macOS; API: none)
-- fill the SMS verification code on the Mac -> [Code Filler (Mantra)](../apps/MANTRA_CODE_FILLER.md) (macOS/Android; API: none)
-- copy the login code from the phone automatically -> [Code Filler (Mantra)](../apps/MANTRA_CODE_FILLER.md) (macOS/Android; API: none)
-- switch apps like Command-Tab but launch closed apps -> [Dock Switcher (Mantra)](../apps/MACOS_TASK_SWITCHER.md) (macOS/Hammerspoon; API: http 8861) - call: `curl -s http://127.0.0.1:8861/apps # the open apps; from the phone use the Mac's address on the home network or Tailscale`
-- show my Dock as a grid -> [Dock Switcher (Mantra)](../apps/MACOS_TASK_SWITCHER.md) (macOS/Hammerspoon; API: http 8861)
-- open a Mac app from the phone -> [Dock Switcher (Mantra)](../apps/MACOS_TASK_SWITCHER.md) (macOS/Hammerspoon; API: http 8861)
-- show the front app's menu on the phone -> [Dock Switcher (Mantra)](../apps/MACOS_TASK_SWITCHER.md) (macOS/Hammerspoon; API: http 8861)
-- register a download so I can see it -> [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md) (macOS; API: http 8833) - call: `python3 dlmon.py copy ~/Movies/big /Volumes/Backup/big/ --name "big copy"`
-- copy a big folder safely -> [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md) (macOS; API: http 8833)
-- move files with verification -> [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md) (macOS; API: http 8833)
-- what is downloading on my Mac -> [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md) (macOS; API: http 8833)
-- download a Hugging Face model with resume -> [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md) (macOS; API: http 8833)
-- see the full Google Drive folder path -> [Drive Full Path (Mantra Productions)](../apps/MANTRA_DRIVE_PATH.md) (Web; API: none)
-- where am I in Google Drive -> [Drive Full Path (Mantra Productions)](../apps/MANTRA_DRIVE_PATH.md) (Web; API: none)
-- copy the Drive folder path -> [Drive Full Path (Mantra Productions)](../apps/MANTRA_DRIVE_PATH.md) (Web; API: none)
-- find a file on the Mac by name -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845) - call: `curl -s -X POST http://127.0.0.1:8845/api/find -H 'Content-Type: application/json' -d '{"folder":"~","name":"animatics"}'`
-- find all files created yesterday -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845)
-- search inside files with Spotlight -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845)
-- where is this zip file -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845)
-- search files inside one folder on the Mac -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845)
-- make Spotlight index a single folder -> [Find a File (Mantra)](../apps/FIND_FILE.md) (macOS/Web/Hammerspoon; API: door 8845)
-- make F keys work as function keys -> [FKeys](../apps/FKeys.md) (macOS; API: none)
-- toggle media keys and F keys -> [FKeys](../apps/FKeys.md) (macOS; API: none)
-- one click fn key mode -> [FKeys](../apps/FKeys.md) (macOS; API: none)
-- open the Apple update door for 30 minutes -> [Free Mac](../apps/FREE_MAC.md) (macOS; API: cli) - call: `sudo -n /usr/local/sbin/apple-door open 15m # opens the Apple door (lets Apple services through) for 15 minutes`
-- make the Mac not start when the lid opens -> [Free Mac](../apps/FREE_MAC.md) (macOS; API: cli)
-- install command line tools without the update server -> [Free Mac](../apps/FREE_MAC.md) (macOS; API: cli)
-- check which Apple servers are blocked -> [Free Mac](../apps/FREE_MAC.md) (macOS; API: cli)
-- record a macro on the Mac -> [Hammerspoon Lua Recorder](../apps/HAMMERSPOON_LUA_RECORDER.md) (macOS/Hammerspoon; API: none)
-- keyboard and mouse recorder in Lua -> [Hammerspoon Lua Recorder](../apps/HAMMERSPOON_LUA_RECORDER.md) (macOS/Hammerspoon; API: none)
-- teach me Hammerspoon Lua by recording -> [Hammerspoon Lua Recorder](../apps/HAMMERSPOON_LUA_RECORDER.md) (macOS/Hammerspoon; API: none)
-- install Pasty clipboard manager -> [Homebrew tap for Mantra tools](../apps/homebrew-pasty.md) (macOS; API: none) - call: `brew install --cask markoboskoauroville/pasty/cascade`
-- cascade my windows on a Mac -> [Homebrew tap for Mantra tools](../apps/homebrew-pasty.md) (macOS; API: none)
-- switch function keys to media keys -> [Homebrew tap for Mantra tools](../apps/homebrew-pasty.md) (macOS; API: none)
-- brew tap markoboskoauroville/pasty -> [Homebrew tap for Mantra tools](../apps/homebrew-pasty.md) (macOS; API: none)
-- edit the hosts file -> [Host Editor Terminal](../apps/HOST_EDITOR_TERMINAL_MACOS.md) (macOS; API: cli) - call: `sudo python3 host.py`
-- see which domains are blocked in hosts -> [Host Editor Terminal](../apps/HOST_EDITOR_TERMINAL_MACOS.md) (macOS; API: cli)
-- remove a blocked entry from hosts -> [Host Editor Terminal](../apps/HOST_EDITOR_TERMINAL_MACOS.md) (macOS; API: cli)
-- see what an installer put on my Mac -> [Installation Logger (Mantra)](../apps/INSTALLATION_LOGGER.md) (macOS/Web; API: http 8841) - call: `curl -s 127.0.0.1:8841/health # only /health and /quit exist; the logger is used in its window`
-- uninstall an app completely using a log -> [Installation Logger (Mantra)](../apps/INSTALLATION_LOGGER.md) (macOS/Web; API: http 8841)
-- record an installation -> [Installation Logger (Mantra)](../apps/INSTALLATION_LOGGER.md) (macOS/Web; API: http 8841)
-- launch an app by typing a few letters -> [Launcher (Mantra)](../apps/STAR_LAUNCHER.md) (macOS; API: accessibility) - call: `star press "launcher" "record"`
-- open the launcher from the G815 Pause key -> [Launcher (Mantra)](../apps/STAR_LAUNCHER.md) (macOS; API: accessibility)
-- use a second MacBook as a monitor -> [MacBook Pro as external display](../apps/MacBook_Pro_as_external_display.md) (macOS/Web; API: none)
-- send the Mac screen over Thunderbolt to another Mac -> [MacBook Pro as external display](../apps/MacBook_Pro_as_external_display.md) (macOS/Web; API: none)
-- MacBook as external display plan -> [MacBook Pro as external display](../apps/MacBook_Pro_as_external_display.md) (macOS/Web; API: none)
-- automate the Mac mouse and keyboard -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829) - call: `macro run "Resolve - Voice Convert Render"`
-- record a macro and replay it -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- click a button I can describe or screenshot -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- read text off the screen -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- press a button in another app through accessibility -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- lock keyboard while Claude types -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- guard my keyboard while Claude uses the mouse -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- stop typing going into the wrong window during automation -> [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md) (macOS/Linux; API: http 8829)
-- test the real speed of an SSD -> [Mantra Speed Test](../apps/SPEED_TEST.md) (macOS; API: door 8960) - call: `curl -s -XPOST 127.0.0.1:8960/api/test -H 'Content-Type: application/json' -d '{"drive":"<name from /api/drives>"}' # body field names are not in the docs`
-- check drive health -> [Mantra Speed Test](../apps/SPEED_TEST.md) (macOS; API: door 8960)
-- compare my drive with others -> [Mantra Speed Test](../apps/SPEED_TEST.md) (macOS; API: door 8960)
-- record a macro on Windows -> [Marco Macro Recorder (Windows)](../apps/MARCO_MACRO_RECORDER.md) (Windows; API: none)
-- learn AutoHotkey by watching what it writes -> [Marco Macro Recorder (Windows)](../apps/MARCO_MACRO_RECORDER.md) (Windows; API: none)
-- replay my keyboard and mouse actions on Windows -> [Marco Macro Recorder (Windows)](../apps/MARCO_MACRO_RECORDER.md) (Windows; API: none)
-- open Chrome in a specific profile -> [Opening and Closing (Mantra)](../apps/OPENING_AND_CLOSING.md) (macOS; API: none)
-- close that annoying window automatically -> [Opening and Closing (Mantra)](../apps/OPENING_AND_CLOSING.md) (macOS; API: none)
-- start Ableton in arrangement view -> [Opening and Closing (Mantra)](../apps/OPENING_AND_CLOSING.md) (macOS; API: none)
-- clipboard history on the Mac -> [Pasty](../apps/Pasty.md) (macOS; API: none)
-- pin things I copy -> [Pasty](../apps/Pasty.md) (macOS; API: none)
-- paste an earlier copied item -> [Pasty](../apps/Pasty.md) (macOS; API: none)
-- clipboard manager -> [Pasty](../apps/Pasty.md) (macOS; API: none)
-- clipboard history manager for Mac -> [Pasty](../apps/Pasty.md) (macOS; API: none)
-- turn off my screens without sleeping the Mac -> [Screen Brightness Automatic (Mantra)](../apps/DARKEN_THE_SCREENS.md) (macOS; API: none)
-- darken both monitors -> [Screen Brightness Automatic (Mantra)](../apps/DARKEN_THE_SCREENS.md) (macOS; API: none)
-- set brightness to zero on all displays -> [Screen Brightness Automatic (Mantra)](../apps/DARKEN_THE_SCREENS.md) (macOS; API: none)
-- start or stop one of my Mac apps from the menu bar -> [Star (Mantra), Lua (Hammerspoon, legacy)](../apps/MANTRA_STAR.md) (macOS/Hammerspoon; API: cli) - call: `hs -c 'print(hs.json.encode(STAR.list()))' # Hammerspoon command line; lists the star rows`
-- see all my apps in one menu -> [Star (Mantra), Lua (Hammerspoon, legacy)](../apps/MANTRA_STAR.md) (macOS/Hammerspoon; API: cli)
-- turn all apps off -> [Star (Mantra), Lua (Hammerspoon, legacy)](../apps/MANTRA_STAR.md) (macOS/Hammerspoon; API: cli)
-- restart Hammerspoon with the same apps ticked -> [Star (Mantra), Lua (Hammerspoon, legacy)](../apps/MANTRA_STAR.md) (macOS/Hammerspoon; API: cli)
-- launch one of my Mantra apps -> [Star (Mantra), Swift menu](../apps/STAR_SWIFT.md) (macOS/Linux; API: cli) - call: `open -a "Star (Mantra)" --args --print-menu # prints the menu rows; the exact binary path is in TAKEOVER.md`
-- menu with all my apps -> [Star (Mantra), Swift menu](../apps/STAR_SWIFT.md) (macOS/Linux; API: cli)
-- order my menu bar icons -> [Star (Mantra), Swift menu](../apps/STAR_SWIFT.md) (macOS/Linux; API: cli)
-- what apps are on the star menu -> [Star (Mantra), Swift menu](../apps/STAR_SWIFT.md) (macOS/Linux; API: cli)
-- see which Mantra apps are running -> [Star Monitor (Mantra)](../apps/STAR_MONITOR.md) (macOS; API: door 8851) - call: `curl -s 127.0.0.1:8851/api/state`
-- start or stop all my apps -> [Star Monitor (Mantra)](../apps/STAR_MONITOR.md) (macOS; API: door 8851)
-- how long has each app run -> [Star Monitor (Mantra)](../apps/STAR_MONITOR.md) (macOS; API: door 8851)
-- manage what comes back after restart -> [Star Monitor (Mantra)](../apps/STAR_MONITOR.md) (macOS; API: door 8851)
-- choose which dictation app starts at login -> [Startup (Mantra)](../apps/Startup-Mantra.md) (macOS; API: none)
-- switch between Voice to Text and Speechify at boot -> [Startup (Mantra)](../apps/Startup-Mantra.md) (macOS; API: none)
-- what starts by itself on my Mac -> [Swift Matrix (Mantra)](../apps/SWIFT_MATRIX.md) (macOS; API: accessibility) - call: `star press "swift matrix" "top"`
-- turn off auto-start of an app -> [Swift Matrix (Mantra)](../apps/SWIFT_MATRIX.md) (macOS; API: accessibility)
-- manage login items and launch agents -> [Swift Matrix (Mantra)](../apps/SWIFT_MATRIX.md) (macOS; API: accessibility)
-- count time on screen -> [Timer Stopwatch Clock (Mantra)](../apps/TIMER_STOPWATCH_CLOCK.md) (macOS; API: none)
-- set a countdown timer -> [Timer Stopwatch Clock (Mantra)](../apps/TIMER_STOPWATCH_CLOCK.md) (macOS; API: none)
-- show a big clock -> [Timer Stopwatch Clock (Mantra)](../apps/TIMER_STOPWATCH_CLOCK.md) (macOS; API: none)
-- convert a TinyTask recording to AutoHotkey -> [TinyTask to AutoHotkey](../apps/autohotkey.md) (Windows/Web; API: none)
-- turn a macro recording into an editable script -> [TinyTask to AutoHotkey](../apps/autohotkey.md) (Windows/Web; API: none)
-- make a short alias for a terminal command -> [TP - Terminal Properties](../apps/TERMINAL_SHORTCUT_MACOS.md) (macOS; API: http 5077) - call: `curl 'http://127.0.0.1:5077/api/search?q=clear'`
-- type c to clear the terminal -> [TP - Terminal Properties](../apps/TERMINAL_SHORTCUT_MACOS.md) (macOS; API: http 5077)
-- auto-push files dropped in a folder to GitHub -> [Watch Folder Daemon](../apps/WATCH_FOLDER_DAEMON.md) (macOS; API: cli) - call: `watch # menu keys: P push, T interval, S stop, F folder, L log, U update, Q quit`
-- upload big renders to a repo automatically -> [Watch Folder Daemon](../apps/WATCH_FOLDER_DAEMON.md) (macOS; API: cli)
+### [App Store (Mantra)](../apps/APP_STORE.md)
+
+macOS/Web/Hammerspoon; API: http 8839. Main call: `curl -s 127.0.0.1:8839/health # the only routes are /health and /quit; the store itself is used in its window`
+
+Before: App Store (Mantra) must be running.
+
+- install an app without the App Store (App Store)
+- find the dmg of an application (App Store)
+- search for a Mac or iPhone app by name (App Store)
+- put the app store to sleep (App Store)
+
+### [Automated Mouse Actions (Mantra)](../apps/MANTRA_MOUSE.md)
+
+macOS/Web/Hammerspoon; API: http 8831. Main call: `curl -s 127.0.0.1:8831/health # the only documented route; the actions are inside the app`
+
+Before: Automated Mouse Actions (Mantra) must be running.
+
+- move the mouse to the OK button automatically (Automated Mouse Actions)
+- make a mouse chord open Mission Control (Automated Mouse Actions)
+
+### [Cascade](../apps/Cascade.md)
+
+macOS; API: none
+
+- tidy all my windows (Cascade)
+- cascade windows so I can reach each with the mouse (Cascade)
+- restore my window layout (Cascade)
+
+### [Claude Enter (Mantra)](../apps/CLAUDE_ENTER.md)
+
+macOS/Chrome; API: none
+
+- press Enter to send in Claude chat (Claude Enter)
+- change Enter behaviour in claude.ai (Claude Enter)
+
+### [Clean Start (Mantra)](../apps/CLEAN_START.md)
+
+macOS; API: none
+
+- boot the Mac without any extra programs (Clean Start)
+- what starts by itself on my Mac (Clean Start)
+- turn off all startup items (Clean Start)
+- restore my startup items (Clean Start)
+
+### [Code Filler (Mantra)](../apps/MANTRA_CODE_FILLER.md)
+
+macOS/Android; API: none
+
+- fill the SMS verification code on the Mac (Code Filler)
+- copy the login code from the phone automatically (Code Filler)
+
+### [Dock Switcher (Mantra)](../apps/MACOS_TASK_SWITCHER.md)
+
+macOS/Hammerspoon; API: http 8861. Main call: `curl -s http://127.0.0.1:8861/apps # the open apps; from the phone use the Mac's address on the home network or Tailscale`
+
+Before: Dock Switcher (Mantra) must be running; no token. The door contract of the manifest (/health, /api) is still being added.
+
+- switch apps like Command-Tab but launch closed apps (Dock Switcher)
+- show my Dock as a grid (Dock Switcher)
+- open a Mac app from the phone (Dock Switcher)
+- show the front app's menu on the phone (Dock Switcher)
+
+### [Download, Copy and Move (Mantra) (was Download Monitor)](../apps/DOWNLOAD_MONITOR.md)
+
+macOS; API: http 8833. Main call: `python3 dlmon.py copy ~/Movies/big /Volumes/Backup/big/ --name "big copy"`
+
+Before: Download, Copy and Move (Mantra) must be running (port 8833).
+
+- register a download so I can see it (Download, Copy and Move)
+- copy a big folder safely (Download, Copy and Move)
+- move files with verification (Download, Copy and Move)
+- what is downloading on my Mac (Download, Copy and Move)
+- download a Hugging Face model with resume (Download, Copy and Move)
+
+### [Drive Full Path (Mantra Productions)](../apps/MANTRA_DRIVE_PATH.md)
+
+Web; API: none
+
+- see the full Google Drive folder path (Drive Full Path)
+- where am I in Google Drive (Drive Full Path)
+- copy the Drive folder path (Drive Full Path)
+
+### [Find a File (Mantra)](../apps/FIND_FILE.md)
+
+macOS/Web/Hammerspoon; API: door 8845. Main call: `curl -s -X POST http://127.0.0.1:8845/api/find -H 'Content-Type: application/json' -d '{"folder":"~","name":"animatics"}'`
+
+Before: Find a File (Mantra) must be running; ENGINE SPOTLIGHT is its search engine.
+
+- find a file on the Mac by name (Find a File)
+- find all files created yesterday (Find a File)
+- search inside files with Spotlight (Find a File)
+- where is this zip file (Find a File)
+- search files inside one folder on the Mac (Find a File)
+- make Spotlight index a single folder (Find a File)
+
+### [FKeys](../apps/FKeys.md)
+
+macOS; API: none
+
+- make F keys work as function keys (FKeys)
+- toggle media keys and F keys (FKeys)
+- one click fn key mode (FKeys)
+
+### [Free Mac](../apps/FREE_MAC.md)
+
+macOS; API: cli. Main call: `sudo -n /usr/local/sbin/apple-door open 15m # opens the Apple door (lets Apple services through) for 15 minutes`
+
+- open the Apple update door for 30 minutes (Free Mac) - call: `stay-off.sh --check`
+- make the Mac not start when the lid opens (Free Mac)
+- install command line tools without the update server (Free Mac)
+- check which Apple servers are blocked (Free Mac)
+
+### [Hammerspoon Lua Recorder](../apps/HAMMERSPOON_LUA_RECORDER.md)
+
+macOS/Hammerspoon; API: none
+
+- record a macro on the Mac (Hammerspoon Lua Recorder)
+- keyboard and mouse recorder in Lua (Hammerspoon Lua Recorder)
+- teach me Hammerspoon Lua by recording (Hammerspoon Lua Recorder)
+
+### [Homebrew tap for Mantra tools](../apps/homebrew-pasty.md)
+
+macOS; API: none. Main call: `brew install --cask markoboskoauroville/pasty/cascade`
+
+- install Pasty clipboard manager (Homebrew tap for Mantra tools)
+- cascade my windows on a Mac (Homebrew tap for Mantra tools)
+- switch function keys to media keys (Homebrew tap for Mantra tools)
+- brew tap markoboskoauroville/pasty (Homebrew tap for Mantra tools)
+
+### [Host Editor Terminal](../apps/HOST_EDITOR_TERMINAL_MACOS.md)
+
+macOS; API: cli. Main call: `sudo python3 host.py`
+
+Before: Needs sudo to edit /etc/hosts; `HOSTS_FILE=<path>` tests on a copy.
+
+- edit the hosts file (Host Editor Terminal) - call: `HOSTS_FILE=/tmp/hosts python3 host.py`
+- see which domains are blocked in hosts (Host Editor Terminal)
+- remove a blocked entry from hosts (Host Editor Terminal)
+
+### [Installation Logger (Mantra)](../apps/INSTALLATION_LOGGER.md)
+
+macOS/Web; API: http 8841. Main call: `curl -s 127.0.0.1:8841/health # only /health and /quit exist; the logger is used in its window`
+
+Before: Port 8841 here is the Mac's logger; other apps also use 8841 on other machines.
+
+- see what an installer put on my Mac (Installation Logger)
+- uninstall an app completely using a log (Installation Logger)
+- record an installation (Installation Logger)
+
+### [Launcher (Mantra)](../apps/STAR_LAUNCHER.md)
+
+macOS; API: accessibility. Main call: `star press "launcher" "record"`
+
+Before: No HTTP or CLI door of its own: the window's controls are Accessibility buttons with fixed ids, pressed through STAR_API (star press `"<app>"` `"<id>"`, or POST `127.0.0.1:8863/apps/<app>/press` `{"label":"<id>"}`); the app must be running (star open `"<app>"`). Macro Recorder needs the Accessibility permission.
+
+- launch an app by typing a few letters (Launcher)
+- open the launcher from the G815 Pause key (Launcher)
+
+### [MacBook Pro as external display](../apps/MacBook_Pro_as_external_display.md)
+
+macOS/Web; API: none
+
+- use a second MacBook as a monitor (MacBook Pro as external display)
+- send the Mac screen over Thunderbolt to another Mac (MacBook Pro as external display)
+- MacBook as external display plan (MacBook Pro as external display)
+
+### [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md)
+
+macOS/Linux; API: http 8829. Main call: `macro run "Resolve - Voice Convert Render"`
+
+Before: Macro Recorder (Mantra) must be running on the Mac; it holds the Accessibility and Screen Recording permissions, so every other app asks it to press and capture. macro run plays a macro stored under ~/.mantra_macro/macros by its exact name.
+
+- automate the Mac mouse and keyboard (Macro Recorder)
+- record a macro and replay it (Macro Recorder)
+- click a button I can describe or screenshot (Macro Recorder)
+- read text off the screen (Macro Recorder)
+- press a button in another app through accessibility (Macro Recorder)
+- lock keyboard while Claude types (Macro Recorder)
+- guard my keyboard while Claude uses the mouse (Macro Recorder)
+- stop typing going into the wrong window during automation (Macro Recorder)
+
+### [Mantra Speed Test](../apps/SPEED_TEST.md)
+
+macOS; API: door 8960. Main call: `curl -s -XPOST 127.0.0.1:8960/api/test -H 'Content-Type: application/json' -d '{"drive":"<name from /api/drives>"}' # body field names are not in the docs`
+
+Before: Mac app; port from MANTRA_PORTS id speedtest (8960 and up).
+
+- test the real speed of an SSD (Mantra Speed Test)
+- check drive health (Mantra Speed Test) - call: `curl -s 127.0.0.1:8960/api/drives`
+- compare my drive with others (Mantra Speed Test)
+
+### [Marco Macro Recorder (Windows)](../apps/MARCO_MACRO_RECORDER.md)
+
+Windows; API: none
+
+- record a macro on Windows (Marco Macro Recorder)
+- learn AutoHotkey by watching what it writes (Marco Macro Recorder)
+- replay my keyboard and mouse actions on Windows (Marco Macro Recorder)
+
+### [Opening and Closing (Mantra)](../apps/OPENING_AND_CLOSING.md)
+
+macOS; API: none
+
+- open Chrome in a specific profile (Opening and Closing)
+- close that annoying window automatically (Opening and Closing)
+- start Ableton in arrangement view (Opening and Closing)
+
+### [Pasty](../apps/Pasty.md)
+
+macOS; API: none
+
+- clipboard history on the Mac (Pasty)
+- pin things I copy (Pasty)
+- paste an earlier copied item (Pasty)
+- clipboard manager (Pasty)
+- clipboard history manager for Mac (Pasty)
+
+### [Screen Brightness Automatic (Mantra)](../apps/DARKEN_THE_SCREENS.md)
+
+macOS; API: none
+
+- turn off my screens without sleeping the Mac (Screen Brightness Automatic)
+- darken both monitors (Screen Brightness Automatic)
+- set brightness to zero on all displays (Screen Brightness Automatic)
+
+### [Star (Mantra), Lua (Hammerspoon, legacy)](../apps/MANTRA_STAR.md)
+
+macOS/Hammerspoon; API: cli. Main call: `hs -c 'print(hs.json.encode(STAR.list()))' # Hammerspoon command line; lists the star rows`
+
+Before: Legacy Lua star in Hammerspoon (the Swift menu is STAR_SWIFT); Hammerspoon with its hs command-line tool must be installed and running.
+
+- start or stop one of my Mac apps from the menu bar (Star, Lua)
+- see all my apps in one menu (Star, Lua)
+- turn all apps off (Star, Lua)
+- restart Hammerspoon with the same apps ticked (Star, Lua)
+
+### [Star (Mantra), Swift menu](../apps/STAR_SWIFT.md)
+
+macOS/Linux; API: cli. Main call: `open -a "Star (Mantra)" --args --print-menu # prints the menu rows; the exact binary path is in TAKEOVER.md`
+
+Before: The six-pointed star menu launcher; rows are in ~/.config/star-rows.json.
+
+- launch one of my Mantra apps (Star, Swift menu)
+- menu with all my apps (Star, Swift menu)
+- order my menu bar icons (Star, Swift menu)
+- what apps are on the star menu (Star, Swift menu)
+
+### [Star Monitor (Mantra)](../apps/STAR_MONITOR.md)
+
+macOS; API: door 8851. Main call: `curl -s 127.0.0.1:8851/api/state`
+
+Before: Verify first: the HTTP API on 8851 belongs to the old Flask page and may not exist in the Swift window version (v5). The window buttons answer Accessibility as off, top, close (STAR_API press).
+
+- see which Mantra apps are running (Star Monitor)
+- start or stop all my apps (Star Monitor)
+- how long has each app run (Star Monitor)
+- manage what comes back after restart (Star Monitor)
+
+### [Startup (Mantra)](../apps/Startup-Mantra.md)
+
+macOS; API: none
+
+- choose which dictation app starts at login (Startup)
+- switch between Voice to Text and Speechify at boot (Startup)
+
+### [Swift Matrix (Mantra)](../apps/SWIFT_MATRIX.md)
+
+macOS; API: accessibility. Main call: `star press "swift matrix" "top"`
+
+Before: No HTTP or CLI door of its own: the window's controls are Accessibility buttons with fixed ids, pressed through STAR_API (star press `"<app>"` `"<id>"`, or POST `127.0.0.1:8863/apps/<app>/press` `{"label":"<id>"}`); the app must be running (star open `"<app>"`). Macro Recorder needs the Accessibility permission.
+
+- what starts by itself on my Mac (Swift Matrix)
+- turn off auto-start of an app (Swift Matrix)
+- manage login items and launch agents (Swift Matrix)
+
+### [Timer Stopwatch Clock (Mantra)](../apps/TIMER_STOPWATCH_CLOCK.md)
+
+macOS; API: none
+
+- count time on screen (Timer Stopwatch Clock)
+- set a countdown timer (Timer Stopwatch Clock)
+- show a big clock (Timer Stopwatch Clock)
+
+### [TinyTask to AutoHotkey](../apps/autohotkey.md)
+
+Windows/Web; API: none
+
+- convert a TinyTask recording to AutoHotkey (TinyTask to AutoHotkey)
+- turn a macro recording into an editable script (TinyTask to AutoHotkey)
+
+### [TP - Terminal Properties](../apps/TERMINAL_SHORTCUT_MACOS.md)
+
+macOS; API: http 5077. Main call: `curl 'http://127.0.0.1:5077/api/search?q=clear'`
+
+Before: TP (Terminal Properties) server on 5077.
+
+- make a short alias for a terminal command (TP - Terminal Properties)
+- type c to clear the terminal (TP - Terminal Properties)
+
+### [Watch Folder Daemon](../apps/WATCH_FOLDER_DAEMON.md)
+
+macOS; API: cli. Main call: `watch # menu keys: P push, T interval, S stop, F folder, L log, U update, Q quit`
+
+- auto-push files dropped in a folder to GitHub (Watch Folder Daemon)
+- upload big renders to a repo automatically (Watch Folder Daemon)
+
 
 ## Retired - do not use
 
 - [Brain Brake Keyboard (Hammerspoon) (retired)](../apps/BRAIN_BRAKE_KEYBOARD.md) - GitHub marks it archived.
-- [Find a File Spotlight (Mantra), retired (retired)](../apps/spotlight.md) - replaced by [Find a File (Mantra)](../apps/FIND_FILE.md)
-- [Keyboard and Mouse Router (Mantra), retired (retired)](../apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) - replaced by [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md)
+- [Find a File Spotlight (Mantra) (retired)](../apps/spotlight.md) - replaced by [Find a File (Mantra)](../apps/FIND_FILE.md)
+- [Keyboard and Mouse Router (Mantra) (retired)](../apps/MANTRA_KEYBOARD_MOUSE_ROUTER.md) - replaced by [Macro Recorder (Mantra)](../apps/MANTRA_MACRO.md)
 - [Pesty fork (archive) (retired)](../apps/pesty-fork-archive.md) - replaced by [Pasty](../apps/Pasty.md)

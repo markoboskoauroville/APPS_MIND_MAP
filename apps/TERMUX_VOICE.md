@@ -87,7 +87,7 @@ Outputs:
 ## Works with
 
 - Uses: [Mantra Manifest](MANTRA_MANIFEST.md)
-- Used by or talked to by: [Cost Agent (Mantra)](COST_AGENT.md), [Voice Engine Android (retired) (retired)](VOICE_ENGINE_ANDROID.md)
+- Used by or talked to by: [Cost Agent (Mantra)](COST_AGENT.md), [Voice Engine Android (retired)](VOICE_ENGINE_ANDROID.md)
 
 ## Code worth reusing
 

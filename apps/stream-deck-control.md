@@ -1,4 +1,4 @@
-# Stream Deck Control (Mantra), retired (retired)
+# Stream Deck Control (Mantra) (retired)
 
 [Map](../README.md) | [Capabilities](../CAPABILITIES.md) | [Control API](../CONTROL_API.md) | [Connections](../CONNECTIONS.md)
 

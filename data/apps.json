@@ -7509,7 +7509,7 @@
     "build/g815 frame keys 26:ff0000 ..."
    ],
    "how_to_call": "curl -s -XPOST 127.0.0.1:8877/frame -H 'Content-Type: application/json' -d '{\"color\":\"ff0000\"}'",
-   "evidence": "TAKEOVER.md v35 entry; app/LightShow.swift; MANTRA_MANIFEST keyboard-lights.md",
+   "evidence": "app/LightShow.swift lines 4-16 (route list) and 252-300 (POST /frame: image body with ?fit= and ?ttl=, or JSON rgb | keys | color | path | image_base64); TAKEOVER.md v35 entry",
    "level": "http",
    "before": "The G815 Lights app must be running (if GET /status does not answer, open ~/Developer/G815_LIGHTS/build/\"G815 Lights.app\"). Loopback only.",
    "examples": [
@@ -13316,7 +13316,7 @@
  },
  {
   "repo": "MANTRA_KEYBOARD_MOUSE_ROUTER",
-  "name": "Keyboard and Mouse Router (Mantra), retired",
+  "name": "Keyboard and Mouse Router (Mantra)",
   "aliases": [
    "Keyboard and Mouse Router",
    "keyboard mouse guard",
@@ -16434,7 +16434,7 @@
  },
  {
   "repo": "MARKO_TRANSCRIBE",
-  "name": "Transcribe Voice to Text RT (Mantra), retired",
+  "name": "Transcribe Voice to Text RT (Mantra)",
   "aliases": [
    "Marko Transcribe",
    "Voice to Text",
@@ -18355,7 +18355,7 @@
     },
     {
      "for": "load a preset",
-     "call": "curl -s -XPOST 127.0.0.1:8873/preset/load"
+     "call": "curl -s -XPOST 127.0.0.1:8873/preset/load -H 'Content-Type: application/json' -d '{\"name\":\"<preset name>\"}'"
     },
     {
      "for": "switch off",
@@ -21318,7 +21318,7 @@
  },
  {
   "repo": "spotlight",
-  "name": "Find a File Spotlight (Mantra), retired",
+  "name": "Find a File Spotlight (Mantra)",
   "aliases": [
    "Spotlight Folder (Mantra)",
    "spotlightd"
@@ -22012,7 +22012,7 @@
  },
  {
   "repo": "stream-deck-control",
-  "name": "Stream Deck Control (Mantra), retired",
+  "name": "Stream Deck Control (Mantra)",
   "aliases": [
    "stream deck control"
   ],
@@ -24760,7 +24760,7 @@
  },
  {
   "repo": "VOICE_ENGINE_ANDROID",
-  "name": "Voice Engine Android (retired)",
+  "name": "Voice Engine Android",
   "aliases": [
    "Voice Engine Android",
    "community.auroville.voiceengine"
@@ -25012,7 +25012,7 @@
  },
  {
   "repo": "VOICE_OF_CLAUDE",
-  "name": "Voice of Claude (Mantra), retired",
+  "name": "Voice of Claude (Mantra)",
   "aliases": [],
   "visibility": "private",
   "kind": "app",
@@ -25286,7 +25286,7 @@
     "POST /sony/set {code|name, value|label}"
    ],
    "how_to_call": "curl -s -XPOST 127.0.0.1:8867/record/start -H 'Content-Type: application/json' -d '{\"name\":\"interview\"}'",
-   "evidence": "app/ApiServer.swift (header comment and route list); README.md lines 47-48; port file ~/.mantra/ports/webcam-recorder",
+   "evidence": "app/ApiServer.swift lines 80-101 (POST /quality {quality: low|mid|high}, /fullscreen {on}, /front, /camera, /record/start, /record/stop read in the source); README.md lines 47-48",
    "level": "http",
    "before": "To control a Sony body (ISO, shutter, REC) call POST /sony/connect, then POST /sony/takecontrol (closes Imaging Edge Remote and takes the USB; the owner's explicit decision), before /sony/set or /sony/rec.",
    "examples": [

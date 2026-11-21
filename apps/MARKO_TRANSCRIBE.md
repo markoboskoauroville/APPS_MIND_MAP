@@ -1,4 +1,4 @@
-# Transcribe Voice to Text RT (Mantra), retired (retired)
+# Transcribe Voice to Text RT (Mantra) (retired)
 
 [Map](../README.md) | [Capabilities](../CAPABILITIES.md) | [Control API](../CONTROL_API.md) | [Connections](../CONNECTIONS.md)
 

@@ -1,4 +1,4 @@
-# Find a File Spotlight (Mantra), retired (retired)
+# Find a File Spotlight (Mantra) (retired)
 
 [Map](../README.md) | [Capabilities](../CAPABILITIES.md) | [Control API](../CONTROL_API.md) | [Connections](../CONNECTIONS.md)
 

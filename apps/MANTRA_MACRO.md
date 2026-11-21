@@ -123,7 +123,7 @@ Outputs:
 
 - Uses: [Star (Mantra), Lua (Hammerspoon, legacy)](MANTRA_STAR.md)
 - Talks to: [MAI Worker (maiwork)](MAI_WORKER.md), [Mantra Chrome Extensions](MANTRA_CHROME_EXTENSIONS.md)
-- Used by or talked to by: [Claude Control (Mantra)](CLAUDE_CONTROL.md), [Macro Skills](MACRO_SKILLS.md), [MAI Worker (maiwork)](MAI_WORKER.md), [Mantra Chrome Extensions](MANTRA_CHROME_EXTENSIONS.md), [Keyboard and Mouse Router (Mantra), retired (retired)](MANTRA_KEYBOARD_MOUSE_ROUTER.md), [Mantra Remote Viewing (Mantra Remote)](MANTRA_REMOTE_VIEWING.md), [Star API (Mantra)](STAR_API.md), [Talk Mode (Mantra)](TALK_MODE.md), [Queen auto-update (Groq Auto Update)](groq-auto-update.md), [Queen (Groq AI Studio), server and tools](groq_ai_studio.md)
+- Used by or talked to by: [Claude Control (Mantra)](CLAUDE_CONTROL.md), [Macro Skills](MACRO_SKILLS.md), [MAI Worker (maiwork)](MAI_WORKER.md), [Mantra Chrome Extensions](MANTRA_CHROME_EXTENSIONS.md), [Keyboard and Mouse Router (Mantra) (retired)](MANTRA_KEYBOARD_MOUSE_ROUTER.md), [Mantra Remote Viewing (Mantra Remote)](MANTRA_REMOTE_VIEWING.md), [Star API (Mantra)](STAR_API.md), [Talk Mode (Mantra)](TALK_MODE.md), [Queen auto-update (Groq Auto Update)](groq-auto-update.md), [Queen (Groq AI Studio), server and tools](groq_ai_studio.md)
 - Planned, not built: [Light Control (Mantra)](LIGHT_CONTROL.md) will be driven by this app (presses its accessibility buttons)
 
 ## Code worth reusing

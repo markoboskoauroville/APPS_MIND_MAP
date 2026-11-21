@@ -83,7 +83,7 @@ Outputs:
 ## Works with
 
 - Talks to: [MPA Academy, website and hub](mpa-academy.md)
-- Used by or talked to by: [Stream Deck Control (Mantra), retired (retired)](stream-deck-control.md)
+- Used by or talked to by: [Stream Deck Control (Mantra) (retired)](stream-deck-control.md)
 
 ## Code worth reusing
 

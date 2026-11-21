@@ -1,6 +1,6 @@
 # Capabilities: which app does what
 
-One line per capability: `task -> app (platforms; API: how it is driven) - call: example`. The first line of each app carries the port and a working example. API values: `door N` (standard door on port N), `http N`, `cli`, `adb`, `accessibility`, `other`, `none`. Retired apps are listed per category under "Retired - do not use", never as live lines. Search: `grep -ri <word> CAPABILITIES.md capabilities/ KEYWORDS.md`, or open `index.html`.
+One heading per app: platforms, API level and port, the main call and a `Before:` line when the call needs a step first. Below it the app's task phrases; a `call:` appears on a task only when it is the call for that task. API values: `door N` (standard door on port N), `http N`, `cli`, `adb`, `accessibility`, `other`, `none`. Retired apps are listed per category under "Retired - do not use", never as live lines. Search: `grep -ri <word> CAPABILITIES.md capabilities/ KEYWORDS.md`, or open `index.html`.
 
 This index is small on purpose: pick the category, open its file (one file has all task lines of that category, with the port and a working call on the first line of each app). Guides that say which app to pick are at the top of each category file.
 

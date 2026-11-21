@@ -41,7 +41,7 @@
 - Type: http, cli
 - Port: 8847 (phone door, Tailscale address only, bearer token)
 
-**Warning:** port 8847 is also quoted for [Find a File Spotlight (Mantra), retired (retired)](spotlight.md) - confirm with `mantra-ports scan`.
+**Warning:** port 8847 is also quoted for [Find a File Spotlight (Mantra) (retired)](spotlight.md) - confirm with `mantra-ports scan`.
 
 Actions:
 

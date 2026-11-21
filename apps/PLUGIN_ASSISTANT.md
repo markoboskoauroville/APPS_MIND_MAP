@@ -64,7 +64,7 @@ curl -X POST http://127.0.0.1:8873/on
 More calls:
 
 - which plugins and devices: `curl -s 127.0.0.1:8873/plugins ; curl -s 127.0.0.1:8873/devices`
-- load a preset: `curl -s -XPOST 127.0.0.1:8873/preset/load`
+- load a preset: `curl -s -XPOST 127.0.0.1:8873/preset/load -H 'Content-Type: application/json' -d '{"name":"<preset name>"}'`
 - switch off: `curl -s -XPOST 127.0.0.1:8873/off`
 
 Evidence: TAKEOVER.md; extension/background.js (HOST 127.0.0.1:8873)

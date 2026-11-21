@@ -37,7 +37,7 @@ No control API found.
 ## Works with
 
 - Talks to: [Mantra Voice (speech server)](MANTRA_VOICE.md)
-- Used by or talked to by: [Voice Engine (Mantra)](VOICE_ENGINE.md), [Voice Engine Android (retired) (retired)](VOICE_ENGINE_ANDROID.md)
+- Used by or talked to by: [Voice Engine (Mantra)](VOICE_ENGINE.md), [Voice Engine Android (retired)](VOICE_ENGINE_ANDROID.md)
 
 ## Code worth reusing
 

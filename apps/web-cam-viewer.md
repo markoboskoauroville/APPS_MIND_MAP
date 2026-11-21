@@ -81,7 +81,7 @@ More calls:
 - start or stop REC on the Sony's card: `curl -s -XPOST 127.0.0.1:8867/sony/rec -H 'Content-Type: application/json' -d '{"on":true}'`
 - pick the camera to record from: `curl -s -XPOST 127.0.0.1:8867/camera -H 'Content-Type: application/json' -d '{"name":"<name from GET /cameras>"}'`
 
-Evidence: app/ApiServer.swift (header comment and route list); README.md lines 47-48; port file ~/.mantra/ports/webcam-recorder
+Evidence: app/ApiServer.swift lines 80-101 (POST /quality {quality: low|mid|high}, /fullscreen {on}, /front, /camera, /record/start, /record/stop read in the source); README.md lines 47-48
 
 ## Inputs / Outputs
 

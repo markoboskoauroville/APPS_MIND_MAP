@@ -94,7 +94,7 @@ Outputs:
 ## Works with
 
 - Uses: [Keyring](KEYRING_TERMUX.md)
-- Used by or talked to by: [Voice Engine Android (retired) (retired)](VOICE_ENGINE_ANDROID.md)
+- Used by or talked to by: [Voice Engine Android (retired)](VOICE_ENGINE_ANDROID.md)
 
 ## Code worth reusing
 
